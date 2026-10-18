@@ -1,0 +1,186 @@
+[
+  {
+    "kernel": "stencil",
+    "n": 512,
+    "impl": "row",
+    "param": 2,
+    "cache_flags": [
+      "--I1=32768,8,64",
+      "--D1=32768,8,64",
+      "--LL=6291456,12,64"
+    ],
+    "counts": {
+      "Ir": 806995,
+      "I1mr": 16,
+      "ILmr": 16,
+      "Dr": 351928,
+      "D1mr": 32778,
+      "DLmr": 16452,
+      "Dw": 68387,
+      "D1mw": 32647,
+      "DLmw": 16326
+    },
+    "log": "cache_stencil_512_row.txt"
+  },
+  {
+    "kernel": "stencil",
+    "n": 512,
+    "impl": "column",
+    "param": 2,
+    "cache_flags": [
+      "--I1=32768,8,64",
+      "--D1=32768,8,64",
+      "--LL=6291456,12,64"
+    ],
+    "counts": {
+      "Ir": 6776041,
+      "I1mr": 16,
+      "ILmr": 16,
+      "Dr": 2601038,
+      "D1mr": 587535,
+      "DLmr": 16455,
+      "Dw": 520229,
+      "D1mw": 520206,
+      "DLmw": 16326
+    },
+    "log": "cache_stencil_512_column.txt"
+  },
+  {
+    "kernel": "stencil",
+    "n": 2048,
+    "impl": "row",
+    "param": 2,
+    "cache_flags": [
+      "--I1=32768,8,64",
+      "--D1=32768,8,64",
+      "--LL=6291456,12,64"
+    ],
+    "counts": {
+      "Ir": 11879251,
+      "I1mr": 16,
+      "ILmr": 16,
+      "Dr": 5340088,
+      "D1mr": 536570,
+      "DLmr": 524298,
+      "Dw": 1059875,
+      "D1mw": 523783,
+      "DLmw": 523783
+    },
+    "log": "cache_stencil_2048_row.txt"
+  },
+  {
+    "kernel": "stencil",
+    "n": 2048,
+    "impl": "column",
+    "param": 2,
+    "cache_flags": [
+      "--I1=32768,8,64",
+      "--D1=32768,8,64",
+      "--LL=6291456,12,64"
+    ],
+    "counts": {
+      "Ir": 108892393,
+      "I1mr": 16,
+      "ILmr": 16,
+      "Dr": 41861198,
+      "D1mr": 9427983,
+      "DLmr": 9427983,
+      "Dw": 8372261,
+      "D1mw": 8372238,
+      "DLmw": 8372238
+    },
+    "log": "cache_stencil_2048_column.txt"
+  },
+  {
+    "kernel": "gemm",
+    "n": 128,
+    "impl": "naive",
+    "param": 64,
+    "cache_flags": [
+      "--I1=32768,8,64",
+      "--D1=32768,8,64",
+      "--LL=6291456,12,64"
+    ],
+    "counts": {
+      "Ir": 9095519,
+      "I1mr": 18,
+      "ILmr": 18,
+      "Dr": 2638619,
+      "D1mr": 2118406,
+      "DLmr": 2056,
+      "Dw": 16664,
+      "D1mw": 13317,
+      "DLmw": 1029
+    },
+    "log": "cache_gemm_128_naive.txt"
+  },
+  {
+    "kernel": "gemm",
+    "n": 128,
+    "impl": "blocked",
+    "param": 64,
+    "cache_flags": [
+      "--I1=32768,8,64",
+      "--D1=32768,8,64",
+      "--LL=6291456,12,64"
+    ],
+    "counts": {
+      "Ir": 2552596,
+      "I1mr": 47,
+      "ILmr": 47,
+      "Dr": 707691,
+      "D1mr": 10354,
+      "DLmr": 1928,
+      "Dw": 340156,
+      "D1mw": 5420,
+      "DLmw": 1803
+    },
+    "log": "cache_gemm_128_blocked.txt"
+  },
+  {
+    "kernel": "gemm",
+    "n": 512,
+    "impl": "naive",
+    "param": 64,
+    "cache_flags": [
+      "--I1=32768,8,64",
+      "--D1=32768,8,64",
+      "--LL=6291456,12,64"
+    ],
+    "counts": {
+      "Ir": 573318239,
+      "I1mr": 18,
+      "ILmr": 18,
+      "Dr": 168037403,
+      "D1mr": 134526985,
+      "DLmr": 32777,
+      "Dw": 263192,
+      "D1mw": 262149,
+      "DLmw": 16390
+    },
+    "log": "cache_gemm_512_naive.txt"
+  },
+  {
+    "kernel": "gemm",
+    "n": 512,
+    "impl": "blocked",
+    "param": 64,
+    "cache_flags": [
+      "--I1=32768,8,64",
+      "--D1=32768,8,64",
+      "--LL=6291456,12,64"
+    ],
+    "counts": {
+      "Ir": 159423142,
+      "I1mr": 47,
+      "ILmr": 47,
+      "Dr": 45125967,
+      "D1mr": 625284,
+      "DLmr": 32777,
+      "Dw": 18521272,
+      "D1mw": 211451,
+      "DLmw": 17164
+    },
+    "log": "cache_gemm_512_blocked.txt"
+  }
+]

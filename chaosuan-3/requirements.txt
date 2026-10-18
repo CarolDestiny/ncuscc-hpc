@@ -1,0 +1,2 @@
+# Python >= 3.10; all scripts use only the standard library.
+# C++17 compiler and CMake >= 3.16 are system build requirements.

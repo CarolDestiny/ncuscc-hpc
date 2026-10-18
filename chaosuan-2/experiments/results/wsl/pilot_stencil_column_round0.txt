@@ -1,0 +1,10 @@
+$ taskset -c 0 /home/destiny/project/chaosuan-2/experiments/build/stencil 512 512 20 column 3
+stencil impl=column h=512 w=512 steps=20 seed=2026 warmup=1 threads=1
+check=PASS max_abs_error=1.29584e-07 checksum=128655
+check=PASS max_abs_error=1.29584e-07 checksum=128655
+sample=0 compute_ms=12.8183
+check=PASS max_abs_error=1.29584e-07 checksum=128655
+sample=1 compute_ms=13.0026
+check=PASS max_abs_error=1.29584e-07 checksum=128655
+sample=2 compute_ms=13.0243
+samples=3 mean_ms=12.9484 median_ms=13.0026 stddev_ms=0.0924135 min_ms=12.8183 max_ms=13.0243 stddev_kind=population throughput_time=median GUpdates/s=0.400075 GFLOP/s=2.40045 effective_bandwidth_GB/s=3.2006 bandwidth_model=ideal_spatial_reuse bytes_per_update=8

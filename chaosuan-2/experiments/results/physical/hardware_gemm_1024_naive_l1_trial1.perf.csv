@@ -1,0 +1,7 @@
+# started on Mon Oct 12 03:15:38 2026
+
+7563740011;;cycles:u;3308470842;100.00;;
+4574959885;;instructions:u;3308470842;100.00;;
+269987346;;mem_load_retired.l1_hit:u;3308470842;100.00;;
+1058373469;;mem_load_retired.l1_miss:u;3308470842;100.00;;
+14865753;;mem_load_retired.fb_hit:u;3308470842;100.00;;

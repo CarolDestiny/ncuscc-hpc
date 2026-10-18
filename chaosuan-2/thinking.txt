@@ -1,0 +1,70 @@
+先从main入口看起
+
+stencil.cpp line:29-38 解析参数
+
+最开始解析四个参数 由common.hpp int positive(const char* text,int limit) 函数解析
+positive只检测参数是否是数字 是否属于1, limi范围
+返回四个安全的int参数
+h 推测含义是高度
+w 推测含义是宽度
+steps
+repeats
+
+接着解析argv[4] 类型std::string
+impl 参数必须是"row"(推测按顺序处理 有利于缓存命中)和"column"(推测跳跃处理 降低缓存命中)中的一个
+
+stencil.cpp line:42-58 生成一个对照组
+
+size_t count 推测含义为一个矩阵的数量 大小是 h*w
+调用函数common.hpp float sample(std::uint32&) 一个简单的伪随机数发生器
+一种子send = 2026 对input进行随机填充 最外圈保留为0
+
+定义ref拷贝自input 但是提升精度到double
+然后开始对ref进行锐化操作,值暂存到到tmp,最终返回ref
+锐化的行为是
+ref[i-w]:上 1/8权重
+ref[i+w]:下 1/8权重
+ref[i-1]:左 1/8权重
+ref[i+1]:右 1/8权重
+ref[i]:自身 1/2权重
+
+stencil.cpp line:59-87
+输出基准信息 impl h w steps
+
+然后开始多轮(steps)循环测试并将每次测试的时间保存到times
+循环从-1->steps 推测-1是预热 根据 // this is not a cold-cache test
+
+然后a是初始状态 b为空
+开始计时 重复steps次
+循环跑void stencil_step(const float* current, float* next, int h, int w, bool column)
+本质是前面的锐化
+分为"row"(连续访问)和"column"(跨行)模式
+计时结束
+校验并打印耗时
+
+stencil.cpp line:89-119
+计算平均耗时带宽异常等一起打印输出
+
+gemm.cpp 差不多 是矩阵乘法
+
+代码逻辑分析结束
+
+可能的瓶颈分析
+stencil.cpp
+row
+需要上行留在缓存和下行被加载 在矩阵较大的情况下表现存疑 大矩阵下带宽受限
+使用指令集加速 分块多线程处理
+column
+缓存命中率低
+
+gemm.cpp
+naive
+B按列读取 每次跨4N 矩阵较大增加缓存和TLB压力 sum依赖 限制并行
+改成ikj顺序 转置B 分块和指令集加速
+
+gemm_blocked
+打包复制额外开销 块过大 缓存命中率低
+调整title 减少重复打包
+
+使用ai生成了ai_result.md
+额 很详细了 主要是编译器已经自动使用SIMD优化了 缓存行为差不多 报告指出了更详细的具体命中哪层缓存

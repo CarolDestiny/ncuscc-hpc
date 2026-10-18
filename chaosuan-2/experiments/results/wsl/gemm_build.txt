@@ -1,0 +1,1 @@
+$ g++ -std=c++17 -O3 -march=x86-64-v3 -mtune=generic -ffp-contract=off -g -fopt-info-vec-all=/home/destiny/project/chaosuan-2/experiments/results/wsl/gemm_vectorization.txt gemm.cpp -o /home/destiny/project/chaosuan-2/experiments/build/gemm

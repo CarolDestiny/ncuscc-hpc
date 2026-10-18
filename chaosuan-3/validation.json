@@ -1,0 +1,138 @@
+{
+  "results": [
+    {
+      "command": [
+        "cmake",
+        "-S",
+        ".",
+        "-B",
+        "/tmp/chaosuan3-build",
+        "-DCMAKE_BUILD_TYPE=Release"
+      ],
+      "returncode": 0,
+      "stdout": "-- Configuring done (0.7s)\n-- Generating done (0.0s)\n-- Build files have been written to: /tmp/chaosuan3-build\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "/tmp/chaosuan3-build",
+        "-j2"
+      ],
+      "returncode": 0,
+      "stdout": "ninja: no work to do.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "test_public.py",
+        "/tmp/chaosuan3-build/baseline_original"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.114s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "test_public.py",
+        "/tmp/chaosuan3-build/baseline_refactored"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.115s\n\nOK\n"
+    },
+    {
+      "command": [
+        "ctest",
+        "--test-dir",
+        "/tmp/chaosuan3-build",
+        "--output-on-failure"
+      ],
+      "returncode": 0,
+      "stdout": "Test project /tmp/chaosuan3-build\n    Start 1: api\n1/3 Test #1: api ..............................   Passed    0.03 sec\n    Start 2: public\n2/3 Test #2: public ...........................   Passed    0.14 sec\n    Start 3: regression\n3/3 Test #3: regression .......................   Passed    0.21 sec\n\n100% tests passed, 0 tests failed out of 3\n\nTotal Test time (real) =   0.38 sec\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "test_api.cpp",
+        "filter.cpp",
+        "-o",
+        "/tmp/chaosuan3-build/test_api_sanitized"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/chaosuan3-build/test_api_sanitized"
+      ],
+      "returncode": 0,
+      "stdout": "API regression: 1057 cases PASS\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "main.cpp",
+        "filter.cpp",
+        "-o",
+        "/tmp/chaosuan3-build/log_filter_sanitized"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "test_public.py",
+        "/tmp/chaosuan3-build/log_filter_sanitized"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.417s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "test_regression.py",
+        "/tmp/chaosuan3-build/log_filter_sanitized"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.425s\n\nOK\n"
+    }
+  ],
+  "sources_sha256": {
+    "CMakeLists.txt": "e10680e7a642433872d96a1ee8d4157c511ad773c0c08c40b4ec00cedf26ae01",
+    "baseline.cpp": "096bdbe25127d58d0d7bcbb3a8ef3a58d4b5cb4c85e7dbb15b64102e41dd41ee",
+    "benchmark.py": "fba13622be8f632325637278b7513e2fa3090a72c0f528fa824c543e5b93866d",
+    "filter.cpp": "0e7fa59eba6526fe53f99c8520fc65fc337efa6c5331941b7d5e059aa6e03ad2",
+    "filter.hpp": "6d277851d9480c4c992347e6b95eeaa538ea716e59bba816297470273e420465",
+    "generate_logs.py": "ba5d094600b7d0f6ca72b5ed440691c01af5578be1e8adf4713d7140d404b786",
+    "main.cpp": "b62154a4da87a2b6709e95c071c0d22fc13bde9bce04829d5d3c894dae7e281e",
+    "requirements.txt": "0ffd0a8f353a6d10c183ed05acc0a0d6d40a75ace4f6d0ba6930ac12f31d713c",
+    "serial_filter.cpp": "db14af24fe2c0e7c2ddc15b08d34bdcf997640c6c0f4daf2b3ea43b9fdbbeddd",
+    "support.hpp": "315705298be983ad7dc7f929319a73e89554f9bebe3b533524d1935d69d30524",
+    "test_api.cpp": "386a882f0abae26f385dbfb1dd03784e3eb63aa6ebf568af1bec8b9785a108c4",
+    "test_public.py": "83caf1963ba5101c36cf8855b131b894d079d2eb1d8ce90f3df08a3d693e25fb",
+    "test_regression.py": "5de3c827f78bdf23dccd06b260870fef209f23f4bb9f7013e5b5f8d590168885",
+    "verify.py": "d87017d82e14dcb9441b1a01b60118812148ced3d6ca49e005dead7588d7f82d"
+  },
+  "metadata_note": "After tests, corrected the documented minimum Python version to 3.10; all tests ran with Python 3.14.4. No code or tests changed."
+}

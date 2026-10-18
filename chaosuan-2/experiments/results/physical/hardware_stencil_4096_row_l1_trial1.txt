@@ -1,0 +1,5 @@
+$ perf stat -D -1 --control fd:3,6 -x ; -o /home/user/project/chaosuan-2-ai-20261012/experiments/results/physical/hardware_stencil_4096_row_l1_trial1.perf.csv -e {cycles:u,instructions:u,mem_load_retired.l1_hit:u,mem_load_retired.l1_miss:u,mem_load_retired.fb_hit:u} -- taskset -c 0 /home/user/project/chaosuan-2-ai-20261012/experiments/build/perf_driver stencil 4096 row 20
+profile_checksum=8.36893e+06
+Events disabled
+Events enabled
+Events disabled

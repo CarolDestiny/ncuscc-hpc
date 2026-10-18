@@ -1,0 +1,710 @@
+{
+  "started_utc": "2026-10-18T02:00:19.889165+00:00",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "commands": [
+    {
+      "command": [
+        "g++",
+        "--version"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "cmake version 4.2.3\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "cmake",
+        "-S",
+        "/home/destiny/project/ncuscc-hpc/chaosuan-1",
+        "-B",
+        "/tmp/ncuscc-verify-p4hw04d6/stage1",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DBUILD_TESTING=OFF"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "-- The CXX compiler identification is GNU 15.2.0\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Configuring done (2.3s)\n-- Generating done (0.0s)\n-- Build files have been written to: /tmp/ncuscc-verify-p4hw04d6/stage1\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "/tmp/ncuscc-verify-p4hw04d6/stage1",
+        "-j2"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "[ 16%] Building CXX object CMakeFiles/linux_procfs.dir/src/linux_procfs.cpp.o\n[ 33%] Building CXX object CMakeFiles/workload.dir/src/workload.cpp.o\n[ 50%] Linking CXX executable workload\n[ 66%] Linking CXX static library liblinux_procfs.a\n[ 66%] Built target linux_procfs\n[ 83%] Building CXX object CMakeFiles/collector.dir/src/collector.cpp.o\n[ 83%] Built target workload\n[100%] Linking CXX executable collector\n[100%] Built target collector\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage1/workload",
+        "--help"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "usage: workload [--mode cpu] --threads N --duration DURATION [--pid-file PATH] [--load-percent 1..100]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage1/collector",
+        "--help"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "usage: collector (--pid PID | --pid-file PATH) [--interval DURATION] [--duration DURATION] --output PATH [--overwrite]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage1/collector",
+        "--pid",
+        "490",
+        "--interval",
+        "200ms",
+        "--duration",
+        "1s",
+        "--output",
+        "/tmp/ncuscc-verify-p4hw04d6/metrics.jsonl"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "/home/destiny/project/ncuscc-hpc/chaosuan-2/stencil.cpp",
+        "-o",
+        "/tmp/ncuscc-verify-p4hw04d6/stage2/stencil"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "g++",
+        "-std=c++17",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "/home/destiny/project/ncuscc-hpc/chaosuan-2/gemm.cpp",
+        "-o",
+        "/tmp/ncuscc-verify-p4hw04d6/stage2/gemm"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage2/stencil",
+        "3",
+        "3",
+        "1",
+        "row",
+        "2"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "stencil impl=row h=3 w=3 steps=1 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=0 checksum=0.0106246\ncheck=PASS max_abs_error=0 checksum=0.0106246\nsample=0 compute_ms=3.8e-05\ncheck=PASS max_abs_error=0 checksum=0.0106246\nsample=1 compute_ms=2.9e-05\nsamples=2 mean_ms=3.35e-05 median_ms=3.35e-05 stddev_ms=4.5e-06 min_ms=2.9e-05 max_ms=3.8e-05 stddev_kind=population throughput_time=median GUpdates/s=0.0298507 GFLOP/s=0.179104 effective_bandwidth_GB/s=0.238806 bandwidth_model=ideal_spatial_reuse bytes_per_update=8\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage2/stencil",
+        "3",
+        "3",
+        "1",
+        "column",
+        "2"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "stencil impl=column h=3 w=3 steps=1 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=0 checksum=0.0106246\ncheck=PASS max_abs_error=0 checksum=0.0106246\nsample=0 compute_ms=6e-05\ncheck=PASS max_abs_error=0 checksum=0.0106246\nsample=1 compute_ms=3e-05\nsamples=2 mean_ms=4.5e-05 median_ms=4.5e-05 stddev_ms=1.5e-05 min_ms=3e-05 max_ms=6e-05 stddev_kind=population throughput_time=median GUpdates/s=0.0222222 GFLOP/s=0.133333 effective_bandwidth_GB/s=0.177778 bandwidth_model=ideal_spatial_reuse bytes_per_update=8\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage2/stencil",
+        "7",
+        "11",
+        "4",
+        "row",
+        "2"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "stencil impl=row h=7 w=11 steps=4 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=4.22151e-08 checksum=15.6076\ncheck=PASS max_abs_error=4.22151e-08 checksum=15.6076\nsample=0 compute_ms=0.000253\ncheck=PASS max_abs_error=4.22151e-08 checksum=15.6076\nsample=1 compute_ms=0.000245\nsamples=2 mean_ms=0.000249 median_ms=0.000249 stddev_ms=4e-06 min_ms=0.000245 max_ms=0.000253 stddev_kind=population throughput_time=median GUpdates/s=0.722892 GFLOP/s=4.33735 effective_bandwidth_GB/s=5.78313 bandwidth_model=ideal_spatial_reuse bytes_per_update=8\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage2/stencil",
+        "7",
+        "11",
+        "4",
+        "column",
+        "2"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "stencil impl=column h=7 w=11 steps=4 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=4.22151e-08 checksum=15.6076\ncheck=PASS max_abs_error=4.22151e-08 checksum=15.6076\nsample=0 compute_ms=0.000255\ncheck=PASS max_abs_error=4.22151e-08 checksum=15.6076\nsample=1 compute_ms=0.000245\nsamples=2 mean_ms=0.00025 median_ms=0.00025 stddev_ms=5e-06 min_ms=0.000245 max_ms=0.000255 stddev_kind=population throughput_time=median GUpdates/s=0.72 GFLOP/s=4.32 effective_bandwidth_GB/s=5.76 bandwidth_model=ideal_spatial_reuse bytes_per_update=8\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage2/stencil",
+        "64",
+        "64",
+        "4",
+        "row",
+        "2"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "stencil impl=row h=64 w=64 steps=4 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=9.13424e-08 checksum=1853.12\ncheck=PASS max_abs_error=9.13424e-08 checksum=1853.12\nsample=0 compute_ms=0.003213\ncheck=PASS max_abs_error=9.13424e-08 checksum=1853.12\nsample=1 compute_ms=0.003208\nsamples=2 mean_ms=0.0032105 median_ms=0.0032105 stddev_ms=2.5e-06 min_ms=0.003208 max_ms=0.003213 stddev_kind=population throughput_time=median GUpdates/s=4.78929 GFLOP/s=28.7357 effective_bandwidth_GB/s=38.3143 bandwidth_model=ideal_spatial_reuse bytes_per_update=8\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage2/stencil",
+        "64",
+        "64",
+        "4",
+        "column",
+        "2"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "stencil impl=column h=64 w=64 steps=4 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=9.13424e-08 checksum=1853.12\ncheck=PASS max_abs_error=9.13424e-08 checksum=1853.12\nsample=0 compute_ms=0.009174\ncheck=PASS max_abs_error=9.13424e-08 checksum=1853.12\nsample=1 compute_ms=0.009142\nsamples=2 mean_ms=0.009158 median_ms=0.009158 stddev_ms=1.6e-05 min_ms=0.009142 max_ms=0.009174 stddev_kind=population throughput_time=median GUpdates/s=1.67897 GFLOP/s=10.0738 effective_bandwidth_GB/s=13.4318 bandwidth_model=ideal_spatial_reuse bytes_per_update=8\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage2/gemm",
+        "1",
+        "naive",
+        "16",
+        "2"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "gemm impl=naive n=1 tile=16 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=2.41158e-11 checksum=0.000943359\ncheck=PASS max_abs_error=2.41158e-11 checksum=0.000943359\nsample=0 compute_ms=5e-05\ncheck=PASS max_abs_error=2.41158e-11 checksum=0.000943359\nsample=1 compute_ms=1.8e-05\nsamples=2 mean_ms=3.4e-05 median_ms=3.4e-05 stddev_ms=1.6e-05 min_ms=1.8e-05 max_ms=5e-05 stddev_kind=population GFLOP/s=0.0588235\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage2/gemm",
+        "1",
+        "blocked",
+        "16",
+        "2"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "gemm impl=blocked n=1 tile=16 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=2.41158e-11 checksum=0.000943359\ncheck=PASS max_abs_error=2.41158e-11 checksum=0.000943359\nsample=0 compute_ms=5.4e-05\ncheck=PASS max_abs_error=2.41158e-11 checksum=0.000943359\nsample=1 compute_ms=5.2e-05\nsamples=2 mean_ms=5.3e-05 median_ms=5.3e-05 stddev_ms=1e-06 min_ms=5.2e-05 max_ms=5.4e-05 stddev_kind=population GFLOP/s=0.0377358\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage2/gemm",
+        "31",
+        "naive",
+        "16",
+        "2"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "gemm impl=naive n=31 tile=16 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\nsample=0 compute_ms=0.009025\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\nsample=1 compute_ms=0.008991\nsamples=2 mean_ms=0.009008 median_ms=0.009008 stddev_ms=1.7e-05 min_ms=0.008991 max_ms=0.009025 stddev_kind=population GFLOP/s=6.61434\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage2/gemm",
+        "31",
+        "blocked",
+        "16",
+        "2"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "gemm impl=blocked n=31 tile=16 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\nsample=0 compute_ms=0.006662\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\nsample=1 compute_ms=0.006511\nsamples=2 mean_ms=0.0065865 median_ms=0.0065865 stddev_ms=7.55e-05 min_ms=0.006511 max_ms=0.006662 stddev_kind=population GFLOP/s=9.04608\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage2/gemm",
+        "31",
+        "naive",
+        "64",
+        "2"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "gemm impl=naive n=31 tile=64 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\nsample=0 compute_ms=0.009018\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\nsample=1 compute_ms=0.009071\nsamples=2 mean_ms=0.0090445 median_ms=0.0090445 stddev_ms=2.65e-05 min_ms=0.009018 max_ms=0.009071 stddev_kind=population GFLOP/s=6.58765\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage2/gemm",
+        "31",
+        "blocked",
+        "64",
+        "2"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "gemm impl=blocked n=31 tile=64 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\nsample=0 compute_ms=0.005135\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\nsample=1 compute_ms=0.006346\nsamples=2 mean_ms=0.0057405 median_ms=0.0057405 stddev_ms=0.0006055 min_ms=0.005135 max_ms=0.006346 stddev_kind=population GFLOP/s=10.3792\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage2/gemm",
+        "128",
+        "naive",
+        "64",
+        "2"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "gemm impl=naive n=128 tile=64 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=2.54014e-05 checksum=528745\ncheck=PASS max_abs_error=2.54014e-05 checksum=528745\nsample=0 compute_ms=1.02459\ncheck=PASS max_abs_error=2.54014e-05 checksum=528745\nsample=1 compute_ms=1.05367\nsamples=2 mean_ms=1.03913 median_ms=1.03913 stddev_ms=0.0145435 min_ms=1.02459 max_ms=1.05367 stddev_kind=population GFLOP/s=4.03636\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage2/gemm",
+        "128",
+        "blocked",
+        "64",
+        "2"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "gemm impl=blocked n=128 tile=64 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=2.54014e-05 checksum=528745\ncheck=PASS max_abs_error=2.54014e-05 checksum=528745\nsample=0 compute_ms=0.208216\ncheck=PASS max_abs_error=2.54014e-05 checksum=528745\nsample=1 compute_ms=0.189533\nsamples=2 mean_ms=0.198875 median_ms=0.198875 stddev_ms=0.0093415 min_ms=0.189533 max_ms=0.208216 stddev_kind=population GFLOP/s=21.0902\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage2/stencil",
+        "2",
+        "3",
+        "1",
+        "row",
+        "1"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "stdout": "",
+      "stderr": "invalid dimensions or implementation\n"
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-verify-p4hw04d6/stage2/gemm",
+        "31",
+        "unknown",
+        "16",
+        "1"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "stdout": "",
+      "stderr": "invalid implementation\n"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "/home/destiny/project/ncuscc-hpc/chaosuan-3/verify.py",
+        "--build",
+        "/tmp/ncuscc-verify-p4hw04d6/stage3",
+        "--output",
+        "/tmp/ncuscc-verify-p4hw04d6/stage3-validation.json"
+      ],
+      "cwd": "/home/destiny/project/ncuscc-hpc",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "stdout": "-- The CXX compiler identification is GNU 15.2.0\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Found Python3: /usr/bin/python3 (found version \"3.14.4\") found components: Interpreter\n-- Configuring done (3.5s)\n-- Generating done (0.0s)\n-- Build files have been written to: /tmp/ncuscc-verify-p4hw04d6/stage3\n[ 18%] Building CXX object CMakeFiles/log_filter.dir/main.cpp.o\n[ 18%] Building CXX object CMakeFiles/baseline_refactored.dir/main.cpp.o\n[ 27%] Building CXX object CMakeFiles/log_filter.dir/filter.cpp.o\n[ 36%] Building CXX object CMakeFiles/baseline_refactored.dir/serial_filter.cpp.o\n[ 45%] Linking CXX executable baseline_refactored\n[ 54%] Linking CXX executable log_filter\n[ 54%] Built target baseline_refactored\n[ 54%] Built target log_filter\n[ 63%] Building CXX object CMakeFiles/baseline_original.dir/baseline.cpp.o\n[ 72%] Building CXX object CMakeFiles/test_api.dir/test_api.cpp.o\n[ 81%] Building CXX object CMakeFiles/test_api.dir/filter.cpp.o\n[ 90%] Linking CXX executable baseline_original\n[100%] Linking CXX executable test_api\n[100%] Built target test_api\n[100%] Built target baseline_original\nTest project /tmp/ncuscc-verify-p4hw04d6/stage3\n    Start 1: api\n1/3 Test #1: api ..............................   Passed    0.03 sec\n    Start 2: public\n2/3 Test #2: public ...........................   Passed    0.15 sec\n    Start 3: regression\n3/3 Test #3: regression .......................   Passed    0.22 sec\n\n100% tests passed, 0 tests failed out of 3\n\nTotal Test time (real) =   0.40 sec\nAPI regression: 1057 cases PASS\n",
+      "stderr": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.117s\n\nOK\n.......\n----------------------------------------------------------------------\nRan 7 tests in 0.116s\n\nOK\n.......\n----------------------------------------------------------------------\nRan 7 tests in 0.454s\n\nOK\n...\n----------------------------------------------------------------------\nRan 3 tests in 0.471s\n\nOK\n"
+    }
+  ],
+  "scope": "Fresh correctness checks; no historical performance or PMU remeasurement",
+  "stage1_missing_tests": [
+    "tests/integration_test.py",
+    "tests/lifecycle_test.py"
+  ],
+  "passed": true,
+  "snapshot_files_checked": 316,
+  "stage1_smoke": {
+    "samples": 5,
+    "rows": [
+      {
+        "schema": "hpc-metrics.v1",
+        "event": "start",
+        "sequence": 0,
+        "wall_time": "2026-10-18T02:00:24.471Z",
+        "monotonic_ns": 64791315099,
+        "collector": {
+          "version": "0.1.0",
+          "pid": 491,
+          "interval_ms": 200,
+          "requested_duration_ms": 1000
+        },
+        "target": {
+          "pid": 490,
+          "start_ticks": 6479,
+          "command": "/tmp/ncuscc-verify-p4hw04d6/stage1/workload",
+          "uid": 1000
+        },
+        "host": {
+          "boot_id": "c41cab90-b8f0-4173-b607-3e019ec26f81",
+          "hostname": "CarolDestiny",
+          "logical_cpus": 2,
+          "clock_ticks_per_second": 100,
+          "page_size_bytes": 4096
+        },
+        "unavailable": []
+      },
+      {
+        "schema": "hpc-metrics.v1",
+        "event": "sample",
+        "sequence": 1,
+        "wall_time": "2026-10-18T02:00:24.671Z",
+        "monotonic_ns": 64991422818,
+        "elapsed_ms": 200,
+        "target": {
+          "pid": 490,
+          "start_ticks": 6479
+        },
+        "process": {
+          "cpu_cores_percent": 94.9,
+          "cpu_capacity_percent": 47.5,
+          "threads": 2,
+          "rss_bytes": 4034560,
+          "read_bytes": 0,
+          "write_bytes": 0,
+          "voluntary_context_switches_delta": 0,
+          "involuntary_context_switches_delta": 0
+        },
+        "host": {
+          "cpu_utilization_percent": 50.0,
+          "load1": 0.16,
+          "memory_available_bytes": 3273687040
+        },
+        "unavailable": []
+      },
+      {
+        "schema": "hpc-metrics.v1",
+        "event": "sample",
+        "sequence": 2,
+        "wall_time": "2026-10-18T02:00:24.871Z",
+        "monotonic_ns": 65191390519,
+        "elapsed_ms": 400,
+        "target": {
+          "pid": 490,
+          "start_ticks": 6479
+        },
+        "process": {
+          "cpu_cores_percent": 105.0,
+          "cpu_capacity_percent": 52.5,
+          "threads": 2,
+          "rss_bytes": 4034560,
+          "read_bytes": 0,
+          "write_bytes": 0,
+          "voluntary_context_switches_delta": 0,
+          "involuntary_context_switches_delta": 0
+        },
+        "host": {
+          "cpu_utilization_percent": 50.0,
+          "load1": 0.23,
+          "memory_available_bytes": 3273687040
+        },
+        "unavailable": []
+      },
+      {
+        "schema": "hpc-metrics.v1",
+        "event": "sample",
+        "sequence": 3,
+        "wall_time": "2026-10-18T02:00:25.072Z",
+        "monotonic_ns": 65391536017,
+        "elapsed_ms": 600,
+        "target": {
+          "pid": 490,
+          "start_ticks": 6479
+        },
+        "process": {
+          "cpu_cores_percent": 99.9,
+          "cpu_capacity_percent": 50.0,
+          "threads": 2,
+          "rss_bytes": 4034560,
+          "read_bytes": 0,
+          "write_bytes": 0,
+          "voluntary_context_switches_delta": 0,
+          "involuntary_context_switches_delta": 0
+        },
+        "host": {
+          "cpu_utilization_percent": 50.0,
+          "load1": 0.23,
+          "memory_available_bytes": 3273687040
+        },
+        "unavailable": []
+      },
+      {
+        "schema": "hpc-metrics.v1",
+        "event": "sample",
+        "sequence": 4,
+        "wall_time": "2026-10-18T02:00:25.272Z",
+        "monotonic_ns": 65591535136,
+        "elapsed_ms": 800,
+        "target": {
+          "pid": 490,
+          "start_ticks": 6479
+        },
+        "process": {
+          "cpu_cores_percent": 100.0,
+          "cpu_capacity_percent": 50.0,
+          "threads": 2,
+          "rss_bytes": 4034560,
+          "read_bytes": 0,
+          "write_bytes": 0,
+          "voluntary_context_switches_delta": 0,
+          "involuntary_context_switches_delta": 0
+        },
+        "host": {
+          "cpu_utilization_percent": 50.0,
+          "load1": 0.23,
+          "memory_available_bytes": 3273687040
+        },
+        "unavailable": []
+      },
+      {
+        "schema": "hpc-metrics.v1",
+        "event": "sample",
+        "sequence": 5,
+        "wall_time": "2026-10-18T02:00:25.472Z",
+        "monotonic_ns": 65791553408,
+        "elapsed_ms": 1000,
+        "target": {
+          "pid": 490,
+          "start_ticks": 6479
+        },
+        "process": {
+          "cpu_cores_percent": 95.0,
+          "cpu_capacity_percent": 47.5,
+          "threads": 2,
+          "rss_bytes": 4034560,
+          "read_bytes": 0,
+          "write_bytes": 0,
+          "voluntary_context_switches_delta": 0,
+          "involuntary_context_switches_delta": 0
+        },
+        "host": {
+          "cpu_utilization_percent": 51.2,
+          "load1": 0.23,
+          "memory_available_bytes": 3273687040
+        },
+        "unavailable": []
+      },
+      {
+        "schema": "hpc-metrics.v1",
+        "event": "end",
+        "sequence": 6,
+        "wall_time": "2026-10-18T02:00:25.472Z",
+        "monotonic_ns": 65791696600,
+        "elapsed_ms": 1000,
+        "reason": "duration_reached",
+        "samples_written": 5,
+        "missed_deadlines": 0,
+        "unavailable_fields": []
+      }
+    ],
+    "workload_stdout": "",
+    "workload_stderr": ""
+  },
+  "stage3_validation": {
+    "results": [
+      {
+        "command": [
+          "cmake",
+          "-S",
+          ".",
+          "-B",
+          "/tmp/ncuscc-verify-p4hw04d6/stage3",
+          "-DCMAKE_BUILD_TYPE=Release"
+        ],
+        "returncode": 0,
+        "stdout": "-- The CXX compiler identification is GNU 15.2.0\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Found Python3: /usr/bin/python3 (found version \"3.14.4\") found components: Interpreter\n-- Configuring done (3.5s)\n-- Generating done (0.0s)\n-- Build files have been written to: /tmp/ncuscc-verify-p4hw04d6/stage3\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "cmake",
+          "--build",
+          "/tmp/ncuscc-verify-p4hw04d6/stage3",
+          "-j2"
+        ],
+        "returncode": 0,
+        "stdout": "[ 18%] Building CXX object CMakeFiles/log_filter.dir/main.cpp.o\n[ 18%] Building CXX object CMakeFiles/baseline_refactored.dir/main.cpp.o\n[ 27%] Building CXX object CMakeFiles/log_filter.dir/filter.cpp.o\n[ 36%] Building CXX object CMakeFiles/baseline_refactored.dir/serial_filter.cpp.o\n[ 45%] Linking CXX executable baseline_refactored\n[ 54%] Linking CXX executable log_filter\n[ 54%] Built target baseline_refactored\n[ 54%] Built target log_filter\n[ 63%] Building CXX object CMakeFiles/baseline_original.dir/baseline.cpp.o\n[ 72%] Building CXX object CMakeFiles/test_api.dir/test_api.cpp.o\n[ 81%] Building CXX object CMakeFiles/test_api.dir/filter.cpp.o\n[ 90%] Linking CXX executable baseline_original\n[100%] Linking CXX executable test_api\n[100%] Built target test_api\n[100%] Built target baseline_original\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "/usr/bin/python3",
+          "test_public.py",
+          "/tmp/ncuscc-verify-p4hw04d6/stage3/baseline_original"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.117s\n\nOK\n"
+      },
+      {
+        "command": [
+          "/usr/bin/python3",
+          "test_public.py",
+          "/tmp/ncuscc-verify-p4hw04d6/stage3/baseline_refactored"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.116s\n\nOK\n"
+      },
+      {
+        "command": [
+          "ctest",
+          "--test-dir",
+          "/tmp/ncuscc-verify-p4hw04d6/stage3",
+          "--output-on-failure"
+        ],
+        "returncode": 0,
+        "stdout": "Test project /tmp/ncuscc-verify-p4hw04d6/stage3\n    Start 1: api\n1/3 Test #1: api ..............................   Passed    0.03 sec\n    Start 2: public\n2/3 Test #2: public ...........................   Passed    0.15 sec\n    Start 3: regression\n3/3 Test #3: regression .......................   Passed    0.22 sec\n\n100% tests passed, 0 tests failed out of 3\n\nTotal Test time (real) =   0.40 sec\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "g++",
+          "-std=c++17",
+          "-O1",
+          "-g",
+          "-fsanitize=address,undefined",
+          "-fno-omit-frame-pointer",
+          "test_api.cpp",
+          "filter.cpp",
+          "-o",
+          "/tmp/ncuscc-verify-p4hw04d6/stage3/test_api_sanitized"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "/tmp/ncuscc-verify-p4hw04d6/stage3/test_api_sanitized"
+        ],
+        "returncode": 0,
+        "stdout": "API regression: 1057 cases PASS\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "g++",
+          "-std=c++17",
+          "-O1",
+          "-g",
+          "-fsanitize=address,undefined",
+          "-fno-omit-frame-pointer",
+          "main.cpp",
+          "filter.cpp",
+          "-o",
+          "/tmp/ncuscc-verify-p4hw04d6/stage3/log_filter_sanitized"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "command": [
+          "/usr/bin/python3",
+          "test_public.py",
+          "/tmp/ncuscc-verify-p4hw04d6/stage3/log_filter_sanitized"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.454s\n\nOK\n"
+      },
+      {
+        "command": [
+          "/usr/bin/python3",
+          "test_regression.py",
+          "/tmp/ncuscc-verify-p4hw04d6/stage3/log_filter_sanitized"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.471s\n\nOK\n"
+      }
+    ],
+    "sources_sha256": {
+      "CMakeLists.txt": "e10680e7a642433872d96a1ee8d4157c511ad773c0c08c40b4ec00cedf26ae01",
+      "baseline.cpp": "096bdbe25127d58d0d7bcbb3a8ef3a58d4b5cb4c85e7dbb15b64102e41dd41ee",
+      "benchmark.py": "fba13622be8f632325637278b7513e2fa3090a72c0f528fa824c543e5b93866d",
+      "filter.cpp": "0e7fa59eba6526fe53f99c8520fc65fc337efa6c5331941b7d5e059aa6e03ad2",
+      "filter.hpp": "6d277851d9480c4c992347e6b95eeaa538ea716e59bba816297470273e420465",
+      "generate_logs.py": "ba5d094600b7d0f6ca72b5ed440691c01af5578be1e8adf4713d7140d404b786",
+      "main.cpp": "b62154a4da87a2b6709e95c071c0d22fc13bde9bce04829d5d3c894dae7e281e",
+      "requirements.txt": "0ffd0a8f353a6d10c183ed05acc0a0d6d40a75ace4f6d0ba6930ac12f31d713c",
+      "serial_filter.cpp": "db14af24fe2c0e7c2ddc15b08d34bdcf997640c6c0f4daf2b3ea43b9fdbbeddd",
+      "support.hpp": "315705298be983ad7dc7f929319a73e89554f9bebe3b533524d1935d69d30524",
+      "test_api.cpp": "386a882f0abae26f385dbfb1dd03784e3eb63aa6ebf568af1bec8b9785a108c4",
+      "test_public.py": "83caf1963ba5101c36cf8855b131b894d079d2eb1d8ce90f3df08a3d693e25fb",
+      "test_regression.py": "5de3c827f78bdf23dccd06b260870fef209f23f4bb9f7013e5b5f8d590168885",
+      "verify.py": "d87017d82e14dcb9441b1a01b60118812148ced3d6ca49e005dead7588d7f82d"
+    }
+  },
+  "finished_utc": "2026-10-18T02:00:39.524771+00:00"
+}

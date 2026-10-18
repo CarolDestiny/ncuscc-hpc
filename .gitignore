@@ -1,0 +1,18 @@
+# Local build products; historical experiment evidence remains tracked.
+**/build/
+**/build-*/
+**/cmake-build-*/
+**/CMakeFiles/
+**/CMakeCache.txt
+**/compile_commands.json
+**/__pycache__/
+*.py[cod]
+*.o
+*.a
+*.so
+.vscode/
+.idea/
+.env
+.env.*
+*.pem
+*.key

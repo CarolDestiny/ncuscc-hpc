@@ -1,0 +1,14 @@
+$ taskset -c 0 /home/destiny/project/chaosuan-2/experiments/build/gemm 1024 blocked 128 5
+gemm impl=blocked n=1024 tile=128 seed=2026 warmup=1 threads=1
+check=PASS max_abs_error=0.00057706 checksum=2.68355e+08
+check=PASS max_abs_error=0.00057706 checksum=2.68355e+08
+sample=0 compute_ms=63.3496
+check=PASS max_abs_error=0.00057706 checksum=2.68355e+08
+sample=1 compute_ms=63.6244
+check=PASS max_abs_error=0.00057706 checksum=2.68355e+08
+sample=2 compute_ms=64.2105
+check=PASS max_abs_error=0.00057706 checksum=2.68355e+08
+sample=3 compute_ms=63.1939
+check=PASS max_abs_error=0.00057706 checksum=2.68355e+08
+sample=4 compute_ms=67.8068
+samples=5 mean_ms=64.4371 median_ms=63.6244 stddev_ms=1.72015 min_ms=63.1939 max_ms=67.8068 stddev_kind=population GFLOP/s=33.7525

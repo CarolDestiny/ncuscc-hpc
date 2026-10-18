@@ -1,0 +1,24 @@
+$ taskset -c 0 /home/user/project/chaosuan-2-ai-20261012/experiments/tools/local/usr/bin/valgrind --tool=cachegrind --cache-sim=yes --branch-sim=no --instr-at-start=no --I1=32768,8,64 --D1=32768,8,64 --LL=6291456,12,64 --cachegrind-out-file=/home/user/project/chaosuan-2-ai-20261012/experiments/results/physical/cache_gemm_512_naive.cg /home/user/project/chaosuan-2-ai-20261012/experiments/build/cache_driver gemm 512 naive 64
+==2565== Cachegrind, a high-precision tracing profiler
+==2565== Copyright (C) 2002-2024, and GNU GPL'd, by Nicholas Nethercote et al.
+==2565== Using Valgrind-3.26.0 and LibVEX; rerun with -h for copyright info
+==2565== Command: /home/user/project/chaosuan-2-ai-20261012/experiments/build/cache_driver gemm 512 naive 64
+==2565== 
+--2565-- warning: L3 cache found, using its data for the LL simulation.
+profile_checksum=3.3519e+07
+==2565== 
+==2565== I refs:        573,318,239
+==2565== I1  misses:             18
+==2565== LLi misses:             18
+==2565== I1  miss rate:        0.00%
+==2565== LLi miss rate:        0.00%
+==2565== 
+==2565== D refs:        168,300,595  (168,037,403 rd   + 263,192 wr)
+==2565== D1  misses:    134,789,134  (134,526,985 rd   + 262,149 wr)
+==2565== LLd misses:         49,167  (     32,777 rd   +  16,390 wr)
+==2565== D1  miss rate:        80.1% (       80.1%     +    99.6%  )
+==2565== LLd miss rate:         0.0% (        0.0%     +     6.2%  )
+==2565== 
+==2565== LL refs:       134,789,152  (134,527,003 rd   + 262,149 wr)
+==2565== LL misses:          49,185  (     32,795 rd   +  16,390 wr)
+==2565== LL miss rate:          0.0% (        0.0%     +     6.2%  )

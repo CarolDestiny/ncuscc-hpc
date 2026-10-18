@@ -1,0 +1,10 @@
+$ taskset -c 0 /home/user/project/chaosuan-2-ai-20261012/experiments/build/stencil 4096 4096 20 column 3
+stencil impl=column h=4096 w=4096 steps=20 seed=2026 warmup=1 threads=1
+check=PASS max_abs_error=1.56184e-07 checksum=8.36893e+06
+check=PASS max_abs_error=1.56184e-07 checksum=8.36893e+06
+sample=0 compute_ms=11336.4
+check=PASS max_abs_error=1.56184e-07 checksum=8.36893e+06
+sample=1 compute_ms=11412.6
+check=PASS max_abs_error=1.56184e-07 checksum=8.36893e+06
+sample=2 compute_ms=11453.1
+samples=3 mean_ms=11400.7 median_ms=11412.6 stddev_ms=48.3923 min_ms=11336.4 max_ms=11453.1 stddev_kind=population throughput_time=median GUpdates/s=0.0293725 GFLOP/s=0.176235 effective_bandwidth_GB/s=0.23498 bandwidth_model=ideal_spatial_reuse bytes_per_update=8

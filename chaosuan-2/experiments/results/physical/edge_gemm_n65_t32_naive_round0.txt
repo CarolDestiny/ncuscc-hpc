@@ -1,0 +1,6 @@
+$ taskset -c 0 /home/user/project/chaosuan-2-ai-20261012/experiments/build/gemm 65 naive 32 1
+gemm impl=naive n=65 tile=32 seed=2026 warmup=1 threads=1
+check=PASS max_abs_error=7.67784e-06 checksum=67947
+check=PASS max_abs_error=7.67784e-06 checksum=67947
+sample=0 compute_ms=0.20745
+samples=1 mean_ms=0.20745 median_ms=0.20745 stddev_ms=0 min_ms=0.20745 max_ms=0.20745 stddev_kind=population GFLOP/s=2.64763

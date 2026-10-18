@@ -1,0 +1,1 @@
+$ g++ -std=c++17 -O3 -march=x86-64-v3 -mtune=generic -ffp-contract=off -g -fno-tree-vectorize -fno-tree-slp-vectorize stencil.cpp -o /home/destiny/project/chaosuan-2/experiments/build/stencil_scalar

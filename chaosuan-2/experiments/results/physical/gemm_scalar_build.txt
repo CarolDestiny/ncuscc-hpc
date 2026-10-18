@@ -1,0 +1,1 @@
+$ g++ -std=c++17 -O3 -march=x86-64-v3 -mtune=generic -ffp-contract=off -g -fno-tree-vectorize -fno-tree-slp-vectorize gemm.cpp -o /home/user/project/chaosuan-2-ai-20261012/experiments/build/gemm_scalar

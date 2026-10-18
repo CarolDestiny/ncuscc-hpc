@@ -1,0 +1,11 @@
+$ g++ -std=c++17 -O3 -march=x86-64-v3 -mtune=generic -ffp-contract=off -g -I/home/user/project/chaosuan-2-ai-20261012/experiments/tools/local/usr/include experiments/cache_driver.cpp -o /home/user/project/chaosuan-2-ai-20261012/experiments/build/cache_driver
+In file included from experiments/cache_driver.cpp:5:
+experiments/../gemm.cpp: In function 'int original_gemm_main(int, char**)':
+experiments/../gemm.cpp:103:1: warning: control reaches end of non-void function [-Wreturn-type]
+  103 | }
+      | ^
+In file included from experiments/cache_driver.cpp:8:
+experiments/../stencil.cpp: In function 'int original_stencil_main(int, char**)':
+experiments/../stencil.cpp:119:1: warning: control reaches end of non-void function [-Wreturn-type]
+  119 | }
+      | ^

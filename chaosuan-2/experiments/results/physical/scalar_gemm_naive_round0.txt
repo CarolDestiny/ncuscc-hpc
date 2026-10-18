@@ -1,0 +1,14 @@
+$ taskset -c 0 /home/user/project/chaosuan-2-ai-20261012/experiments/build/gemm_scalar 128 naive 64 5
+gemm impl=naive n=128 tile=64 seed=2026 warmup=1 threads=1
+check=PASS max_abs_error=2.54014e-05 checksum=528745
+check=PASS max_abs_error=2.54014e-05 checksum=528745
+sample=0 compute_ms=2.24348
+check=PASS max_abs_error=2.54014e-05 checksum=528745
+sample=1 compute_ms=2.22682
+check=PASS max_abs_error=2.54014e-05 checksum=528745
+sample=2 compute_ms=2.26349
+check=PASS max_abs_error=2.54014e-05 checksum=528745
+sample=3 compute_ms=2.17157
+check=PASS max_abs_error=2.54014e-05 checksum=528745
+sample=4 compute_ms=2.15494
+samples=5 mean_ms=2.21206 median_ms=2.22682 stddev_ms=0.0418371 min_ms=2.15494 max_ms=2.26349 stddev_kind=population GFLOP/s=1.88354

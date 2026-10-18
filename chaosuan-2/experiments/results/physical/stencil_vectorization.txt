@@ -1,0 +1,810 @@
+/usr/include/c++/15/bits/stl_heap.h:140:39: missed: couldn't vectorize loop
+/usr/include/c++/15/bits/stl_heap.h:140:39: missed: not vectorized: could not determine main exit from loop with multiple exits.
+/usr/include/c++/15/bits/stl_heap.h:229:28: missed: couldn't vectorize loop
+/usr/include/c++/15/bits/stl_heap.h:229:28: missed: not vectorized: number of iterations cannot be computed.
+/usr/include/c++/15/bits/stl_heap.h:229:28: note: ***** Analysis failed with vector mode V4DF
+/usr/include/c++/15/bits/stl_heap.h:229:28: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DF
+/usr/include/c++/15/bits/stl_heap.h:224:5: note: vectorized 0 loops in function.
+/usr/include/c++/15/bits/stl_heap.h:249:5: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/15/bits/stl_heap.h:249:5: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/15/bits/stl_algo.h:1776:57: missed: couldn't vectorize loop
+/usr/include/c++/15/bits/stl_algo.h:1776:57: missed: not vectorized: unsupported control flow in loop.
+/usr/include/c++/15/bits/stl_algo.h:1758:20: missed: couldn't vectorize loop
+/usr/include/c++/15/bits/stl_algo.h:1758:20: missed: not vectorized: number of iterations cannot be computed.
+/usr/include/c++/15/bits/stl_algo.h:1771:5: note: vectorized 0 loops in function.
+/usr/include/c++/15/bits/stl_algobase.h:704:25: missed: statement clobbers memory: __builtin_memmove (_31, __first_1, _29);
+/usr/include/c++/15/bits/stl_algo.h:1776:57: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/15/bits/stl_algo.h:1776:57: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/15/bits/stl_heap.h:422:31: missed: couldn't vectorize loop
+/usr/include/c++/15/bits/stl_heap.h:422:31: missed: not vectorized: number of iterations cannot be computed.
+/usr/include/c++/15/bits/stl_heap.h:358:4: missed: couldn't vectorize loop
+/usr/include/c++/15/bits/stl_heap.h:358:4: missed: not vectorized: latch block not empty.
+/usr/include/c++/15/bits/stl_algo.h:1881:31: missed: couldn't vectorize loop
+/usr/include/c++/15/bits/stl_algo.h:1881:31: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+/usr/include/c++/15/bits/stl_algo.h:1841:4: missed: couldn't vectorize loop
+/usr/include/c++/15/bits/stl_algo.h:1841:4: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+/usr/include/c++/15/bits/stl_algo.h:1839:17: missed: couldn't vectorize loop
+/usr/include/c++/15/bits/stl_algo.h:1839:17: missed: not vectorized: number of iterations cannot be computed.
+/usr/include/c++/15/bits/stl_algo.h:1836:17: missed: couldn't vectorize loop
+/usr/include/c++/15/bits/stl_algo.h:1836:17: missed: not vectorized: number of iterations cannot be computed.
+/usr/include/c++/15/bits/stl_algo.h:1877:5: note: vectorized 0 loops in function.
+/usr/include/c++/15/bits/stl_algo.h:1891:25: missed: statement clobbers memory: std::__introsort_loop.isra (__cut, __last, __depth_limit_4);
+/usr/include/c++/15/bits/stl_heap.h:356:22: missed: statement clobbers memory: std::__adjust_heap.isra (__first, __parent_50, _152, _54);
+/usr/include/c++/15/bits/stl_heap.h:264:25: missed: statement clobbers memory: std::__adjust_heap.isra (__first, 0, _33, _29);
+/usr/include/c++/15/bits/move.h:236:11: note: ***** Analysis succeeded with vector mode V4DI
+/usr/include/c++/15/bits/move.h:236:11: note: SLPing BB part
+/usr/include/c++/15/bits/move.h:236:11: note: Costing subgraph: 
+/usr/include/c++/15/bits/move.h:236:11: note: node 0x14453298 (max_nunits=2, refcnt=1) vector(2) double
+/usr/include/c++/15/bits/move.h:236:11: note: op template: *__first_9 = _79;
+/usr/include/c++/15/bits/move.h:236:11: note: 	stmt 0 *__first_9 = _79;
+/usr/include/c++/15/bits/move.h:236:11: note: 	stmt 1 MEM[(double &)__first_9 + 8] = pretmp_162;
+/usr/include/c++/15/bits/move.h:236:11: note: 	children 0x14453430
+/usr/include/c++/15/bits/move.h:236:11: note: node 0x14453430 (max_nunits=1, refcnt=3) vector(2) double
+/usr/include/c++/15/bits/move.h:236:11: note: op: VEC_PERM_EXPR
+/usr/include/c++/15/bits/move.h:236:11: note: 	[l] stmt 0 _79 = MEM[(double &)__first_9 + 8];
+/usr/include/c++/15/bits/move.h:236:11: note: 	[l] stmt 1 pretmp_162 = MEM[(type &)__first_9];
+/usr/include/c++/15/bits/move.h:236:11: note: 	lane permutation { 0[1] 0[0] }
+/usr/include/c++/15/bits/move.h:236:11: note: 	children 0x14453320
+/usr/include/c++/15/bits/move.h:236:11: note: node 0x14453320 (max_nunits=2, refcnt=1) vector(2) double
+/usr/include/c++/15/bits/move.h:236:11: note: op template: _79 = MEM[(double &)__first_9 + 8];
+/usr/include/c++/15/bits/move.h:236:11: note: 	[l] stmt 0 pretmp_162 = MEM[(type &)__first_9];
+/usr/include/c++/15/bits/move.h:236:11: note: 	[l] stmt 1 _79 = MEM[(double &)__first_9 + 8];
+/usr/include/c++/15/bits/move.h:236:11: note: node 0x144533a8 (max_nunits=2, refcnt=1) vector(2) double
+/usr/include/c++/15/bits/move.h:236:11: note: op template: *__first_9 = _79;
+/usr/include/c++/15/bits/move.h:236:11: note: 	stmt 0 *__first_9 = _79;
+/usr/include/c++/15/bits/move.h:236:11: note: 	stmt 1 MEM[(double &)__first_9 + 8] = pretmp_162;
+/usr/include/c++/15/bits/move.h:236:11: note: 	children 0x14453430
+/usr/include/c++/15/bits/move.h:236:11: note: Cost model analysis: 
+/usr/include/c++/15/bits/move.h:236:11: note: Cost model analysis for part in loop 1:
+  Vector cost: 56
+  Scalar cost: 72
+/usr/include/c++/15/bits/move.h:236:11: note: Basic block will be vectorized using SLP
+/usr/include/c++/15/bits/move.h:236:11: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/15/bits/move.h:236:11: optimized: basic block part vectorized using 16 byte vectors
+/usr/include/c++/15/bits/move.h:236:11: note: Vectorizing SLP tree:
+/usr/include/c++/15/bits/move.h:236:11: note: node 0x14453298 (max_nunits=2, refcnt=1) vector(2) double
+/usr/include/c++/15/bits/move.h:236:11: note: op template: *__first_9 = _79;
+/usr/include/c++/15/bits/move.h:236:11: note: 	stmt 0 *__first_9 = _79;
+/usr/include/c++/15/bits/move.h:236:11: note: 	stmt 1 MEM[(double &)__first_9 + 8] = pretmp_162;
+/usr/include/c++/15/bits/move.h:236:11: note: 	children 0x14453430
+/usr/include/c++/15/bits/move.h:236:11: note: node 0x14453430 (max_nunits=1, refcnt=3) vector(2) double
+/usr/include/c++/15/bits/move.h:236:11: note: op: VEC_PERM_EXPR
+/usr/include/c++/15/bits/move.h:236:11: note: 	[l] stmt 0 _79 = MEM[(double &)__first_9 + 8];
+/usr/include/c++/15/bits/move.h:236:11: note: 	[l] stmt 1 pretmp_162 = MEM[(type &)__first_9];
+/usr/include/c++/15/bits/move.h:236:11: note: 	lane permutation { 0[1] 0[0] }
+/usr/include/c++/15/bits/move.h:236:11: note: 	children 0x14453320
+/usr/include/c++/15/bits/move.h:236:11: note: node 0x14453320 (max_nunits=2, refcnt=1) vector(2) double
+/usr/include/c++/15/bits/move.h:236:11: note: op template: _79 = MEM[(double &)__first_9 + 8];
+/usr/include/c++/15/bits/move.h:236:11: note: 	[l] stmt 0 pretmp_162 = MEM[(type &)__first_9];
+/usr/include/c++/15/bits/move.h:236:11: note: 	[l] stmt 1 _79 = MEM[(double &)__first_9 + 8];
+/usr/include/c++/15/bits/move.h:236:11: note: ------>vectorizing SLP node starting from: _79 = MEM[(double &)__first_9 + 8];
+/usr/include/c++/15/bits/move.h:236:11: note: transform load. ncopies = 1
+/usr/include/c++/15/bits/move.h:236:11: note: create vector_type-pointer variable to type: vector(2) double  vectorizing a pointer ref: MEM[(double &)__first_9 + 8]
+/usr/include/c++/15/bits/move.h:236:11: note: created vectp.781_72
+/usr/include/c++/15/bits/move.h:236:11: note: add new stmt: vectp.781_69 = vectp.781_72 + 18446744073709551608;
+/usr/include/c++/15/bits/move.h:236:11: note: add new stmt: vect__79.782_66 = MEM <vector(2) double> [(type &)vectp.781_69];
+/usr/include/c++/15/bits/move.h:236:11: note: extracting lane for live stmt pretmp_162 = MEM[(type &)__first_9];
+/usr/include/c++/15/bits/move.h:236:11: note: extracting lane for live stmt _79 = MEM[(double &)__first_9 + 8];
+/usr/include/c++/15/bits/move.h:236:11: note: ------>vectorizing SLP permutation node
+/usr/include/c++/15/bits/move.h:236:11: note: vectorizing permutation 0x14453430 op0[1] op0[0]
+/usr/include/c++/15/bits/move.h:236:11: note: as vops0[0][1] vops0[0][0]
+/usr/include/c++/15/bits/move.h:236:11: note: add new stmt: _45 = VEC_PERM_EXPR <vect__79.782_66, vect__79.782_66, { 1, 0 }>;
+/usr/include/c++/15/bits/move.h:236:11: note: extracting lane for live stmt _79 = MEM[(double &)__first_9 + 8];
+/usr/include/c++/15/bits/move.h:236:11: note: extracting lane for live stmt pretmp_162 = MEM[(type &)__first_9];
+/usr/include/c++/15/bits/move.h:236:11: note: ------>vectorizing SLP node starting from: *__first_9 = _79;
+/usr/include/c++/15/bits/move.h:236:11: note: vect_is_simple_use: operand MEM[(double &)__first_9 + 8], type of def: internal
+/usr/include/c++/15/bits/move.h:236:11: note: vect_is_simple_use: operand MEM[(type &)__first_9], type of def: internal
+/usr/include/c++/15/bits/move.h:236:11: note: transform store. ncopies = 1
+/usr/include/c++/15/bits/move.h:236:11: note: create vector_type-pointer variable to type: vector(2) double  vectorizing a pointer ref: *__first_9
+/usr/include/c++/15/bits/move.h:236:11: note: created vectp.784_39
+/usr/include/c++/15/bits/move.h:236:11: note: add new stmt: MEM <vector(2) double> [(double &)vectp.784_39] = _45;
+/usr/include/c++/15/bits/move.h:236:11: note: vectorizing stmts using SLP.
+/usr/include/c++/15/bits/move.h:236:11: note: Vectorizing SLP tree:
+/usr/include/c++/15/bits/move.h:236:11: note: node 0x144533a8 (max_nunits=2, refcnt=1) vector(2) double
+/usr/include/c++/15/bits/move.h:236:11: note: op template: *__first_9 = _79;
+/usr/include/c++/15/bits/move.h:236:11: note: 	stmt 0 *__first_9 = _79;
+/usr/include/c++/15/bits/move.h:236:11: note: 	stmt 1 MEM[(double &)__first_9 + 8] = pretmp_162;
+/usr/include/c++/15/bits/move.h:236:11: note: 	children 0x14453430
+/usr/include/c++/15/bits/move.h:236:11: note: node 0x14453430 (max_nunits=1, refcnt=3) vector(2) double
+/usr/include/c++/15/bits/move.h:236:11: note: op: VEC_PERM_EXPR
+/usr/include/c++/15/bits/move.h:236:11: note: 	[l] stmt 0 _79 = MEM[(double &)__first_9 + 8];
+/usr/include/c++/15/bits/move.h:236:11: note: 	[l] stmt 1 pretmp_162 = MEM[(type &)__first_9];
+/usr/include/c++/15/bits/move.h:236:11: note: 	lane permutation { 0[1] 0[0] }
+/usr/include/c++/15/bits/move.h:236:11: note: 	children 0x14453320
+/usr/include/c++/15/bits/move.h:236:11: note: node 0x14453320 (max_nunits=2, refcnt=1) vector(2) double
+/usr/include/c++/15/bits/move.h:236:11: note: op template: _79 = MEM[(double &)__first_9 + 8];
+/usr/include/c++/15/bits/move.h:236:11: note: 	[l] stmt 0 pretmp_162 = MEM[(type &)__first_9];
+/usr/include/c++/15/bits/move.h:236:11: note: 	[l] stmt 1 _79 = MEM[(double &)__first_9 + 8];
+/usr/include/c++/15/bits/move.h:236:11: note: ------>vectorizing SLP node starting from: *__first_9 = _79;
+/usr/include/c++/15/bits/move.h:236:11: note: vect_is_simple_use: operand MEM[(double &)__first_9 + 8], type of def: internal
+/usr/include/c++/15/bits/move.h:236:11: note: vect_is_simple_use: operand MEM[(type &)__first_9], type of def: internal
+/usr/include/c++/15/bits/move.h:236:11: note: transform store. ncopies = 1
+/usr/include/c++/15/bits/move.h:236:11: note: create vector_type-pointer variable to type: vector(2) double  vectorizing a pointer ref: *__first_9
+/usr/include/c++/15/bits/move.h:236:11: note: created vectp.786_35
+/usr/include/c++/15/bits/move.h:236:11: note: add new stmt: MEM <vector(2) double> [(double &)vectp.786_35] = _45;
+/usr/include/c++/15/bits/move.h:236:11: note: vectorizing stmts using SLP.
+/usr/include/c++/15/bits/move.h:236:11: note: ***** The result for vector mode V32QI would be the same
+/usr/include/c++/15/bits/char_traits.h:393:25: missed: statement clobbers memory: _32 = __builtin_strlen (text_6(D));
+/usr/include/c++/15/bits/basic_string.tcc:235:13: missed: statement clobbers memory: _36 = std::__cxx11::basic_string<char>::_M_create (&s, &__dnew, 0);
+/usr/include/c++/15/bits/char_traits.h:429:49: missed: statement clobbers memory: __builtin_memcpy (_24, text_6(D), _32);
+/usr/include/c++/15/bits/basic_string.h:3322:32: missed: statement clobbers memory: _5 = std::__cxx11::basic_string<char>::find_first_not_of (&s, "0123456789", 0, 10);
+/usr/include/c++/15/ext/string_conversions.h:84:34: missed: statement clobbers memory: _45 = strtoll (_23, &__endptr, 10);
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (_51, _54);
+common.hpp:21:88: missed: statement clobbers memory: _13 = __cxa_allocate_exception (16);
+common.hpp:21:88: missed: not vectorized: statement can throw an exception: std::runtime_error::runtime_error (_13, "argument outside supported range");
+common.hpp:21:88: missed: not vectorized: statement can throw an exception: __cxa_throw (_13, &_ZTISt13runtime_error, __dt_comp );
+common.hpp:21:88: missed: statement clobbers memory: __cxa_free_exception (_13);
+common.hpp:16:12: missed: not vectorized: statement can throw an exception: resx 9
+/usr/include/c++/15/ext/string_conversions.h:90:27: missed: not vectorized: statement can throw an exception: std::__throw_out_of_range ("stoll");
+/usr/include/c++/15/ext/string_conversions.h:87:31: missed: not vectorized: statement can throw an exception: std::__throw_invalid_argument ("stoll");
+common.hpp:16:12: missed: not vectorized: statement can throw an exception: resx 15
+common.hpp:19:63: missed: statement clobbers memory: _18 = __cxa_allocate_exception (16);
+common.hpp:19:63: missed: not vectorized: statement can throw an exception: std::runtime_error::runtime_error (_18, "expected a positive integer");
+common.hpp:19:63: missed: not vectorized: statement can throw an exception: __cxa_throw (_18, &_ZTISt13runtime_error, __dt_comp );
+common.hpp:19:63: missed: statement clobbers memory: __cxa_free_exception (_18);
+common.hpp:16:12: missed: not vectorized: statement can throw an exception: resx 7
+/usr/include/c++/15/bits/basic_string.h:896:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&s);
+/usr/include/c++/15/bits/basic_string.h:711:28: missed: statement clobbers memory: std::__throw_logic_error ("basic_string: construction from null is not valid");
+common.hpp:16:12: note: ***** Analysis failed with vector mode V4DI
+common.hpp:16:12: note: ***** The result for vector mode V32QI would be the same
+common.hpp:16:12: note: ***** Re-trying analysis with vector mode V16QI
+common.hpp:16:12: note: ***** Analysis failed with vector mode V16QI
+common.hpp:16:12: note: ***** Re-trying analysis with vector mode V8QI
+common.hpp:16:12: note: ***** Analysis failed with vector mode V8QI
+common.hpp:16:12: note: ***** Re-trying analysis with vector mode V4QI
+common.hpp:16:12: note: ***** Analysis failed with vector mode V4QI
+common.hpp:69:30: optimized: loop vectorized using 32 byte vectors
+common.hpp:69:30: optimized: loop vectorized using 16 byte vectors
+common.hpp:66:30: optimized: loop vectorized using 32 byte vectors
+/usr/include/c++/15/bits/stl_algo.h:1798:53: missed: couldn't vectorize loop
+/usr/include/c++/15/bits/stl_algo.h:1798:53: missed: not vectorized: unsupported control flow in loop.
+/usr/include/c++/15/bits/stl_algo.h:1758:20: missed: couldn't vectorize loop
+/usr/include/c++/15/bits/stl_algo.h:1758:20: missed: not vectorized: number of iterations cannot be computed.
+common.hpp:60:20: note: vectorized 2 loops in function.
+/usr/include/c++/15/bits/stl_algo.h:1906:25: missed: statement clobbers memory: std::__introsort_loop.isra (__first, __last, _72);
+/usr/include/c++/15/bits/stl_algo.h:1823:23: missed: statement clobbers memory: std::__insertion_sort.isra (__first, __last);
+/usr/include/c++/15/bits/stl_algo.h:1818:25: missed: statement clobbers memory: std::__insertion_sort.isra (__first, D.93885);
+common.hpp:74:39: missed: statement clobbers memory: _75 = sqrt (_10);
+common.hpp:61:91: missed: statement clobbers memory: _38 = __cxa_allocate_exception (16);
+common.hpp:61:91: missed: not vectorized: statement can throw an exception: std::runtime_error::runtime_error (_38, "timing summary needs at least one sample");
+common.hpp:61:91: missed: statement clobbers memory: __cxa_throw (_38, &_ZTISt13runtime_error, __dt_comp );
+common.hpp:61:91: missed: statement clobbers memory: __cxa_free_exception (_38);
+common.hpp:75:40: note: ***** Analysis succeeded with vector mode V4DI
+common.hpp:75:40: note: SLPing BB part
+common.hpp:75:40: note: Costing subgraph: 
+common.hpp:75:40: note: node 0x144b32f8 (max_nunits=2, refcnt=1) vector(2) double
+common.hpp:75:40: note: op template: <retval>.mean_ms = mean_106;
+common.hpp:75:40: note: 	stmt 0 <retval>.mean_ms = mean_106;
+common.hpp:75:40: note: 	stmt 1 <retval>.median_ms = median_14;
+common.hpp:75:40: note: 	children 0x144b3408
+common.hpp:75:40: note: node (external) 0x144b3408 (max_nunits=1, refcnt=1) vector(2) double
+common.hpp:75:40: note: 	{ mean_106, median_14 }
+common.hpp:75:40: note: Cost model analysis: 
+common.hpp:75:40: note: Cost model analysis for part in loop 0:
+  Vector cost: 16
+  Scalar cost: 24
+common.hpp:75:40: note: Costing subgraph: 
+common.hpp:75:40: note: node 0x144b3490 (max_nunits=2, refcnt=1) vector(2) double
+common.hpp:75:40: note: op template: <retval>.mean_ms = mean_23;
+common.hpp:75:40: note: 	stmt 0 <retval>.mean_ms = mean_23;
+common.hpp:75:40: note: 	stmt 1 <retval>.median_ms = median_14;
+common.hpp:75:40: note: 	children 0x144b35a0
+common.hpp:75:40: note: node (external) 0x144b35a0 (max_nunits=1, refcnt=1) vector(2) double
+common.hpp:75:40: note: 	{ mean_23, median_14 }
+common.hpp:75:40: note: Cost model analysis: 
+common.hpp:75:40: note: Cost model analysis for part in loop 0:
+  Vector cost: 16
+  Scalar cost: 24
+common.hpp:75:40: note: Costing subgraph: 
+common.hpp:75:40: note: node 0x144b36b0 (max_nunits=2, refcnt=1) vector(2) double
+common.hpp:75:40: note: op template: <retval>.stddev_ms = _19;
+common.hpp:75:40: note: 	stmt 0 <retval>.stddev_ms = _19;
+common.hpp:75:40: note: 	stmt 1 <retval>.min_ms = _12;
+common.hpp:75:40: note: 	children 0x144b37c0
+common.hpp:75:40: note: node (external) 0x144b37c0 (max_nunits=1, refcnt=1) vector(2) double
+common.hpp:75:40: note: 	{ _19, _12 }
+common.hpp:75:40: note: Cost model analysis: 
+common.hpp:75:40: note: Cost model analysis for part in loop 0:
+  Vector cost: 16
+  Scalar cost: 24
+common.hpp:75:40: note: Basic block will be vectorized using SLP
+common.hpp:75:40: optimized: basic block part vectorized using 16 byte vectors
+common.hpp:75:40: note: Vectorizing SLP tree:
+common.hpp:75:40: note: node 0x144b32f8 (max_nunits=2, refcnt=1) vector(2) double
+common.hpp:75:40: note: op template: <retval>.mean_ms = mean_106;
+common.hpp:75:40: note: 	stmt 0 <retval>.mean_ms = mean_106;
+common.hpp:75:40: note: 	stmt 1 <retval>.median_ms = median_14;
+common.hpp:75:40: note: 	children 0x144b3408
+common.hpp:75:40: note: node (external) 0x144b3408 (max_nunits=1, refcnt=1) vector(2) double
+common.hpp:75:40: note: 	{ mean_106, median_14 }
+common.hpp:75:40: note: ------>vectorizing SLP node starting from: <retval>.mean_ms = mean_106;
+common.hpp:75:40: note: vect_is_simple_use: operand median_14 = PHI <pretmp_144(14), median_21(15)>, type of def: internal
+common.hpp:75:40: note: transform store. ncopies = 1
+common.hpp:75:40: note: create vector_type-pointer variable to type: vector(2) double  vectorizing a pointer ref: <retval>.mean_ms
+common.hpp:75:40: note: created &<retval>.mean_ms
+common.hpp:75:40: note: add new stmt: MEM <vector(2) double> [(double *)&<retval> + 8B] = _201;
+common.hpp:75:40: note: vectorizing stmts using SLP.
+common.hpp:75:40: optimized: basic block part vectorized using 16 byte vectors
+common.hpp:75:40: note: Vectorizing SLP tree:
+common.hpp:75:40: note: node 0x144b3490 (max_nunits=2, refcnt=1) vector(2) double
+common.hpp:75:40: note: op template: <retval>.mean_ms = mean_23;
+common.hpp:75:40: note: 	stmt 0 <retval>.mean_ms = mean_23;
+common.hpp:75:40: note: 	stmt 1 <retval>.median_ms = median_14;
+common.hpp:75:40: note: 	children 0x144b35a0
+common.hpp:75:40: note: node (external) 0x144b35a0 (max_nunits=1, refcnt=1) vector(2) double
+common.hpp:75:40: note: 	{ mean_23, median_14 }
+common.hpp:75:40: note: ------>vectorizing SLP node starting from: <retval>.mean_ms = mean_23;
+common.hpp:75:40: note: vect_is_simple_use: operand median_14 = PHI <pretmp_144(14), median_21(15)>, type of def: internal
+common.hpp:75:40: note: transform store. ncopies = 1
+common.hpp:75:40: note: create vector_type-pointer variable to type: vector(2) double  vectorizing a pointer ref: <retval>.mean_ms
+common.hpp:75:40: note: created &<retval>.mean_ms
+common.hpp:75:40: note: add new stmt: MEM <vector(2) double> [(double *)&<retval> + 8B] = _133;
+common.hpp:75:40: note: vectorizing stmts using SLP.
+common.hpp:75:40: optimized: basic block part vectorized using 16 byte vectors
+common.hpp:75:40: note: Vectorizing SLP tree:
+common.hpp:75:40: note: node 0x144b36b0 (max_nunits=2, refcnt=1) vector(2) double
+common.hpp:75:40: note: op template: <retval>.stddev_ms = _19;
+common.hpp:75:40: note: 	stmt 0 <retval>.stddev_ms = _19;
+common.hpp:75:40: note: 	stmt 1 <retval>.min_ms = _12;
+common.hpp:75:40: note: 	children 0x144b37c0
+common.hpp:75:40: note: node (external) 0x144b37c0 (max_nunits=1, refcnt=1) vector(2) double
+common.hpp:75:40: note: 	{ _19, _12 }
+common.hpp:75:40: note: ------>vectorizing SLP node starting from: <retval>.stddev_ms = _19;
+common.hpp:75:40: note: vect_is_simple_use: operand MEM[(value_type &)_46], type of def: internal
+common.hpp:75:40: note: transform store. ncopies = 1
+common.hpp:75:40: note: create vector_type-pointer variable to type: vector(2) double  vectorizing a pointer ref: <retval>.stddev_ms
+common.hpp:75:40: note: created &<retval>.stddev_ms
+common.hpp:75:40: note: add new stmt: MEM <vector(2) double> [(double *)&<retval> + 24B] = _131;
+common.hpp:75:40: note: vectorizing stmts using SLP.
+common.hpp:75:40: note: ***** The result for vector mode V32QI would be the same
+stencil.cpp:19:27: missed: couldn't vectorize loop
+stencil.cpp:14:35: missed: not vectorized: not suitable for strided load _46 = *_45;
+stencil.cpp:20:31: missed: couldn't vectorize loop
+stencil.cpp:14:35: missed: not vectorized: no vectype for stmt: _46 = *_45;
+ scalar_type: const float
+stencil.cpp:24:27: missed: couldn't vectorize loop
+stencil.cpp:15:42: missed: not vectorized: complicated access pattern.
+stencil.cpp:25:31: optimized: loop vectorized using 32 byte vectors
+stencil.cpp:25:31: optimized:  loop versioned for vectorization because of possible aliasing
+stencil.cpp:25:31: optimized: loop vectorized using 16 byte vectors
+stencil.cpp:7:6: note: vectorized 1 loops in function.
+stencil.cpp:7:6: note: ***** Analysis failed with vector mode V8SF
+stencil.cpp:7:6: note: ***** The result for vector mode V32QI would be the same
+stencil.cpp:7:6: note: ***** Re-trying analysis with vector mode V16QI
+stencil.cpp:7:6: note: ***** Analysis failed with vector mode V16QI
+stencil.cpp:7:6: note: ***** Re-trying analysis with vector mode V8QI
+stencil.cpp:7:6: note: ***** Analysis failed with vector mode V8QI
+stencil.cpp:7:6: note: ***** Re-trying analysis with vector mode V4QI
+stencil.cpp:7:6: note: ***** Analysis failed with vector mode V4QI
+/usr/include/c++/15/bits/stl_vector.h:586:7: note: vectorized 0 loops in function.
+/usr/include/c++/15/bits/new_allocator.h:151:66: missed: statement clobbers memory: _28 = operator new (_27);
+/usr/include/c++/15/bits/stl_algobase.h:925:11: missed: statement clobbers memory: __builtin_memset (__first_29, 0, _38);
+/usr/include/c++/15/bits/stl_vector.h:2216:24: missed: statement clobbers memory: std::__throw_length_error ("cannot create std::vector larger than max_size()");
+/usr/include/c++/15/bits/stl_vector.h:2216:24: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/15/bits/stl_vector.h:2216:24: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+stencil.cpp:63:28: missed: couldn't vectorize loop
+stencil.cpp:63:28: missed: not vectorized: loop nest containing two or more consecutive inner loops cannot be vectorized
+stencil.cpp:80:27: missed: couldn't vectorize loop
+stencil.cpp:80:27: missed: not vectorized: unsupported control flow in loop.
+stencil.cpp:80:55: missed: couldn't vectorize loop
+stencil.cpp:80:55: missed: not vectorized: unsupported control flow in loop.
+common.hpp:40:44: missed: couldn't vectorize loop
+common.hpp:40:44: missed: not vectorized: unsupported control flow in loop.
+stencil.cpp:70:27: missed: couldn't vectorize loop
+stencil.cpp:71:25: missed: statement clobbers memory: stencil_step (a$D75990$_M_impl$D75289$_M_start_511, b$D75990$_M_impl$D75289$_M_start_501, _101, _103, 0);
+stencil.cpp:70:27: missed: couldn't vectorize loop
+/usr/include/c++/15/bits/char_traits.h:383:25: missed: statement clobbers memory: _532 = __builtin_memcmp (_533, "column", 6);
+stencil.cpp:51:23: missed: couldn't vectorize loop
+stencil.cpp:51:23: missed: not vectorized: multiple nested loops.
+stencil.cpp:52:27: missed: couldn't vectorize loop
+stencil.cpp:54:44: missed: not vectorized: complicated access pattern.
+stencil.cpp:52:57: optimized: loop vectorized using 32 byte vectors
+stencil.cpp:52:57: optimized:  loop versioned for vectorization because of possible aliasing
+stencil.cpp:52:57: optimized: loop vectorized using 16 byte vectors
+/usr/include/c++/15/bits/stl_uninitialized.h:144:22: optimized: loop vectorized using 32 byte vectors
+/usr/include/c++/15/bits/stl_uninitialized.h:144:22: optimized: loop vectorized using 16 byte vectors
+stencil.cpp:45:23: missed: couldn't vectorize loop
+stencil.cpp:46:78: missed: not vectorized: complicated access pattern.
+stencil.cpp:46:27: missed: couldn't vectorize loop
+common.hpp:29:19: missed: not vectorized: unsupported use in stmt.
+stencil.cpp:29:5: note: vectorized 2 loops in function.
+stencil.cpp:29:5: missed: splitting region at control altering definition _101 = positive (_1, 4096);
+stencil.cpp:35:27: missed: not vectorized: statement can throw an exception: _101 = positive (_1, 4096);
+stencil.cpp:35:27: note: ***** Analysis failed with vector mode V4DI
+stencil.cpp:35:27: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+stencil.cpp:35:27: missed: splitting region at control altering definition _103 = positive (_2, 4096);
+stencil.cpp:35:56: missed: not vectorized: statement can throw an exception: _103 = positive (_2, 4096);
+stencil.cpp:35:56: note: ***** Analysis failed with vector mode V4DI
+stencil.cpp:35:56: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+stencil.cpp:35:56: missed: splitting region at control altering definition _105 = positive (_3, 1000);
+stencil.cpp:36:31: missed: not vectorized: statement can throw an exception: _105 = positive (_3, 1000);
+stencil.cpp:36:31: note: ***** Analysis failed with vector mode V4DI
+stencil.cpp:36:31: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+stencil.cpp:36:31: missed: splitting region at control altering definition _107 = positive (_4, 100);
+stencil.cpp:36:66: missed: not vectorized: statement can throw an exception: _107 = positive (_4, 100);
+stencil.cpp:36:66: note: ***** Analysis failed with vector mode V4DI
+stencil.cpp:36:66: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+stencil.cpp:36:66: missed: splitting region at control altering definition _503 = std::__cxx11::basic_string<char>::_M_create (&impl, &__dnew, 0);
+/usr/include/c++/15/bits/char_traits.h:393:25: missed: statement clobbers memory: _499 = __builtin_strlen (_5);
+/usr/include/c++/15/bits/basic_string.tcc:235:13: missed: not vectorized: statement can throw an exception: _503 = std::__cxx11::basic_string<char>::_M_create (&impl, &__dnew, 0);
+/usr/include/c++/15/bits/basic_string.tcc:235:13: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/15/bits/basic_string.tcc:235:13: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/15/bits/basic_string.tcc:235:13: missed: splitting region at dominance boundary bb20
+/usr/include/c++/15/bits/basic_string.tcc:235:13: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/basic_string.tcc:235:13: missed: splitting region at dominance boundary bb24
+/usr/include/c++/15/bits/basic_string.h:266:31: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/15/bits/basic_string.h:266:31: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/15/bits/basic_string.h:266:31: missed: splitting region at dominance boundary bb25
+/usr/include/c++/15/bits/char_traits.h:429:49: missed: statement clobbers memory: __builtin_memcpy (_521, _5, _499);
+/usr/include/c++/15/bits/char_traits.h:429:49: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/char_traits.h:429:49: missed: splitting region at control altering definition _536 = operator new (_535);
+/usr/include/c++/15/bits/char_traits.h:383:25: missed: statement clobbers memory: _518 = __builtin_memcmp (_309, "column", 6);
+/usr/include/c++/15/bits/char_traits.h:383:25: missed: statement clobbers memory: _513 = __builtin_memcmp (_320, "row", 3);
+/usr/include/c++/15/bits/new_allocator.h:151:66: missed: not vectorized: statement can throw an exception: _536 = operator new (_535);
+stencil.cpp:38:15: note: ***** Analysis failed with vector mode V4DI
+stencil.cpp:38:15: note: ***** The result for vector mode V32QI would be the same
+stencil.cpp:38:15: note: ***** Re-trying analysis with vector mode V16QI
+stencil.cpp:38:15: note: ***** Analysis failed with vector mode V16QI
+stencil.cpp:38:15: note: ***** Re-trying analysis with vector mode V8QI
+stencil.cpp:38:15: note: ***** Analysis failed with vector mode V8QI
+stencil.cpp:38:15: note: ***** Re-trying analysis with vector mode V4QI
+stencil.cpp:38:15: note: ***** Analysis failed with vector mode V4QI
+stencil.cpp:38:15: missed: splitting region at dominance boundary bb37
+stencil.cpp:38:15: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:38:15: missed: splitting region at control altering definition _563 = operator new (_970);
+/usr/include/c++/15/bits/stl_construct.h:133:7: missed: statement clobbers memory: __builtin_memset (_536, 0, _535);
+stencil.cpp:43:48: missed: not vectorized: statement can throw an exception: std::vector<float>::vector (&a, count_113, &D.77557);
+stencil.cpp:43:58: missed: not vectorized: statement can throw an exception: std::vector<float>::vector (&b, count_113, &D.77559);
+/usr/include/c++/15/bits/new_allocator.h:151:66: missed: not vectorized: statement can throw an exception: _563 = operator new (_970);
+stencil.cpp:43:58: note: ***** Analysis succeeded with vector mode V4DI
+stencil.cpp:43:58: note: SLPing BB part
+stencil.cpp:43:48: note: Costing subgraph: 
+stencil.cpp:43:48: note: node 0x142a50e0 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+stencil.cpp:43:48: note: op template: MEM <float *> [(void *)&a] = a$D75990$_M_impl$D75289$_M_start_822(D);
+stencil.cpp:43:48: note: 	stmt 0 MEM <float *> [(void *)&a] = a$D75990$_M_impl$D75289$_M_start_822(D);
+stencil.cpp:43:48: note: 	stmt 1 MEM <float *> [(void *)&a + 8B] = a$D75990$_M_impl$D75289$_M_finish_545(D);
+stencil.cpp:43:48: note: 	children 0x142a5168
+stencil.cpp:43:48: note: node (external) 0x142a5168 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+stencil.cpp:43:48: note: 	{ a$D75990$_M_impl$D75289$_M_start_822(D), a$D75990$_M_impl$D75289$_M_finish_545(D) }
+stencil.cpp:43:48: note: Cost model analysis: 
+stencil.cpp:43:48: note: Cost model analysis for part in loop 0:
+  Vector cost: 28
+  Scalar cost: 24
+stencil.cpp:43:48: missed: not vectorized: vectorization is not profitable.
+stencil.cpp:43:58: note: Costing subgraph: 
+stencil.cpp:43:58: note: node 0x142a5278 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+stencil.cpp:43:58: note: op template: MEM <float *> [(void *)&b] = b$D75990$_M_impl$D75289$_M_start_937(D);
+stencil.cpp:43:58: note: 	stmt 0 MEM <float *> [(void *)&b] = b$D75990$_M_impl$D75289$_M_start_937(D);
+stencil.cpp:43:58: note: 	stmt 1 MEM <float *> [(void *)&b + 8B] = b$_M_finish_924(D);
+stencil.cpp:43:58: note: 	children 0x142a5300
+stencil.cpp:43:58: note: node (external) 0x142a5300 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+stencil.cpp:43:58: note: 	{ b$D75990$_M_impl$D75289$_M_start_937(D), b$_M_finish_924(D) }
+stencil.cpp:43:58: note: Cost model analysis: 
+stencil.cpp:43:58: note: Cost model analysis for part in loop 0:
+  Vector cost: 28
+  Scalar cost: 24
+stencil.cpp:43:58: missed: not vectorized: vectorization is not profitable.
+stencil.cpp:43:58: note: ***** The result for vector mode V32QI would be the same
+stencil.cpp:43:58: note: ***** Re-trying analysis with vector mode V16QI
+stencil.cpp:43:58: note: ***** Analysis succeeded with vector mode V16QI
+stencil.cpp:43:58: note: SLPing BB part
+stencil.cpp:43:48: note: Costing subgraph: 
+stencil.cpp:43:48: note: node 0x142a5300 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+stencil.cpp:43:48: note: op template: MEM <float *> [(void *)&a] = a$D75990$_M_impl$D75289$_M_start_822(D);
+stencil.cpp:43:48: note: 	stmt 0 MEM <float *> [(void *)&a] = a$D75990$_M_impl$D75289$_M_start_822(D);
+stencil.cpp:43:48: note: 	stmt 1 MEM <float *> [(void *)&a + 8B] = a$D75990$_M_impl$D75289$_M_finish_545(D);
+stencil.cpp:43:48: note: 	children 0x142a50e0
+stencil.cpp:43:48: note: node (external) 0x142a50e0 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+stencil.cpp:43:48: note: 	{ a$D75990$_M_impl$D75289$_M_start_822(D), a$D75990$_M_impl$D75289$_M_finish_545(D) }
+stencil.cpp:43:48: note: Cost model analysis: 
+stencil.cpp:43:48: note: Cost model analysis for part in loop 0:
+  Vector cost: 28
+  Scalar cost: 24
+stencil.cpp:43:48: missed: not vectorized: vectorization is not profitable.
+stencil.cpp:43:58: note: Costing subgraph: 
+stencil.cpp:43:58: note: node 0x142a51f0 (max_nunits=2, refcnt=1) vector(2) long unsigned int
+stencil.cpp:43:58: note: op template: MEM <float *> [(void *)&b] = b$D75990$_M_impl$D75289$_M_start_937(D);
+stencil.cpp:43:58: note: 	stmt 0 MEM <float *> [(void *)&b] = b$D75990$_M_impl$D75289$_M_start_937(D);
+stencil.cpp:43:58: note: 	stmt 1 MEM <float *> [(void *)&b + 8B] = b$_M_finish_924(D);
+stencil.cpp:43:58: note: 	children 0x142a5058
+stencil.cpp:43:58: note: node (external) 0x142a5058 (max_nunits=1, refcnt=1) vector(2) long unsigned int
+stencil.cpp:43:58: note: 	{ b$D75990$_M_impl$D75289$_M_start_937(D), b$_M_finish_924(D) }
+stencil.cpp:43:58: note: Cost model analysis: 
+stencil.cpp:43:58: note: Cost model analysis for part in loop 0:
+  Vector cost: 28
+  Scalar cost: 24
+stencil.cpp:43:58: missed: not vectorized: vectorization is not profitable.
+stencil.cpp:43:58: note: ***** Re-trying analysis with vector mode V8QI
+stencil.cpp:43:58: note: ***** Analysis succeeded with vector mode V8QI
+stencil.cpp:43:58: note: SLPing BB part
+stencil.cpp:43:48: note: Costing subgraph: 
+stencil.cpp:43:48: note: node 0x142a51f0 (max_nunits=1, refcnt=1) vector(1) long unsigned int
+stencil.cpp:43:48: note: op template: MEM <float *> [(void *)&a] = a$D75990$_M_impl$D75289$_M_start_822(D);
+stencil.cpp:43:48: note: 	stmt 0 MEM <float *> [(void *)&a] = a$D75990$_M_impl$D75289$_M_start_822(D);
+stencil.cpp:43:48: note: 	stmt 1 MEM <float *> [(void *)&a + 8B] = a$D75990$_M_impl$D75289$_M_finish_545(D);
+stencil.cpp:43:48: note: 	stmt 2 MEM <float *> [(void *)&a + 16B] = a$D75990$_M_impl$D75289$_M_end_of_storage_834(D);
+stencil.cpp:43:48: note: 	children 0x142a5058
+stencil.cpp:43:48: note: node (external) 0x142a5058 (max_nunits=1, refcnt=1) vector(1) long unsigned int
+stencil.cpp:43:48: note: 	{ a$D75990$_M_impl$D75289$_M_start_822(D), a$D75990$_M_impl$D75289$_M_finish_545(D), a$D75990$_M_impl$D75289$_M_end_of_storage_834(D) }
+stencil.cpp:43:48: note: Cost model analysis: 
+stencil.cpp:43:48: note: Cost model analysis for part in loop 0:
+  Vector cost: 66
+  Scalar cost: 36
+stencil.cpp:43:48: missed: not vectorized: vectorization is not profitable.
+stencil.cpp:43:58: note: Costing subgraph: 
+stencil.cpp:43:58: note: node 0x142a5300 (max_nunits=1, refcnt=1) vector(1) long unsigned int
+stencil.cpp:43:58: note: op template: MEM <float *> [(void *)&b] = b$D75990$_M_impl$D75289$_M_start_937(D);
+stencil.cpp:43:58: note: 	stmt 0 MEM <float *> [(void *)&b] = b$D75990$_M_impl$D75289$_M_start_937(D);
+stencil.cpp:43:58: note: 	stmt 1 MEM <float *> [(void *)&b + 8B] = b$_M_finish_924(D);
+stencil.cpp:43:58: note: 	stmt 2 MEM <float *> [(void *)&b + 16B] = b$_M_end_of_storage_381(D);
+stencil.cpp:43:58: note: 	children 0x142a50e0
+stencil.cpp:43:58: note: node (external) 0x142a50e0 (max_nunits=1, refcnt=1) vector(1) long unsigned int
+stencil.cpp:43:58: note: 	{ b$D75990$_M_impl$D75289$_M_start_937(D), b$_M_finish_924(D), b$_M_end_of_storage_381(D) }
+stencil.cpp:43:58: note: Cost model analysis: 
+stencil.cpp:43:58: note: Cost model analysis for part in loop 0:
+  Vector cost: 66
+  Scalar cost: 36
+stencil.cpp:43:58: missed: not vectorized: vectorization is not profitable.
+stencil.cpp:43:58: note: ***** Re-trying analysis with vector mode V4QI
+stencil.cpp:46:76: note: ***** Analysis failed with vector mode V4QI
+stencil.cpp:46:76: missed: splitting region at dominance boundary bb52
+stencil.cpp:46:76: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:46:76: missed: splitting region at control altering definition _580 = operator new (_579);
+/usr/include/c++/15/bits/new_allocator.h:151:66: missed: not vectorized: statement can throw an exception: _580 = operator new (_579);
+/usr/include/c++/15/bits/new_allocator.h:151:66: note: ***** Analysis failed with vector mode V8SF
+/usr/include/c++/15/bits/new_allocator.h:151:66: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V8SF
+/usr/include/c++/15/bits/new_allocator.h:151:66: missed: splitting region at dominance boundary bb60
+/usr/include/c++/15/bits/new_allocator.h:151:66: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/new_allocator.h:151:66: missed: splitting region at control altering definition _264 = std::__ostream_insert<char, std::char_traits<char> > (&cout, _263, _262);
+/usr/include/c++/15/bits/stl_construct.h:133:7: missed: statement clobbers memory: __builtin_memset (_580, 0, _579);
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (&cout, "stencil impl=", 13);
+/usr/include/c++/15/bits/basic_string.h:4370:30: missed: not vectorized: statement can throw an exception: _264 = std::__ostream_insert<char, std::char_traits<char> > (&cout, _263, _262);
+stencil.cpp:29:5: note: ***** Analysis failed with vector mode V4DF
+stencil.cpp:29:5: note: ***** The result for vector mode V32QI would be the same
+stencil.cpp:29:5: note: ***** Re-trying analysis with vector mode V16QI
+stencil.cpp:29:5: note: ***** Analysis failed with vector mode V16QI
+stencil.cpp:29:5: note: ***** Re-trying analysis with vector mode V8QI
+stencil.cpp:29:5: note: ***** Analysis failed with vector mode V8QI
+stencil.cpp:29:5: note: ***** Re-trying analysis with vector mode V4QI
+stencil.cpp:29:5: note: ***** Analysis failed with vector mode V4QI
+stencil.cpp:29:5: missed: splitting region at dominance boundary bb71
+stencil.cpp:29:5: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:29:5: missed: splitting region at control altering definition _137 = std::basic_ostream<char>::operator<< (_264, _101);
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_264, " h=", 3);
+stencil.cpp:59:59: missed: not vectorized: statement can throw an exception: _137 = std::basic_ostream<char>::operator<< (_264, _101);
+stencil.cpp:59:59: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:59:59: missed: splitting region at control altering definition _139 = std::basic_ostream<char>::operator<< (_137, _103);
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_137, " w=", 3);
+stencil.cpp:60:18: missed: not vectorized: statement can throw an exception: _139 = std::basic_ostream<char>::operator<< (_137, _103);
+stencil.cpp:60:18: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:60:18: missed: splitting region at control altering definition _141 = std::basic_ostream<char>::operator<< (_139, _105);
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_139, " steps=", 7);
+stencil.cpp:60:40: missed: not vectorized: statement can throw an exception: _141 = std::basic_ostream<char>::operator<< (_139, _105);
+stencil.cpp:60:40: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:60:40: missed: splitting region at control altering definition _622 = operator new (_939);
+stencil.cpp:60:40: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (_141, " seed=2026 warmup=1 threads=1\n");
+/usr/include/c++/15/bits/stl_algobase.h:426:25: missed: statement clobbers memory: __builtin_memcpy (a$D75990$_M_impl$D75289$_M_start_537, _536, _599);
+/usr/include/c++/15/bits/stl_uninitialized.h:273:24: missed: statement clobbers memory: __builtin_memcpy (a$D75990$_M_impl$D75289$_M_finish_779, _607, _609);
+/usr/include/c++/15/bits/stl_algobase.h:426:25: missed: statement clobbers memory: __builtin_memcpy (a$D75990$_M_impl$D75289$_M_start_537, _536, _939);
+/usr/include/c++/15/bits/new_allocator.h:151:66: missed: not vectorized: statement can throw an exception: _622 = operator new (_939);
+/usr/include/c++/15/bits/new_allocator.h:151:66: note: ***** Analysis failed with vector mode V8SF
+/usr/include/c++/15/bits/new_allocator.h:151:66: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V8SF
+/usr/include/c++/15/bits/new_allocator.h:151:66: missed: splitting region at dominance boundary bb102
+/usr/include/c++/15/bits/stl_uninitialized.h:273:24: missed: statement clobbers memory: __builtin_memcpy (_622, _536, _939);
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (a$D75990$_M_impl$D75289$_M_start_537, _590);
+/usr/include/c++/15/bits/vector.tcc:246:65: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/vector.tcc:246:65: missed: splitting region at control altering definition _684 = std::basic_ostream<char>::_M_insert<double> (&cout, max_error_938);
+/usr/include/c++/15/bits/stl_algobase.h:925:11: missed: statement clobbers memory: __builtin_memset (b$D75990$_M_impl$D75289$_M_start_858, 0, _470);
+stencil.cpp:68:38: missed: statement clobbers memory: start = std::chrono::_V2::steady_clock::now ();
+/usr/include/c++/15/bits/char_traits.h:383:25: missed: statement clobbers memory: _532 = __builtin_memcmp (_533, "column", 6);
+stencil.cpp:71:25: missed: statement clobbers memory: stencil_step (a$D75990$_M_impl$D75289$_M_start_543, b$D75990$_M_impl$D75289$_M_start_540, _101, _103, _530);
+stencil.cpp:71:25: missed: statement clobbers memory: stencil_step (a$D75990$_M_impl$D75289$_M_start_511, b$D75990$_M_impl$D75289$_M_start_501, _101, _103, 0);
+stencil.cpp:76:79: missed: statement clobbers memory: D.77840 = std::chrono::_V2::steady_clock::now ();
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (&cout, "check=", 6);
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (&cout, iftmp.75_582, 4);
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (&cout, " max_abs_error=", 15);
+/usr/include/c++/15/bits/ostream.h:232:25: missed: not vectorized: statement can throw an exception: _684 = std::basic_ostream<char>::_M_insert<double> (&cout, max_error_938);
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/15/bits/ostream.h:232:25: missed: splitting region at control altering definition _685 = std::basic_ostream<char>::_M_insert<double> (_684, checksum_515);
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_684, " checksum=", 10);
+/usr/include/c++/15/bits/ostream.h:232:25: missed: not vectorized: statement can throw an exception: _685 = std::basic_ostream<char>::_M_insert<double> (_684, checksum_515);
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/ostream.h:232:25: missed: splitting region at control altering definition _722 = operator new (_721);
+/usr/include/c++/15/bits/ostream.h:646:16: missed: not vectorized: statement can throw an exception: std::basic_ostream<char>::put (_685, 10);
+/usr/include/c++/15/bits/ostream.h:645:25: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_685, &__c, 1);
+/usr/include/c++/15/bits/new_allocator.h:151:66: missed: not vectorized: statement can throw an exception: _722 = operator new (_721);
+stencil.cpp:29:5: note: ***** Analysis failed with vector mode V32QI
+stencil.cpp:29:5: note: ***** The result for vector mode V32QI would be the same
+stencil.cpp:29:5: note: ***** Re-trying analysis with vector mode V16QI
+stencil.cpp:29:5: note: ***** Analysis failed with vector mode V16QI
+stencil.cpp:29:5: note: ***** Re-trying analysis with vector mode V8QI
+stencil.cpp:29:5: note: ***** Analysis failed with vector mode V8QI
+stencil.cpp:29:5: note: ***** Re-trying analysis with vector mode V4QI
+stencil.cpp:29:5: note: ***** Analysis failed with vector mode V4QI
+stencil.cpp:29:5: missed: splitting region at dominance boundary bb159
+/usr/include/c++/15/bits/stl_uninitialized.h:1343:20: missed: statement clobbers memory: __builtin_memcpy (_722, times$_M_start_67, _708);
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (times$_M_start_67, _715);
+/usr/include/c++/15/bits/vector.tcc:646:53: note: ***** Analysis failed with vector mode V4DF
+/usr/include/c++/15/bits/vector.tcc:646:53: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DF
+/usr/include/c++/15/bits/vector.tcc:646:53: missed: splitting region at dominance boundary bb171
+/usr/include/c++/15/bits/stl_vector.h:1423:6: note: ***** Analysis failed with vector mode V4DF
+/usr/include/c++/15/bits/stl_vector.h:1423:6: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DF
+/usr/include/c++/15/bits/stl_vector.h:1423:6: missed: splitting region at control altering definition _174 = std::basic_ostream<char>::operator<< (&cout, run_602);
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (&cout, "sample=", 7);
+stencil.cpp:85:46: missed: not vectorized: statement can throw an exception: _174 = std::basic_ostream<char>::operator<< (&cout, run_602);
+stencil.cpp:85:46: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:85:46: missed: splitting region at control altering definition _307 = std::basic_ostream<char>::_M_insert<double> (_174, _274);
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_174, " compute_ms=", 12);
+/usr/include/c++/15/bits/ostream.h:232:25: missed: not vectorized: statement can throw an exception: _307 = std::basic_ostream<char>::_M_insert<double> (_174, _274);
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/ostream.h:232:25: missed: splitting region at dominance boundary bb185
+/usr/include/c++/15/bits/ostream.h:646:16: missed: not vectorized: statement can throw an exception: std::basic_ostream<char>::put (_307, 10);
+/usr/include/c++/15/bits/ostream.h:645:25: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_307, &__c, 1);
+stencil.cpp:85:70: note: ***** Analysis failed with vector mode V32QI
+stencil.cpp:85:70: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V32QI
+stencil.cpp:85:70: missed: splitting region at dominance boundary bb267
+stencil.cpp:63:28: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:63:28: missed: splitting region at dominance boundary bb118
+stencil.cpp:63:28: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:63:28: missed: splitting region at dominance boundary bb122
+stencil.cpp:63:28: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:63:28: missed: splitting region at dominance boundary bb124
+stencil.cpp:63:28: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:63:28: missed: splitting region at dominance boundary bb126
+stencil.cpp:63:28: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:63:28: missed: splitting region at dominance boundary bb128
+stencil.cpp:63:28: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:63:28: missed: splitting region at dominance boundary bb130
+stencil.cpp:63:28: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:63:28: missed: splitting region at dominance boundary bb135
+stencil.cpp:63:28: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:63:28: missed: splitting region at dominance boundary bb133
+stencil.cpp:63:28: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:63:28: missed: splitting region at dominance boundary bb165
+stencil.cpp:63:28: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:63:28: missed: splitting region at dominance boundary bb162
+stencil.cpp:63:28: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:63:28: missed: splitting region at dominance boundary bb172
+/usr/include/c++/15/bits/stl_vector.h:2205:24: missed: not vectorized: statement can throw an exception: std::__throw_length_error ("vector::_M_realloc_append");
+/usr/include/c++/15/bits/stl_vector.h:2205:24: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/stl_vector.h:2205:24: missed: splitting region at dominance boundary bb176
+/usr/include/c++/15/bits/stl_vector.h:2205:24: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/stl_vector.h:2205:24: missed: splitting region at dominance boundary bb178
+/usr/include/c++/15/bits/stl_vector.h:2205:24: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/stl_vector.h:2205:24: missed: splitting region at dominance boundary bb183
+/usr/include/c++/15/bits/stl_vector.h:2205:24: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/stl_vector.h:2205:24: missed: splitting region at dominance boundary bb181
+/usr/include/c++/15/bits/stl_vector.h:2205:24: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/stl_vector.h:2205:24: missed: splitting region at dominance boundary bb186
+/usr/include/c++/15/bits/stl_vector.h:2205:24: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/stl_vector.h:2205:24: missed: splitting region at control altering definition _754 = operator new (_965);
+/usr/include/c++/15/bits/new_allocator.h:151:66: missed: not vectorized: statement can throw an exception: _754 = operator new (_965);
+/usr/include/c++/15/bits/new_allocator.h:151:66: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/15/bits/new_allocator.h:151:66: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/15/bits/new_allocator.h:151:66: missed: splitting region at dominance boundary bb189
+/usr/include/c++/15/bits/new_allocator.h:151:66: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/new_allocator.h:151:66: missed: splitting region at dominance boundary bb190
+/usr/include/c++/15/bits/stl_uninitialized.h:273:24: missed: statement clobbers memory: __builtin_memcpy (_754, times$_M_start_844, _965);
+/usr/include/c++/15/bits/stl_uninitialized.h:273:24: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/15/bits/stl_uninitialized.h:273:24: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/15/bits/stl_uninitialized.h:273:24: missed: splitting region at control altering definition stats = timing_stats (&D.78113); [return slot optimization]
+stencil.cpp:96:36: missed: not vectorized: statement can throw an exception: stats = timing_stats (&D.78113); [return slot optimization]
+stencil.cpp:96:36: note: ***** Analysis failed with vector mode V4DI
+stencil.cpp:96:36: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+stencil.cpp:96:36: missed: splitting region at control altering definition _312 = std::basic_ostream<char>::_M_insert<long unsigned int> (&cout, _52);
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (_468, _965);
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (&cout, "samples=", 8);
+/usr/include/c++/15/bits/ostream.h:179:25: missed: not vectorized: statement can throw an exception: _312 = std::basic_ostream<char>::_M_insert<long unsigned int> (&cout, _52);
+/usr/include/c++/15/bits/ostream.h:179:25: note: ***** Analysis failed with vector mode V4DI
+/usr/include/c++/15/bits/ostream.h:179:25: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+/usr/include/c++/15/bits/ostream.h:179:25: missed: splitting region at dominance boundary bb197
+/usr/include/c++/15/bits/ostream.h:179:25: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/ostream.h:179:25: missed: splitting region at control altering definition _313 = std::basic_ostream<char>::_M_insert<double> (_312, _53);
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_312, " mean_ms=", 9);
+/usr/include/c++/15/bits/ostream.h:232:25: missed: not vectorized: statement can throw an exception: _313 = std::basic_ostream<char>::_M_insert<double> (_312, _53);
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Analysis failed with vector mode V4DF
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DF
+/usr/include/c++/15/bits/ostream.h:232:25: missed: splitting region at dominance boundary bb201
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/ostream.h:232:25: missed: splitting region at control altering definition _314 = std::basic_ostream<char>::_M_insert<double> (_313, _54);
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_313, " median_ms=", 11);
+/usr/include/c++/15/bits/ostream.h:232:25: missed: not vectorized: statement can throw an exception: _314 = std::basic_ostream<char>::_M_insert<double> (_313, _54);
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Analysis failed with vector mode V4DF
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DF
+/usr/include/c++/15/bits/ostream.h:232:25: missed: splitting region at dominance boundary bb205
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/ostream.h:232:25: missed: splitting region at control altering definition _315 = std::basic_ostream<char>::_M_insert<double> (_314, _55);
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_314, " stddev_ms=", 11);
+/usr/include/c++/15/bits/ostream.h:232:25: missed: not vectorized: statement can throw an exception: _315 = std::basic_ostream<char>::_M_insert<double> (_314, _55);
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Analysis failed with vector mode V4DF
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DF
+/usr/include/c++/15/bits/ostream.h:232:25: missed: splitting region at dominance boundary bb209
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/ostream.h:232:25: missed: splitting region at control altering definition _316 = std::basic_ostream<char>::_M_insert<double> (_315, _56);
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_315, " min_ms=", 8);
+/usr/include/c++/15/bits/ostream.h:232:25: missed: not vectorized: statement can throw an exception: _316 = std::basic_ostream<char>::_M_insert<double> (_315, _56);
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Analysis failed with vector mode V4DF
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DF
+/usr/include/c++/15/bits/ostream.h:232:25: missed: splitting region at dominance boundary bb213
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/ostream.h:232:25: missed: splitting region at control altering definition _317 = std::basic_ostream<char>::_M_insert<double> (_316, _57);
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_316, " max_ms=", 8);
+/usr/include/c++/15/bits/ostream.h:232:25: missed: not vectorized: statement can throw an exception: _317 = std::basic_ostream<char>::_M_insert<double> (_316, _57);
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Analysis failed with vector mode V4DF
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DF
+/usr/include/c++/15/bits/ostream.h:232:25: missed: splitting region at dominance boundary bb217
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/ostream.h:232:25: missed: splitting region at control altering definition _151 = std::operator<< <std::char_traits<char> > (&cout, "unavailable(timer_resolution; increase workload)");
+stencil.cpp:103:18: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (_317, " stddev_kind=population throughput_time=median");
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (&cout, " GUpdates/s=", 12);
+stencil.cpp:112:54: missed: not vectorized: statement can throw an exception: _151 = std::operator<< <std::char_traits<char> > (&cout, "unavailable(timer_resolution; increase workload)");
+stencil.cpp:112:54: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:112:54: missed: splitting region at control altering definition _153 = std::operator<< <std::char_traits<char> > (_151, "unavailable(timer_resolution; increase workload)");
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_151, " GFLOP/s=", 9);
+stencil.cpp:112:54: missed: not vectorized: statement can throw an exception: _153 = std::operator<< <std::char_traits<char> > (_151, "unavailable(timer_resolution; increase workload)");
+stencil.cpp:112:54: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:112:54: missed: splitting region at dominance boundary bb239
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_153, " effective_bandwidth_GB/s=", 26);
+stencil.cpp:112:54: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (_153, "unavailable(timer_resolution; increase workload)");
+stencil.cpp:112:54: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:112:54: missed: splitting region at dominance boundary bb235
+stencil.cpp:112:54: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:112:54: missed: splitting region at dominance boundary bb220
+stencil.cpp:112:54: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:112:54: missed: splitting region at control altering definition _318 = std::basic_ostream<char>::_M_insert<double> (&cout, _59);
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (&cout, " GUpdates/s=", 12);
+/usr/include/c++/15/bits/ostream.h:232:25: missed: not vectorized: statement can throw an exception: _318 = std::basic_ostream<char>::_M_insert<double> (&cout, _59);
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/ostream.h:232:25: missed: splitting region at dominance boundary bb224
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/ostream.h:232:25: missed: splitting region at control altering definition _319 = std::basic_ostream<char>::_M_insert<double> (_318, _60);
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_318, " GFLOP/s=", 9);
+/usr/include/c++/15/bits/ostream.h:232:25: missed: not vectorized: statement can throw an exception: _319 = std::basic_ostream<char>::_M_insert<double> (_318, _60);
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/ostream.h:232:25: missed: splitting region at dominance boundary bb228
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/ostream.h:232:25: missed: splitting region at dominance boundary bb244
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_319, " effective_bandwidth_GB/s=", 26);
+/usr/include/c++/15/bits/ostream.h:232:25: missed: not vectorized: statement can throw an exception: std::basic_ostream<char>::_M_insert<double> (_319, _61);
+/usr/include/c++/15/bits/ostream.h:232:25: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/ostream.h:232:25: missed: splitting region at dominance boundary bb218
+stencil.cpp:114:18: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (&cout, " bandwidth_model=ideal_spatial_reuse bytes_per_update=8\n");
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (times$_M_start_844, _342);
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (ref$D77034$_M_impl$D76369$_M_start_783, _338);
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (tmp$_M_impl$D76369$_M_start_407, _334);
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (a$D75990$_M_impl$D75289$_M_start_620, _330);
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (b$D75990$_M_impl$D75289$_M_start_732, _326);
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (_536, _535);
+/usr/include/c++/15/bits/basic_string.h:896:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&impl);
+stencil.cpp:29:5: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:29:5: missed: splitting region at dominance boundary bb263
+stencil.cpp:29:5: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:29:5: missed: splitting region at dominance boundary bb414
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (_468, _965);
+stencil.cpp:29:5: missed: not vectorized: statement can throw an exception: resx 53
+/usr/include/c++/15/bits/stl_vector.h:805:7: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/stl_vector.h:805:7: missed: splitting region at dominance boundary bb174
+/usr/include/c++/15/bits/stl_vector.h:805:7: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/stl_vector.h:805:7: missed: splitting region at dominance boundary bb152
+/usr/include/c++/15/bits/stl_vector.h:805:7: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/stl_vector.h:805:7: missed: splitting region at dominance boundary bb268
+stencil.cpp:82:60: missed: statement clobbers memory: _182 = __cxa_allocate_exception (16);
+stencil.cpp:82:60: missed: not vectorized: statement can throw an exception: std::runtime_error::runtime_error (_182, "boundary changed");
+stencil.cpp:82:60: missed: not vectorized: statement can throw an exception: __cxa_throw (_182, &_ZTISt13runtime_error, __dt_comp );
+stencil.cpp:82:60: missed: statement clobbers memory: __cxa_free_exception (_182);
+stencil.cpp:29:5: missed: not vectorized: statement can throw an exception: resx 49
+stencil.cpp:82:60: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:82:60: missed: splitting region at dominance boundary bb137
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (times$_M_start_523, _350);
+stencil.cpp:29:5: missed: not vectorized: statement can throw an exception: resx 39
+/usr/include/c++/15/bits/stl_vector.h:805:7: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/stl_vector.h:805:7: missed: splitting region at dominance boundary bb84
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (times$_M_start_958, _300);
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (ref$D77034$_M_impl$D76369$_M_start_783, _296);
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (tmp$_M_impl$D76369$_M_start_407, _292);
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (a$D75990$_M_impl$D75289$_M_start_635, _288);
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (b$D75990$_M_impl$D75289$_M_start_747, _284);
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (_536, _535);
+/usr/include/c++/15/bits/basic_string.h:896:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&impl);
+/usr/include/c++/15/bits/basic_string.h:896:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/basic_string.h:896:23: missed: splitting region at dominance boundary bb82
+/usr/include/c++/15/bits/basic_string.h:896:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/basic_string.h:896:23: missed: splitting region at dominance boundary bb78
+/usr/include/c++/15/bits/basic_string.h:896:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/basic_string.h:896:23: missed: splitting region at dominance boundary bb74
+/usr/include/c++/15/bits/basic_string.h:896:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/basic_string.h:896:23: missed: splitting region at dominance boundary bb416
+/usr/include/c++/15/bits/basic_string.h:896:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/basic_string.h:896:23: missed: splitting region at dominance boundary bb273
+/usr/include/c++/15/bits/basic_string.h:896:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/basic_string.h:896:23: missed: splitting region at dominance boundary bb57
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (ref$D77034$_M_impl$D76369$_M_start_783, _354);
+stencil.cpp:29:5: missed: not vectorized: statement can throw an exception: resx 38
+/usr/include/c++/15/bits/stl_vector.h:805:7: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/stl_vector.h:805:7: missed: splitting region at dominance boundary bb417
+/usr/include/c++/15/bits/stl_vector.h:2216:24: missed: not vectorized: statement can throw an exception: std::__throw_length_error ("cannot create std::vector larger than max_size()");
+/usr/include/c++/15/bits/stl_vector.h:2216:24: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/stl_vector.h:2216:24: missed: splitting region at dominance boundary bb278
+/usr/include/c++/15/bits/stl_vector.h:2216:24: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/stl_vector.h:2216:24: missed: splitting region at dominance boundary bb48
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (ref$D77034$_M_impl$D76369$_M_start_553, _358);
+stencil.cpp:29:5: missed: not vectorized: statement can throw an exception: resx 31
+/usr/include/c++/15/bits/stl_vector.h:805:7: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/stl_vector.h:805:7: missed: splitting region at dominance boundary bb56
+/usr/include/c++/15/bits/stl_vector.h:2216:24: missed: not vectorized: statement can throw an exception: std::__throw_length_error ("cannot create std::vector larger than max_size()");
+/usr/include/c++/15/bits/stl_vector.h:2216:24: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/stl_vector.h:2216:24: missed: splitting region at dominance boundary bb283
+stencil.cpp:29:5: missed: not vectorized: statement can throw an exception: resx 69
+/usr/include/c++/15/bits/stl_vector.h:2216:24: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/stl_vector.h:2216:24: missed: splitting region at dominance boundary bb287
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (b$D75990$_M_impl$D75289$_M_start_69, _362);
+stencil.cpp:29:5: missed: not vectorized: statement can throw an exception: resx 26
+/usr/include/c++/15/bits/new_allocator.h:172:59: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: splitting region at dominance boundary bb288
+/usr/include/c++/15/bits/new_allocator.h:172:59: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: splitting region at dominance boundary bb292
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (a$D75990$_M_impl$D75289$_M_start_931, _366);
+stencil.cpp:29:5: missed: not vectorized: statement can throw an exception: resx 21
+/usr/include/c++/15/bits/new_allocator.h:172:59: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: splitting region at dominance boundary bb293
+/usr/include/c++/15/bits/new_allocator.h:172:59: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: splitting region at dominance boundary bb34
+/usr/include/c++/15/bits/new_allocator.h:172:59: missed: statement clobbers memory: operator delete (_536, _535);
+stencil.cpp:29:5: missed: not vectorized: statement can throw an exception: resx 16
+/usr/include/c++/15/bits/stl_vector.h:805:7: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/stl_vector.h:805:7: missed: splitting region at dominance boundary bb27
+/usr/include/c++/15/bits/stl_vector.h:2216:24: missed: not vectorized: statement can throw an exception: std::__throw_length_error ("cannot create std::vector larger than max_size()");
+/usr/include/c++/15/bits/stl_vector.h:2216:24: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/stl_vector.h:2216:24: missed: splitting region at dominance boundary bb32
+/usr/include/c++/15/bits/basic_string.h:1167:26: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/basic_string.h:1167:26: missed: splitting region at dominance boundary bb296
+stencil.cpp:39:72: missed: statement clobbers memory: _218 = __cxa_allocate_exception (16);
+stencil.cpp:39:72: missed: not vectorized: statement can throw an exception: std::runtime_error::runtime_error (_218, "invalid dimensions or implementation");
+stencil.cpp:39:72: missed: not vectorized: statement can throw an exception: __cxa_throw (_218, &_ZTISt13runtime_error, __dt_comp );
+stencil.cpp:39:72: missed: statement clobbers memory: __cxa_free_exception (_218);
+stencil.cpp:29:5: missed: not vectorized: statement can throw an exception: resx 8
+stencil.cpp:39:72: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:39:72: missed: splitting region at dominance boundary bb15
+/usr/include/c++/15/bits/basic_string.h:896:19: missed: statement clobbers memory: std::__cxx11::basic_string<char>::_M_dispose (&impl);
+stencil.cpp:29:5: missed: not vectorized: statement can throw an exception: resx 7
+/usr/include/c++/15/bits/basic_string.h:896:23: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/basic_string.h:896:23: missed: splitting region at dominance boundary bb13
+/usr/include/c++/15/bits/basic_string.h:711:28: missed: not vectorized: statement can throw an exception: std::__throw_logic_error ("basic_string: construction from null is not valid");
+/usr/include/c++/15/bits/basic_string.h:711:28: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/basic_string.h:711:28: missed: splitting region at dominance boundary bb11
+/usr/include/c++/15/bits/basic_string.h:711:28: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/basic_string.h:711:28: missed: splitting region at dominance boundary bb9
+/usr/include/c++/15/bits/basic_string.h:711:28: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/basic_string.h:711:28: missed: splitting region at dominance boundary bb7
+/usr/include/c++/15/bits/basic_string.h:711:28: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/basic_string.h:711:28: missed: splitting region at dominance boundary bb3
+/usr/include/c++/15/bits/basic_string.h:711:28: note: ***** Analysis failed with vector mode VOID
+/usr/include/c++/15/bits/basic_string.h:711:28: missed: splitting region at dominance boundary bb257
+/usr/include/c++/15/bits/ostream.h:739:18: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (&cerr, "usage: stencil HEIGHT WIDTH STEPS row|column REPEATS\n", 53);
+stencil.cpp:32:22: missed: not vectorized: statement can throw an exception: std::operator<< <std::char_traits<char> > (&cerr, "limits: dimensions 3..4096, steps 1..1000, repeats 1..100\n");
+stencil.cpp:32:22: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:32:22: missed: splitting region at dominance boundary bb5
+stencil.cpp:33:16: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:33:16: missed: splitting region at dominance boundary bb299
+stencil.cpp:33:16: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:33:16: missed: splitting region at control altering definition _244 = std::operator<< <std::char_traits<char> > (&cerr, _65);
+stencil.cpp:115:3: missed: statement clobbers memory: _222 = __builtin_eh_filter (1);
+stencil.cpp:115:32: missed: statement clobbers memory: _62 = __builtin_eh_pointer (1);
+stencil.cpp:115:32: missed: statement clobbers memory: _241 = __cxa_begin_catch (_62);
+stencil.cpp:117:30: missed: statement clobbers memory: _65 = OBJ_TYPE_REF(_64;_241->2B) (_241);
+stencil.cpp:117:30: missed: not vectorized: statement can throw an exception: _244 = std::operator<< <std::char_traits<char> > (&cerr, _65);
+stencil.cpp:117:30: note: ***** Analysis failed with vector mode V4DI
+stencil.cpp:117:30: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V4DI
+stencil.cpp:117:30: missed: splitting region at dominance boundary bb258
+/usr/include/c++/15/bits/ostream.h:646:16: missed: not vectorized: statement can throw an exception: std::basic_ostream<char>::put (_244, 10);
+/usr/include/c++/15/bits/ostream.h:645:25: missed: not vectorized: statement can throw an exception: std::__ostream_insert<char, std::char_traits<char> > (_244, &__c, 1);
+stencil.cpp:119:1: missed: statement clobbers memory: __cxa_end_catch ();
+stencil.cpp:119:1: note: ***** Analysis failed with vector mode V32QI
+stencil.cpp:119:1: note: ***** Skipping vector mode V32QI, which would repeat the analysis for V32QI
+stencil.cpp:119:1: missed: splitting region at dominance boundary bb308
+stencil.cpp:119:1: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:119:1: missed: splitting region at dominance boundary bb309
+stencil.cpp:119:1: note: ***** Analysis failed with vector mode VOID
+stencil.cpp:119:1: missed: statement clobbers memory: __cxa_end_catch ();
+stencil.cpp:119:1: note: ***** Analysis failed with vector mode VOID

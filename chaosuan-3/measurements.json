@@ -1,0 +1,1334 @@
+{
+  "schema": "chaosuan3.measurements.v1",
+  "started_utc": "2026-10-15T09:28:45.899402+00:00",
+  "environment": {
+    "uname": {
+      "system": "Linux",
+      "node": "CarolDestiny",
+      "release": "6.18.33.2-microsoft-standard-WSL2",
+      "version": "#1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026",
+      "machine": "x86_64",
+      "processor": ""
+    },
+    "cpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           39 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  2\nOn-line CPU(s) list:                     0,1\nVendor ID:                               GenuineIntel\nModel name:                              Intel(R) Core(TM) i9-14900HX\nCPU family:                              6\nModel:                                   183\nThread(s) per core:                      1\nCore(s) per socket:                      2\nSocket(s):                               1\nStepping:                                1\nBogoMIPS:                                4838.40\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves avx_vnni vnmi umip waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize ibt flush_l1d arch_capabilities\nVirtualization:                          VT-x\nHypervisor vendor:                       Microsoft\nVirtualization type:                     full\nL1d cache:                               96 KiB (2 instances)\nL1i cache:                               64 KiB (2 instances)\nL2 cache:                                4 MiB (2 instances)\nL3 cache:                                36 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0,1\nVulnerability Gather data sampling:      Not affected\nVulnerability Ghostwrite:                Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Old microcode:             Not affected\nVulnerability Reg file data sampling:    Mitigation; Clear Register File\nVulnerability Retbleed:                  Mitigation; Enhanced IBRS\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Not affected\n",
+    "memory": "               total        used        free      shared  buff/cache   available\nMem:      4107378688  1366228992   565252096     4526080  2337214464  2741149696\nSwap:     4294967296           0  4294967296\n",
+    "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0\nCopyright (C) 2025 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "cmake": "cmake version 4.2.3\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "cpu_affinity": [
+      0,
+      1
+    ],
+    "threads": 1,
+    "compile_commands": [
+      {
+        "directory": "/tmp/chaosuan3-build",
+        "command": "/usr/bin/c++ -O3 -DNDEBUG -std=c++17 -O3 -Wall -Wextra -Wpedantic -o CMakeFiles/log_filter.dir/main.cpp.o -c /home/destiny/project/chaosuan-3/main.cpp",
+        "file": "/home/destiny/project/chaosuan-3/main.cpp",
+        "output": "/tmp/chaosuan3-build/CMakeFiles/log_filter.dir/main.cpp.o"
+      },
+      {
+        "directory": "/tmp/chaosuan3-build",
+        "command": "/usr/bin/c++ -O3 -DNDEBUG -std=c++17 -O3 -Wall -Wextra -Wpedantic -o CMakeFiles/log_filter.dir/filter.cpp.o -c /home/destiny/project/chaosuan-3/filter.cpp",
+        "file": "/home/destiny/project/chaosuan-3/filter.cpp",
+        "output": "/tmp/chaosuan3-build/CMakeFiles/log_filter.dir/filter.cpp.o"
+      },
+      {
+        "directory": "/tmp/chaosuan3-build",
+        "command": "/usr/bin/c++ -DFILTER_IMPLEMENTATION=\\\"serial_refactored\\\" -O3 -DNDEBUG -std=c++17 -O3 -Wall -Wextra -Wpedantic -o CMakeFiles/baseline_refactored.dir/main.cpp.o -c /home/destiny/project/chaosuan-3/main.cpp",
+        "file": "/home/destiny/project/chaosuan-3/main.cpp",
+        "output": "/tmp/chaosuan3-build/CMakeFiles/baseline_refactored.dir/main.cpp.o"
+      },
+      {
+        "directory": "/tmp/chaosuan3-build",
+        "command": "/usr/bin/c++ -DFILTER_IMPLEMENTATION=\\\"serial_refactored\\\" -O3 -DNDEBUG -std=c++17 -O3 -Wall -Wextra -Wpedantic -o CMakeFiles/baseline_refactored.dir/serial_filter.cpp.o -c /home/destiny/project/chaosuan-3/serial_filter.cpp",
+        "file": "/home/destiny/project/chaosuan-3/serial_filter.cpp",
+        "output": "/tmp/chaosuan3-build/CMakeFiles/baseline_refactored.dir/serial_filter.cpp.o"
+      },
+      {
+        "directory": "/tmp/chaosuan3-build",
+        "command": "/usr/bin/c++ -O3 -DNDEBUG -std=c++17 -O3 -Wall -Wextra -Wpedantic -o CMakeFiles/baseline_original.dir/baseline.cpp.o -c /home/destiny/project/chaosuan-3/baseline.cpp",
+        "file": "/home/destiny/project/chaosuan-3/baseline.cpp",
+        "output": "/tmp/chaosuan3-build/CMakeFiles/baseline_original.dir/baseline.cpp.o"
+      },
+      {
+        "directory": "/tmp/chaosuan3-build",
+        "command": "/usr/bin/c++ -O3 -DNDEBUG -std=c++17 -O3 -Wall -Wextra -Wpedantic -o CMakeFiles/test_api.dir/test_api.cpp.o -c /home/destiny/project/chaosuan-3/test_api.cpp",
+        "file": "/home/destiny/project/chaosuan-3/test_api.cpp",
+        "output": "/tmp/chaosuan3-build/CMakeFiles/test_api.dir/test_api.cpp.o"
+      },
+      {
+        "directory": "/tmp/chaosuan3-build",
+        "command": "/usr/bin/c++ -O3 -DNDEBUG -std=c++17 -O3 -Wall -Wextra -Wpedantic -o CMakeFiles/test_api.dir/filter.cpp.o -c /home/destiny/project/chaosuan-3/filter.cpp",
+        "file": "/home/destiny/project/chaosuan-3/filter.cpp",
+        "output": "/tmp/chaosuan3-build/CMakeFiles/test_api.dir/filter.cpp.o"
+      }
+    ]
+  },
+  "timing": "steady_clock around filter only; input generation/loading, buffer allocation, full-field validation and file IO excluded equally; one warmup before each retained sample",
+  "sources_sha256": {
+    "baseline.cpp": "096bdbe25127d58d0d7bcbb3a8ef3a58d4b5cb4c85e7dbb15b64102e41dd41ee",
+    "main.cpp": "b62154a4da87a2b6709e95c071c0d22fc13bde9bce04829d5d3c894dae7e281e",
+    "serial_filter.cpp": "db14af24fe2c0e7c2ddc15b08d34bdcf997640c6c0f4daf2b3ea43b9fdbbeddd",
+    "filter.cpp": "0e7fa59eba6526fe53f99c8520fc65fc337efa6c5331941b7d5e059aa6e03ad2",
+    "support.hpp": "315705298be983ad7dc7f929319a73e89554f9bebe3b533524d1935d69d30524",
+    "test_public.py": "83caf1963ba5101c36cf8855b131b894d079d2eb1d8ce90f3df08a3d693e25fb",
+    "generate_logs.py": "ba5d094600b7d0f6ca72b5ed440691c01af5578be1e8adf4713d7140d404b786",
+    "benchmark.py": "fba13622be8f632325637278b7513e2fa3090a72c0f528fa824c543e5b93866d",
+    "CMakeLists.txt": "e10680e7a642433872d96a1ee8d4157c511ad773c0c08c40b4ec00cedf26ae01"
+  },
+  "sample_order": "Cyclically rotated executable order each round; order reversed on odd rounds",
+  "cases": [
+    {
+      "count": 100000,
+      "requested_hit_percent": 50,
+      "pattern": "random",
+      "seed": 2026,
+      "query": {
+        "begin": 1000,
+        "end": 2000,
+        "min_latency": 100,
+        "flags": 3
+      },
+      "manifest": {
+        "bytes": 2400024,
+        "count": 100000,
+        "file": "input.bin",
+        "format": "log-filter.v1",
+        "generatorVersion": "log-generator.v1",
+        "hitCountActual": 50156,
+        "hitPercentActual": 50.156,
+        "hitPercentRequested": 50,
+        "pattern": "random",
+        "query": {
+          "begin": 1000,
+          "end": 2000,
+          "minLatencyUs": 100,
+          "requiredFlags": 3
+        },
+        "schemaVersion": "log-generator-manifest.v1",
+        "seed": 2026,
+        "sha256": "406d4f5bf7fce7b09ed21aaf4fff69378e6fd7f10f5c6e8ea8d4d49f113266a9"
+      },
+      "runs": [
+        {
+          "round": 0,
+          "implementation": "baseline_original",
+          "core_ms": 0.282587,
+          "matched": 50156,
+          "process_wall_s": 0.005426130000046214,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.282587 matched=50156 check=PASS\nmedian_core_ms=0.282587 actual_hit_percent=50.156 input_Mrecords_per_s=353.8733204\n",
+          "output_sha256": "601d7f049f8118f1748bd1bd6f1d3c66016e3348fb84fedc5fc15bcd49e10437"
+        },
+        {
+          "round": 0,
+          "implementation": "baseline_refactored",
+          "core_ms": 0.288365,
+          "matched": 50156,
+          "process_wall_s": 0.004956116000016664,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.288365 matched=50156 check=PASS\nmedian_core_ms=0.288365 actual_hit_percent=50.156 input_Mrecords_per_s=346.7827233\n",
+          "output_sha256": "601d7f049f8118f1748bd1bd6f1d3c66016e3348fb84fedc5fc15bcd49e10437"
+        },
+        {
+          "round": 0,
+          "implementation": "log_filter",
+          "core_ms": 0.120789,
+          "matched": 50156,
+          "process_wall_s": 0.0043883649999543195,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.120789 matched=50156 check=PASS\nmedian_core_ms=0.120789 actual_hit_percent=50.156 input_Mrecords_per_s=827.8899569\n",
+          "output_sha256": "601d7f049f8118f1748bd1bd6f1d3c66016e3348fb84fedc5fc15bcd49e10437"
+        },
+        {
+          "round": 1,
+          "implementation": "baseline_original",
+          "core_ms": 0.272275,
+          "matched": 50156,
+          "process_wall_s": 0.004114168999990397,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.272275 matched=50156 check=PASS\nmedian_core_ms=0.272275 actual_hit_percent=50.156 input_Mrecords_per_s=367.2757323\n"
+        },
+        {
+          "round": 1,
+          "implementation": "log_filter",
+          "core_ms": 0.128683,
+          "matched": 50156,
+          "process_wall_s": 0.004213618999983737,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.128683 matched=50156 check=PASS\nmedian_core_ms=0.128683 actual_hit_percent=50.156 input_Mrecords_per_s=777.1034247\n"
+        },
+        {
+          "round": 1,
+          "implementation": "baseline_refactored",
+          "core_ms": 0.34858,
+          "matched": 50156,
+          "process_wall_s": 0.004109833000029539,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.34858 matched=50156 check=PASS\nmedian_core_ms=0.34858 actual_hit_percent=50.156 input_Mrecords_per_s=286.8781915\n"
+        },
+        {
+          "round": 2,
+          "implementation": "log_filter",
+          "core_ms": 0.135373,
+          "matched": 50156,
+          "process_wall_s": 0.003944926999906784,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.135373 matched=50156 check=PASS\nmedian_core_ms=0.135373 actual_hit_percent=50.156 input_Mrecords_per_s=738.6997407\n"
+        },
+        {
+          "round": 2,
+          "implementation": "baseline_original",
+          "core_ms": 0.297885,
+          "matched": 50156,
+          "process_wall_s": 0.0047139270000116085,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.297885 matched=50156 check=PASS\nmedian_core_ms=0.297885 actual_hit_percent=50.156 input_Mrecords_per_s=335.7000185\n"
+        },
+        {
+          "round": 2,
+          "implementation": "baseline_refactored",
+          "core_ms": 0.29424,
+          "matched": 50156,
+          "process_wall_s": 0.004242062999992413,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.29424 matched=50156 check=PASS\nmedian_core_ms=0.29424 actual_hit_percent=50.156 input_Mrecords_per_s=339.8586188\n"
+        },
+        {
+          "round": 3,
+          "implementation": "log_filter",
+          "core_ms": 0.12554,
+          "matched": 50156,
+          "process_wall_s": 0.003470992999950795,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.12554 matched=50156 check=PASS\nmedian_core_ms=0.12554 actual_hit_percent=50.156 input_Mrecords_per_s=796.5588657\n"
+        },
+        {
+          "round": 3,
+          "implementation": "baseline_refactored",
+          "core_ms": 0.297847,
+          "matched": 50156,
+          "process_wall_s": 0.003851596000004065,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.297847 matched=50156 check=PASS\nmedian_core_ms=0.297847 actual_hit_percent=50.156 input_Mrecords_per_s=335.7428478\n"
+        },
+        {
+          "round": 3,
+          "implementation": "baseline_original",
+          "core_ms": 0.319111,
+          "matched": 50156,
+          "process_wall_s": 0.0043456140000444066,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.319111 matched=50156 check=PASS\nmedian_core_ms=0.319111 actual_hit_percent=50.156 input_Mrecords_per_s=313.3705826\n"
+        },
+        {
+          "round": 4,
+          "implementation": "baseline_refactored",
+          "core_ms": 0.34016,
+          "matched": 50156,
+          "process_wall_s": 0.00427555199996732,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.34016 matched=50156 check=PASS\nmedian_core_ms=0.34016 actual_hit_percent=50.156 input_Mrecords_per_s=293.9793039\n"
+        },
+        {
+          "round": 4,
+          "implementation": "log_filter",
+          "core_ms": 0.122037,
+          "matched": 50156,
+          "process_wall_s": 0.00416379200009942,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.122037 matched=50156 check=PASS\nmedian_core_ms=0.122037 actual_hit_percent=50.156 input_Mrecords_per_s=819.4236174\n"
+        },
+        {
+          "round": 4,
+          "implementation": "baseline_original",
+          "core_ms": 0.284395,
+          "matched": 50156,
+          "process_wall_s": 0.003936706999979833,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.284395 matched=50156 check=PASS\nmedian_core_ms=0.284395 actual_hit_percent=50.156 input_Mrecords_per_s=351.6236221\n"
+        },
+        {
+          "round": 5,
+          "implementation": "baseline_refactored",
+          "core_ms": 0.332422,
+          "matched": 50156,
+          "process_wall_s": 0.00434513599998354,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.332422 matched=50156 check=PASS\nmedian_core_ms=0.332422 actual_hit_percent=50.156 input_Mrecords_per_s=300.8224486\n"
+        },
+        {
+          "round": 5,
+          "implementation": "baseline_original",
+          "core_ms": 0.285058,
+          "matched": 50156,
+          "process_wall_s": 0.004215608999970755,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.285058 matched=50156 check=PASS\nmedian_core_ms=0.285058 actual_hit_percent=50.156 input_Mrecords_per_s=350.8058009\n"
+        },
+        {
+          "round": 5,
+          "implementation": "log_filter",
+          "core_ms": 0.132653,
+          "matched": 50156,
+          "process_wall_s": 0.0034206409999342213,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.132653 matched=50156 check=PASS\nmedian_core_ms=0.132653 actual_hit_percent=50.156 input_Mrecords_per_s=753.8465018\n"
+        },
+        {
+          "round": 6,
+          "implementation": "baseline_original",
+          "core_ms": 0.327792,
+          "matched": 50156,
+          "process_wall_s": 0.004145334000099865,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.327792 matched=50156 check=PASS\nmedian_core_ms=0.327792 actual_hit_percent=50.156 input_Mrecords_per_s=305.0715088\n"
+        },
+        {
+          "round": 6,
+          "implementation": "baseline_refactored",
+          "core_ms": 0.283014,
+          "matched": 50156,
+          "process_wall_s": 0.004564688000073147,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.283014 matched=50156 check=PASS\nmedian_core_ms=0.283014 actual_hit_percent=50.156 input_Mrecords_per_s=353.3394108\n"
+        },
+        {
+          "round": 6,
+          "implementation": "log_filter",
+          "core_ms": 0.125076,
+          "matched": 50156,
+          "process_wall_s": 0.003725155000097402,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=100000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=0.125076 matched=50156 check=PASS\nmedian_core_ms=0.125076 actual_hit_percent=50.156 input_Mrecords_per_s=799.5138956\n"
+        }
+      ],
+      "summary": {
+        "baseline_original": {
+          "samples_ms": [
+            0.282587,
+            0.272275,
+            0.297885,
+            0.319111,
+            0.284395,
+            0.285058,
+            0.327792
+          ],
+          "median_ms": 0.285058,
+          "min_ms": 0.272275,
+          "max_ms": 0.327792
+        },
+        "baseline_refactored": {
+          "samples_ms": [
+            0.288365,
+            0.34858,
+            0.29424,
+            0.297847,
+            0.34016,
+            0.332422,
+            0.283014
+          ],
+          "median_ms": 0.297847,
+          "min_ms": 0.283014,
+          "max_ms": 0.34858
+        },
+        "log_filter": {
+          "samples_ms": [
+            0.120789,
+            0.128683,
+            0.135373,
+            0.12554,
+            0.122037,
+            0.132653,
+            0.125076
+          ],
+          "median_ms": 0.12554,
+          "min_ms": 0.120789,
+          "max_ms": 0.135373
+        }
+      },
+      "speedup_original_over_optimized": 2.2706547713876053
+    },
+    {
+      "count": 2000000,
+      "requested_hit_percent": 50,
+      "pattern": "random",
+      "seed": 2026,
+      "query": {
+        "begin": 1000,
+        "end": 2000,
+        "min_latency": 100,
+        "flags": 3
+      },
+      "manifest": {
+        "bytes": 48000024,
+        "count": 2000000,
+        "file": "input.bin",
+        "format": "log-filter.v1",
+        "generatorVersion": "log-generator.v1",
+        "hitCountActual": 1000308,
+        "hitPercentActual": 50.0154,
+        "hitPercentRequested": 50,
+        "pattern": "random",
+        "query": {
+          "begin": 1000,
+          "end": 2000,
+          "minLatencyUs": 100,
+          "requiredFlags": 3
+        },
+        "schemaVersion": "log-generator-manifest.v1",
+        "seed": 2026,
+        "sha256": "f885858e0a34dc36d6fe78de6c7e8d6180b199968e230a4a149b38bb38976d94"
+      },
+      "runs": [
+        {
+          "round": 0,
+          "implementation": "baseline_original",
+          "core_ms": 7.668581,
+          "matched": 1000308,
+          "process_wall_s": 0.12055718999999954,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=7.668581 matched=1000308 check=PASS\nmedian_core_ms=7.668581 actual_hit_percent=50.0154 input_Mrecords_per_s=260.8044435\n",
+          "output_sha256": "f9dc49a8f58443b04ad4b99af873882626fe5edc5805413322fde30f313f80c7"
+        },
+        {
+          "round": 0,
+          "implementation": "baseline_refactored",
+          "core_ms": 7.635237,
+          "matched": 1000308,
+          "process_wall_s": 0.13198508899995431,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=7.635237 matched=1000308 check=PASS\nmedian_core_ms=7.635237 actual_hit_percent=50.0154 input_Mrecords_per_s=261.9434079\n",
+          "output_sha256": "f9dc49a8f58443b04ad4b99af873882626fe5edc5805413322fde30f313f80c7"
+        },
+        {
+          "round": 0,
+          "implementation": "log_filter",
+          "core_ms": 3.868796,
+          "matched": 1000308,
+          "process_wall_s": 0.10738891799996964,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.868796 matched=1000308 check=PASS\nmedian_core_ms=3.868796 actual_hit_percent=50.0154 input_Mrecords_per_s=516.9566966\n",
+          "output_sha256": "f9dc49a8f58443b04ad4b99af873882626fe5edc5805413322fde30f313f80c7"
+        },
+        {
+          "round": 1,
+          "implementation": "baseline_original",
+          "core_ms": 7.649179,
+          "matched": 1000308,
+          "process_wall_s": 0.08169043800000964,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=7.649179 matched=1000308 check=PASS\nmedian_core_ms=7.649179 actual_hit_percent=50.0154 input_Mrecords_per_s=261.4659691\n"
+        },
+        {
+          "round": 1,
+          "implementation": "log_filter",
+          "core_ms": 4.424893,
+          "matched": 1000308,
+          "process_wall_s": 0.07623535199991238,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=4.424893 matched=1000308 check=PASS\nmedian_core_ms=4.424893 actual_hit_percent=50.0154 input_Mrecords_per_s=451.9883306\n"
+        },
+        {
+          "round": 1,
+          "implementation": "baseline_refactored",
+          "core_ms": 7.735085,
+          "matched": 1000308,
+          "process_wall_s": 0.0812984140000026,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=7.735085 matched=1000308 check=PASS\nmedian_core_ms=7.735085 actual_hit_percent=50.0154 input_Mrecords_per_s=258.5621231\n"
+        },
+        {
+          "round": 2,
+          "implementation": "log_filter",
+          "core_ms": 4.301912,
+          "matched": 1000308,
+          "process_wall_s": 0.07541250299993862,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=4.301912 matched=1000308 check=PASS\nmedian_core_ms=4.301912 actual_hit_percent=50.0154 input_Mrecords_per_s=464.9095565\n"
+        },
+        {
+          "round": 2,
+          "implementation": "baseline_original",
+          "core_ms": 7.466387,
+          "matched": 1000308,
+          "process_wall_s": 0.08441496499995083,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=7.466387 matched=1000308 check=PASS\nmedian_core_ms=7.466387 actual_hit_percent=50.0154 input_Mrecords_per_s=267.8671759\n"
+        },
+        {
+          "round": 2,
+          "implementation": "baseline_refactored",
+          "core_ms": 7.997268,
+          "matched": 1000308,
+          "process_wall_s": 0.08690122999996674,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=7.997268 matched=1000308 check=PASS\nmedian_core_ms=7.997268 actual_hit_percent=50.0154 input_Mrecords_per_s=250.0854042\n"
+        },
+        {
+          "round": 3,
+          "implementation": "log_filter",
+          "core_ms": 3.737595,
+          "matched": 1000308,
+          "process_wall_s": 0.07846008600006371,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.737595 matched=1000308 check=PASS\nmedian_core_ms=3.737595 actual_hit_percent=50.0154 input_Mrecords_per_s=535.1034556\n"
+        },
+        {
+          "round": 3,
+          "implementation": "baseline_refactored",
+          "core_ms": 7.953227,
+          "matched": 1000308,
+          "process_wall_s": 0.08441000499999518,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=7.953227 matched=1000308 check=PASS\nmedian_core_ms=7.953227 actual_hit_percent=50.0154 input_Mrecords_per_s=251.4702523\n"
+        },
+        {
+          "round": 3,
+          "implementation": "baseline_original",
+          "core_ms": 8.065752,
+          "matched": 1000308,
+          "process_wall_s": 0.07963132600002609,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=8.065752 matched=1000308 check=PASS\nmedian_core_ms=8.065752 actual_hit_percent=50.0154 input_Mrecords_per_s=247.9620003\n"
+        },
+        {
+          "round": 4,
+          "implementation": "baseline_refactored",
+          "core_ms": 8.220587,
+          "matched": 1000308,
+          "process_wall_s": 0.08661022800004048,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=8.220587 matched=1000308 check=PASS\nmedian_core_ms=8.220587 actual_hit_percent=50.0154 input_Mrecords_per_s=243.2916287\n"
+        },
+        {
+          "round": 4,
+          "implementation": "log_filter",
+          "core_ms": 4.177082,
+          "matched": 1000308,
+          "process_wall_s": 0.07992058299998916,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=4.177082 matched=1000308 check=PASS\nmedian_core_ms=4.177082 actual_hit_percent=50.0154 input_Mrecords_per_s=478.8031454\n"
+        },
+        {
+          "round": 4,
+          "implementation": "baseline_original",
+          "core_ms": 7.21702,
+          "matched": 1000308,
+          "process_wall_s": 0.08646063000003323,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=7.21702 matched=1000308 check=PASS\nmedian_core_ms=7.21702 actual_hit_percent=50.0154 input_Mrecords_per_s=277.1226905\n"
+        },
+        {
+          "round": 5,
+          "implementation": "baseline_refactored",
+          "core_ms": 7.693985,
+          "matched": 1000308,
+          "process_wall_s": 0.08470350300001428,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=7.693985 matched=1000308 check=PASS\nmedian_core_ms=7.693985 actual_hit_percent=50.0154 input_Mrecords_per_s=259.9433194\n"
+        },
+        {
+          "round": 5,
+          "implementation": "baseline_original",
+          "core_ms": 8.031324,
+          "matched": 1000308,
+          "process_wall_s": 0.0898898329999156,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=8.031324 matched=1000308 check=PASS\nmedian_core_ms=8.031324 actual_hit_percent=50.0154 input_Mrecords_per_s=249.0249428\n"
+        },
+        {
+          "round": 5,
+          "implementation": "log_filter",
+          "core_ms": 3.771827,
+          "matched": 1000308,
+          "process_wall_s": 0.07357030100001793,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.771827 matched=1000308 check=PASS\nmedian_core_ms=3.771827 actual_hit_percent=50.0154 input_Mrecords_per_s=530.2470129\n"
+        },
+        {
+          "round": 6,
+          "implementation": "baseline_original",
+          "core_ms": 8.530133,
+          "matched": 1000308,
+          "process_wall_s": 0.07982037600004332,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=8.530133 matched=1000308 check=PASS\nmedian_core_ms=8.530133 actual_hit_percent=50.0154 input_Mrecords_per_s=234.4629328\n"
+        },
+        {
+          "round": 6,
+          "implementation": "baseline_refactored",
+          "core_ms": 7.921363,
+          "matched": 1000308,
+          "process_wall_s": 0.08009921500001838,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=7.921363 matched=1000308 check=PASS\nmedian_core_ms=7.921363 actual_hit_percent=50.0154 input_Mrecords_per_s=252.4818014\n"
+        },
+        {
+          "round": 6,
+          "implementation": "log_filter",
+          "core_ms": 3.807502,
+          "matched": 1000308,
+          "process_wall_s": 0.07627486199999112,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.807502 matched=1000308 check=PASS\nmedian_core_ms=3.807502 actual_hit_percent=50.0154 input_Mrecords_per_s=525.2787786\n"
+        }
+      ],
+      "summary": {
+        "baseline_original": {
+          "samples_ms": [
+            7.668581,
+            7.649179,
+            7.466387,
+            8.065752,
+            7.21702,
+            8.031324,
+            8.530133
+          ],
+          "median_ms": 7.668581,
+          "min_ms": 7.21702,
+          "max_ms": 8.530133
+        },
+        "baseline_refactored": {
+          "samples_ms": [
+            7.635237,
+            7.735085,
+            7.997268,
+            7.953227,
+            8.220587,
+            7.693985,
+            7.921363
+          ],
+          "median_ms": 7.921363,
+          "min_ms": 7.635237,
+          "max_ms": 8.220587
+        },
+        "log_filter": {
+          "samples_ms": [
+            3.868796,
+            4.424893,
+            4.301912,
+            3.737595,
+            4.177082,
+            3.771827,
+            3.807502
+          ],
+          "median_ms": 3.868796,
+          "min_ms": 3.737595,
+          "max_ms": 4.424893
+        }
+      },
+      "speedup_original_over_optimized": 1.9821621507052838
+    },
+    {
+      "count": 2000000,
+      "requested_hit_percent": 50,
+      "pattern": "blocks",
+      "seed": 2026,
+      "query": {
+        "begin": 1000,
+        "end": 2000,
+        "min_latency": 100,
+        "flags": 3
+      },
+      "manifest": {
+        "bytes": 48000024,
+        "count": 2000000,
+        "file": "input.bin",
+        "format": "log-filter.v1",
+        "generatorVersion": "log-generator.v1",
+        "hitCountActual": 1000000,
+        "hitPercentActual": 50.0,
+        "hitPercentRequested": 50,
+        "pattern": "blocks",
+        "query": {
+          "begin": 1000,
+          "end": 2000,
+          "minLatencyUs": 100,
+          "requiredFlags": 3
+        },
+        "schemaVersion": "log-generator-manifest.v1",
+        "seed": 2026,
+        "sha256": "db35e90402931a9331efcf62d1f7ffb34b9f2e3f724f53b1ece43707a679cf63"
+      },
+      "runs": [
+        {
+          "round": 0,
+          "implementation": "baseline_original",
+          "core_ms": 6.056025,
+          "matched": 1000000,
+          "process_wall_s": 0.10319545400000152,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=6.056025 matched=1000000 check=PASS\nmedian_core_ms=6.056025 actual_hit_percent=50 input_Mrecords_per_s=330.2496274\n",
+          "output_sha256": "25238548416234d6e026fe9712e0952c4c03e342bae2ef0c16cf57fbb4a1b4dd"
+        },
+        {
+          "round": 0,
+          "implementation": "baseline_refactored",
+          "core_ms": 6.917778,
+          "matched": 1000000,
+          "process_wall_s": 0.09789870099996278,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=6.917778 matched=1000000 check=PASS\nmedian_core_ms=6.917778 actual_hit_percent=50 input_Mrecords_per_s=289.1101738\n",
+          "output_sha256": "25238548416234d6e026fe9712e0952c4c03e342bae2ef0c16cf57fbb4a1b4dd"
+        },
+        {
+          "round": 0,
+          "implementation": "log_filter",
+          "core_ms": 3.718208,
+          "matched": 1000000,
+          "process_wall_s": 0.09641797200004021,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.718208 matched=1000000 check=PASS\nmedian_core_ms=3.718208 actual_hit_percent=50 input_Mrecords_per_s=537.8935229\n",
+          "output_sha256": "25238548416234d6e026fe9712e0952c4c03e342bae2ef0c16cf57fbb4a1b4dd"
+        },
+        {
+          "round": 1,
+          "implementation": "baseline_original",
+          "core_ms": 7.260687,
+          "matched": 1000000,
+          "process_wall_s": 0.08050217100003465,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=7.260687 matched=1000000 check=PASS\nmedian_core_ms=7.260687 actual_hit_percent=50 input_Mrecords_per_s=275.4560278\n"
+        },
+        {
+          "round": 1,
+          "implementation": "log_filter",
+          "core_ms": 5.835543,
+          "matched": 1000000,
+          "process_wall_s": 0.07926383599999554,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=5.835543 matched=1000000 check=PASS\nmedian_core_ms=5.835543 actual_hit_percent=50 input_Mrecords_per_s=342.7273177\n"
+        },
+        {
+          "round": 1,
+          "implementation": "baseline_refactored",
+          "core_ms": 7.954477,
+          "matched": 1000000,
+          "process_wall_s": 0.09249140600002193,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=7.954477 matched=1000000 check=PASS\nmedian_core_ms=7.954477 actual_hit_percent=50 input_Mrecords_per_s=251.4307352\n"
+        },
+        {
+          "round": 2,
+          "implementation": "log_filter",
+          "core_ms": 4.981588,
+          "matched": 1000000,
+          "process_wall_s": 0.08796309800004565,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=4.981588 matched=1000000 check=PASS\nmedian_core_ms=4.981588 actual_hit_percent=50 input_Mrecords_per_s=401.4784041\n"
+        },
+        {
+          "round": 2,
+          "implementation": "baseline_original",
+          "core_ms": 8.08122,
+          "matched": 1000000,
+          "process_wall_s": 0.09607881700003418,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=8.08122 matched=1000000 check=PASS\nmedian_core_ms=8.08122 actual_hit_percent=50 input_Mrecords_per_s=247.4873843\n"
+        },
+        {
+          "round": 2,
+          "implementation": "baseline_refactored",
+          "core_ms": 9.133342,
+          "matched": 1000000,
+          "process_wall_s": 0.09638858299990716,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=9.133342 matched=1000000 check=PASS\nmedian_core_ms=9.133342 actual_hit_percent=50 input_Mrecords_per_s=218.9778944\n"
+        },
+        {
+          "round": 3,
+          "implementation": "log_filter",
+          "core_ms": 3.862125,
+          "matched": 1000000,
+          "process_wall_s": 0.07946294199996373,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.862125 matched=1000000 check=PASS\nmedian_core_ms=3.862125 actual_hit_percent=50 input_Mrecords_per_s=517.8496294\n"
+        },
+        {
+          "round": 3,
+          "implementation": "baseline_refactored",
+          "core_ms": 7.265772,
+          "matched": 1000000,
+          "process_wall_s": 0.08295684999995956,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=7.265772 matched=1000000 check=PASS\nmedian_core_ms=7.265772 actual_hit_percent=50 input_Mrecords_per_s=275.263248\n"
+        },
+        {
+          "round": 3,
+          "implementation": "baseline_original",
+          "core_ms": 6.129918,
+          "matched": 1000000,
+          "process_wall_s": 0.07880002399997466,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=6.129918 matched=1000000 check=PASS\nmedian_core_ms=6.129918 actual_hit_percent=50 input_Mrecords_per_s=326.2686385\n"
+        },
+        {
+          "round": 4,
+          "implementation": "baseline_refactored",
+          "core_ms": 6.677061,
+          "matched": 1000000,
+          "process_wall_s": 0.08803108000006432,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=6.677061 matched=1000000 check=PASS\nmedian_core_ms=6.677061 actual_hit_percent=50 input_Mrecords_per_s=299.5329831\n"
+        },
+        {
+          "round": 4,
+          "implementation": "log_filter",
+          "core_ms": 3.97626,
+          "matched": 1000000,
+          "process_wall_s": 0.07762555700003304,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.97626 matched=1000000 check=PASS\nmedian_core_ms=3.97626 actual_hit_percent=50 input_Mrecords_per_s=502.9852173\n"
+        },
+        {
+          "round": 4,
+          "implementation": "baseline_original",
+          "core_ms": 6.667465,
+          "matched": 1000000,
+          "process_wall_s": 0.08521915599999375,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=6.667465 matched=1000000 check=PASS\nmedian_core_ms=6.667465 actual_hit_percent=50 input_Mrecords_per_s=299.9640793\n"
+        },
+        {
+          "round": 5,
+          "implementation": "baseline_refactored",
+          "core_ms": 6.634492,
+          "matched": 1000000,
+          "process_wall_s": 0.08256901200002176,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=6.634492 matched=1000000 check=PASS\nmedian_core_ms=6.634492 actual_hit_percent=50 input_Mrecords_per_s=301.4548815\n"
+        },
+        {
+          "round": 5,
+          "implementation": "baseline_original",
+          "core_ms": 6.193157,
+          "matched": 1000000,
+          "process_wall_s": 0.0803857789999256,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=6.193157 matched=1000000 check=PASS\nmedian_core_ms=6.193157 actual_hit_percent=50 input_Mrecords_per_s=322.9370739\n"
+        },
+        {
+          "round": 5,
+          "implementation": "log_filter",
+          "core_ms": 4.192154,
+          "matched": 1000000,
+          "process_wall_s": 0.07897681399992962,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=4.192154 matched=1000000 check=PASS\nmedian_core_ms=4.192154 actual_hit_percent=50 input_Mrecords_per_s=477.0817103\n"
+        },
+        {
+          "round": 6,
+          "implementation": "baseline_original",
+          "core_ms": 6.742038,
+          "matched": 1000000,
+          "process_wall_s": 0.08142228100007287,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=6.742038 matched=1000000 check=PASS\nmedian_core_ms=6.742038 actual_hit_percent=50 input_Mrecords_per_s=296.646207\n"
+        },
+        {
+          "round": 6,
+          "implementation": "baseline_refactored",
+          "core_ms": 6.023494,
+          "matched": 1000000,
+          "process_wall_s": 0.07551598600002762,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=6.023494 matched=1000000 check=PASS\nmedian_core_ms=6.023494 actual_hit_percent=50 input_Mrecords_per_s=332.033202\n"
+        },
+        {
+          "round": 6,
+          "implementation": "log_filter",
+          "core_ms": 3.880084,
+          "matched": 1000000,
+          "process_wall_s": 0.07266685199999756,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.880084 matched=1000000 check=PASS\nmedian_core_ms=3.880084 actual_hit_percent=50 input_Mrecords_per_s=515.4527582\n"
+        }
+      ],
+      "summary": {
+        "baseline_original": {
+          "samples_ms": [
+            6.056025,
+            7.260687,
+            8.08122,
+            6.129918,
+            6.667465,
+            6.193157,
+            6.742038
+          ],
+          "median_ms": 6.667465,
+          "min_ms": 6.056025,
+          "max_ms": 8.08122
+        },
+        "baseline_refactored": {
+          "samples_ms": [
+            6.917778,
+            7.954477,
+            9.133342,
+            7.265772,
+            6.677061,
+            6.634492,
+            6.023494
+          ],
+          "median_ms": 6.917778,
+          "min_ms": 6.023494,
+          "max_ms": 9.133342
+        },
+        "log_filter": {
+          "samples_ms": [
+            3.718208,
+            5.835543,
+            4.981588,
+            3.862125,
+            3.97626,
+            4.192154,
+            3.880084
+          ],
+          "median_ms": 3.97626,
+          "min_ms": 3.718208,
+          "max_ms": 5.835543
+        }
+      },
+      "speedup_original_over_optimized": 1.6768181658141068
+    },
+    {
+      "count": 2000000,
+      "requested_hit_percent": 1,
+      "pattern": "random",
+      "seed": 2026,
+      "query": {
+        "begin": 1000,
+        "end": 2000,
+        "min_latency": 100,
+        "flags": 3
+      },
+      "manifest": {
+        "bytes": 48000024,
+        "count": 2000000,
+        "file": "input.bin",
+        "format": "log-filter.v1",
+        "generatorVersion": "log-generator.v1",
+        "hitCountActual": 20017,
+        "hitPercentActual": 1.00085,
+        "hitPercentRequested": 1,
+        "pattern": "random",
+        "query": {
+          "begin": 1000,
+          "end": 2000,
+          "minLatencyUs": 100,
+          "requiredFlags": 3
+        },
+        "schemaVersion": "log-generator-manifest.v1",
+        "seed": 2026,
+        "sha256": "f0b0e2e1a5bb7539a7c52a01893889fdcd2133e12eec29832f4b7e5bea3f6c4c"
+      },
+      "runs": [
+        {
+          "round": 0,
+          "implementation": "baseline_original",
+          "core_ms": 8.546941,
+          "matched": 20017,
+          "process_wall_s": 0.07319782299998678,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=8.546941 matched=20017 check=PASS\nmedian_core_ms=8.546941 actual_hit_percent=1.00085 input_Mrecords_per_s=234.0018493\n",
+          "output_sha256": "951eb9929bef6fb845323788e240dd53259df3c268dd3524b8ab568a9efa3f9c"
+        },
+        {
+          "round": 0,
+          "implementation": "baseline_refactored",
+          "core_ms": 9.566011,
+          "matched": 20017,
+          "process_wall_s": 0.07495857600008549,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=9.566011 matched=20017 check=PASS\nmedian_core_ms=9.566011 actual_hit_percent=1.00085 input_Mrecords_per_s=209.0735626\n",
+          "output_sha256": "951eb9929bef6fb845323788e240dd53259df3c268dd3524b8ab568a9efa3f9c"
+        },
+        {
+          "round": 0,
+          "implementation": "log_filter",
+          "core_ms": 3.596914,
+          "matched": 20017,
+          "process_wall_s": 0.06556936499998756,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.596914 matched=20017 check=PASS\nmedian_core_ms=3.596914 actual_hit_percent=1.00085 input_Mrecords_per_s=556.0321987\n",
+          "output_sha256": "951eb9929bef6fb845323788e240dd53259df3c268dd3524b8ab568a9efa3f9c"
+        },
+        {
+          "round": 1,
+          "implementation": "baseline_original",
+          "core_ms": 8.443908,
+          "matched": 20017,
+          "process_wall_s": 0.07357355300007384,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=8.443908 matched=20017 check=PASS\nmedian_core_ms=8.443908 actual_hit_percent=1.00085 input_Mrecords_per_s=236.8571519\n"
+        },
+        {
+          "round": 1,
+          "implementation": "log_filter",
+          "core_ms": 3.058205,
+          "matched": 20017,
+          "process_wall_s": 0.057902355000010175,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.058205 matched=20017 check=PASS\nmedian_core_ms=3.058205 actual_hit_percent=1.00085 input_Mrecords_per_s=653.9783958\n"
+        },
+        {
+          "round": 1,
+          "implementation": "baseline_refactored",
+          "core_ms": 8.833307,
+          "matched": 20017,
+          "process_wall_s": 0.07363384299992504,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=8.833307 matched=20017 check=PASS\nmedian_core_ms=8.833307 actual_hit_percent=1.00085 input_Mrecords_per_s=226.4157693\n"
+        },
+        {
+          "round": 2,
+          "implementation": "log_filter",
+          "core_ms": 3.154281,
+          "matched": 20017,
+          "process_wall_s": 0.06127735400002621,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.154281 matched=20017 check=PASS\nmedian_core_ms=3.154281 actual_hit_percent=1.00085 input_Mrecords_per_s=634.0589187\n"
+        },
+        {
+          "round": 2,
+          "implementation": "baseline_original",
+          "core_ms": 7.821693,
+          "matched": 20017,
+          "process_wall_s": 0.07006281999997555,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=7.821693 matched=20017 check=PASS\nmedian_core_ms=7.821693 actual_hit_percent=1.00085 input_Mrecords_per_s=255.6991178\n"
+        },
+        {
+          "round": 2,
+          "implementation": "baseline_refactored",
+          "core_ms": 8.543811,
+          "matched": 20017,
+          "process_wall_s": 0.07135632400002123,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=8.543811 matched=20017 check=PASS\nmedian_core_ms=8.543811 actual_hit_percent=1.00085 input_Mrecords_per_s=234.0875752\n"
+        },
+        {
+          "round": 3,
+          "implementation": "log_filter",
+          "core_ms": 3.027966,
+          "matched": 20017,
+          "process_wall_s": 0.05922129999999015,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.027966 matched=20017 check=PASS\nmedian_core_ms=3.027966 actual_hit_percent=1.00085 input_Mrecords_per_s=660.5093981\n"
+        },
+        {
+          "round": 3,
+          "implementation": "baseline_refactored",
+          "core_ms": 8.817483,
+          "matched": 20017,
+          "process_wall_s": 0.07069105799996578,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=8.817483 matched=20017 check=PASS\nmedian_core_ms=8.817483 actual_hit_percent=1.00085 input_Mrecords_per_s=226.8220988\n"
+        },
+        {
+          "round": 3,
+          "implementation": "baseline_original",
+          "core_ms": 8.759651,
+          "matched": 20017,
+          "process_wall_s": 0.0766471360000196,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=8.759651 matched=20017 check=PASS\nmedian_core_ms=8.759651 actual_hit_percent=1.00085 input_Mrecords_per_s=228.3195986\n"
+        },
+        {
+          "round": 4,
+          "implementation": "baseline_refactored",
+          "core_ms": 9.301041,
+          "matched": 20017,
+          "process_wall_s": 0.07363221199989312,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=9.301041 matched=20017 check=PASS\nmedian_core_ms=9.301041 actual_hit_percent=1.00085 input_Mrecords_per_s=215.029694\n"
+        },
+        {
+          "round": 4,
+          "implementation": "log_filter",
+          "core_ms": 3.116732,
+          "matched": 20017,
+          "process_wall_s": 0.062356326999974954,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.116732 matched=20017 check=PASS\nmedian_core_ms=3.116732 actual_hit_percent=1.00085 input_Mrecords_per_s=641.6977783\n"
+        },
+        {
+          "round": 4,
+          "implementation": "baseline_original",
+          "core_ms": 8.536563,
+          "matched": 20017,
+          "process_wall_s": 0.07319802200004233,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=8.536563 matched=20017 check=PASS\nmedian_core_ms=8.536563 actual_hit_percent=1.00085 input_Mrecords_per_s=234.2863281\n"
+        },
+        {
+          "round": 5,
+          "implementation": "baseline_refactored",
+          "core_ms": 8.43047,
+          "matched": 20017,
+          "process_wall_s": 0.07362686599992685,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=8.43047 matched=20017 check=PASS\nmedian_core_ms=8.43047 actual_hit_percent=1.00085 input_Mrecords_per_s=237.2346975\n"
+        },
+        {
+          "round": 5,
+          "implementation": "baseline_original",
+          "core_ms": 7.929014,
+          "matched": 20017,
+          "process_wall_s": 0.06833531200004472,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=7.929014 matched=20017 check=PASS\nmedian_core_ms=7.929014 actual_hit_percent=1.00085 input_Mrecords_per_s=252.2381724\n"
+        },
+        {
+          "round": 5,
+          "implementation": "log_filter",
+          "core_ms": 3.569642,
+          "matched": 20017,
+          "process_wall_s": 0.061635246000037114,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.569642 matched=20017 check=PASS\nmedian_core_ms=3.569642 actual_hit_percent=1.00085 input_Mrecords_per_s=560.2802746\n"
+        },
+        {
+          "round": 6,
+          "implementation": "baseline_original",
+          "core_ms": 8.305948,
+          "matched": 20017,
+          "process_wall_s": 0.0722608589999254,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=8.305948 matched=20017 check=PASS\nmedian_core_ms=8.305948 actual_hit_percent=1.00085 input_Mrecords_per_s=240.791298\n"
+        },
+        {
+          "round": 6,
+          "implementation": "baseline_refactored",
+          "core_ms": 8.77876,
+          "matched": 20017,
+          "process_wall_s": 0.07059818299990184,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=8.77876 matched=20017 check=PASS\nmedian_core_ms=8.77876 actual_hit_percent=1.00085 input_Mrecords_per_s=227.8226082\n"
+        },
+        {
+          "round": 6,
+          "implementation": "log_filter",
+          "core_ms": 3.176005,
+          "matched": 20017,
+          "process_wall_s": 0.059029613000006975,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.176005 matched=20017 check=PASS\nmedian_core_ms=3.176005 actual_hit_percent=1.00085 input_Mrecords_per_s=629.7219305\n"
+        }
+      ],
+      "summary": {
+        "baseline_original": {
+          "samples_ms": [
+            8.546941,
+            8.443908,
+            7.821693,
+            8.759651,
+            8.536563,
+            7.929014,
+            8.305948
+          ],
+          "median_ms": 8.443908,
+          "min_ms": 7.821693,
+          "max_ms": 8.759651
+        },
+        "baseline_refactored": {
+          "samples_ms": [
+            9.566011,
+            8.833307,
+            8.543811,
+            8.817483,
+            9.301041,
+            8.43047,
+            8.77876
+          ],
+          "median_ms": 8.817483,
+          "min_ms": 8.43047,
+          "max_ms": 9.566011
+        },
+        "log_filter": {
+          "samples_ms": [
+            3.596914,
+            3.058205,
+            3.154281,
+            3.027966,
+            3.116732,
+            3.569642,
+            3.176005
+          ],
+          "median_ms": 3.154281,
+          "min_ms": 3.027966,
+          "max_ms": 3.596914
+        }
+      },
+      "speedup_original_over_optimized": 2.6769675878591666
+    },
+    {
+      "count": 2000000,
+      "requested_hit_percent": 100,
+      "pattern": "blocks",
+      "seed": 2026,
+      "query": {
+        "begin": 1000,
+        "end": 2000,
+        "min_latency": 100,
+        "flags": 3
+      },
+      "manifest": {
+        "bytes": 48000024,
+        "count": 2000000,
+        "file": "input.bin",
+        "format": "log-filter.v1",
+        "generatorVersion": "log-generator.v1",
+        "hitCountActual": 2000000,
+        "hitPercentActual": 100.0,
+        "hitPercentRequested": 100,
+        "pattern": "blocks",
+        "query": {
+          "begin": 1000,
+          "end": 2000,
+          "minLatencyUs": 100,
+          "requiredFlags": 3
+        },
+        "schemaVersion": "log-generator-manifest.v1",
+        "seed": 2026,
+        "sha256": "1627c1092589ec9fd303cc71b8ead5b35fd3fae1fde63f30ad3d25716cec3edb"
+      },
+      "runs": [
+        {
+          "round": 0,
+          "implementation": "baseline_original",
+          "core_ms": 5.609076,
+          "matched": 2000000,
+          "process_wall_s": 0.14316212400001405,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=5.609076 matched=2000000 check=PASS\nmedian_core_ms=5.609076 actual_hit_percent=100 input_Mrecords_per_s=356.5649672\n",
+          "output_sha256": "1627c1092589ec9fd303cc71b8ead5b35fd3fae1fde63f30ad3d25716cec3edb"
+        },
+        {
+          "round": 0,
+          "implementation": "baseline_refactored",
+          "core_ms": 3.951989,
+          "matched": 2000000,
+          "process_wall_s": 0.14299007199997504,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.951989 matched=2000000 check=PASS\nmedian_core_ms=3.951989 actual_hit_percent=100 input_Mrecords_per_s=506.0742831\n",
+          "output_sha256": "1627c1092589ec9fd303cc71b8ead5b35fd3fae1fde63f30ad3d25716cec3edb"
+        },
+        {
+          "round": 0,
+          "implementation": "log_filter",
+          "core_ms": 4.897948,
+          "matched": 2000000,
+          "process_wall_s": 0.12350461799996992,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=4.897948 matched=2000000 check=PASS\nmedian_core_ms=4.897948 actual_hit_percent=100 input_Mrecords_per_s=408.3342657\n",
+          "output_sha256": "1627c1092589ec9fd303cc71b8ead5b35fd3fae1fde63f30ad3d25716cec3edb"
+        },
+        {
+          "round": 1,
+          "implementation": "baseline_original",
+          "core_ms": 3.925306,
+          "matched": 2000000,
+          "process_wall_s": 0.08511430900000505,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.925306 matched=2000000 check=PASS\nmedian_core_ms=3.925306 actual_hit_percent=100 input_Mrecords_per_s=509.5144175\n"
+        },
+        {
+          "round": 1,
+          "implementation": "log_filter",
+          "core_ms": 4.934876,
+          "matched": 2000000,
+          "process_wall_s": 0.0860634209999489,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=4.934876 matched=2000000 check=PASS\nmedian_core_ms=4.934876 actual_hit_percent=100 input_Mrecords_per_s=405.2786737\n"
+        },
+        {
+          "round": 1,
+          "implementation": "baseline_refactored",
+          "core_ms": 3.821469,
+          "matched": 2000000,
+          "process_wall_s": 0.08203603599997678,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.821469 matched=2000000 check=PASS\nmedian_core_ms=3.821469 actual_hit_percent=100 input_Mrecords_per_s=523.3589491\n"
+        },
+        {
+          "round": 2,
+          "implementation": "log_filter",
+          "core_ms": 4.280393,
+          "matched": 2000000,
+          "process_wall_s": 0.08594860699997753,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=4.280393 matched=2000000 check=PASS\nmedian_core_ms=4.280393 actual_hit_percent=100 input_Mrecords_per_s=467.2468159\n"
+        },
+        {
+          "round": 2,
+          "implementation": "baseline_original",
+          "core_ms": 3.832827,
+          "matched": 2000000,
+          "process_wall_s": 0.08706837900001574,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.832827 matched=2000000 check=PASS\nmedian_core_ms=3.832827 actual_hit_percent=100 input_Mrecords_per_s=521.8080545\n"
+        },
+        {
+          "round": 2,
+          "implementation": "baseline_refactored",
+          "core_ms": 3.768233,
+          "matched": 2000000,
+          "process_wall_s": 0.08338917099990795,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.768233 matched=2000000 check=PASS\nmedian_core_ms=3.768233 actual_hit_percent=100 input_Mrecords_per_s=530.7527427\n"
+        },
+        {
+          "round": 3,
+          "implementation": "log_filter",
+          "core_ms": 4.200659,
+          "matched": 2000000,
+          "process_wall_s": 0.08188932800010207,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=4.200659 matched=2000000 check=PASS\nmedian_core_ms=4.200659 actual_hit_percent=100 input_Mrecords_per_s=476.1157714\n"
+        },
+        {
+          "round": 3,
+          "implementation": "baseline_refactored",
+          "core_ms": 3.688671,
+          "matched": 2000000,
+          "process_wall_s": 0.08227285700002085,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.688671 matched=2000000 check=PASS\nmedian_core_ms=3.688671 actual_hit_percent=100 input_Mrecords_per_s=542.2007005\n"
+        },
+        {
+          "round": 3,
+          "implementation": "baseline_original",
+          "core_ms": 3.780255,
+          "matched": 2000000,
+          "process_wall_s": 0.08222656300006292,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.780255 matched=2000000 check=PASS\nmedian_core_ms=3.780255 actual_hit_percent=100 input_Mrecords_per_s=529.0648382\n"
+        },
+        {
+          "round": 4,
+          "implementation": "baseline_refactored",
+          "core_ms": 4.074582,
+          "matched": 2000000,
+          "process_wall_s": 0.08337994299995444,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=4.074582 matched=2000000 check=PASS\nmedian_core_ms=4.074582 actual_hit_percent=100 input_Mrecords_per_s=490.8478956\n"
+        },
+        {
+          "round": 4,
+          "implementation": "log_filter",
+          "core_ms": 4.124572,
+          "matched": 2000000,
+          "process_wall_s": 0.08306543900005181,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=4.124572 matched=2000000 check=PASS\nmedian_core_ms=4.124572 actual_hit_percent=100 input_Mrecords_per_s=484.8987968\n"
+        },
+        {
+          "round": 4,
+          "implementation": "baseline_original",
+          "core_ms": 3.876971,
+          "matched": 2000000,
+          "process_wall_s": 0.08581416499998795,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.876971 matched=2000000 check=PASS\nmedian_core_ms=3.876971 actual_hit_percent=100 input_Mrecords_per_s=515.8666392\n"
+        },
+        {
+          "round": 5,
+          "implementation": "baseline_refactored",
+          "core_ms": 3.754313,
+          "matched": 2000000,
+          "process_wall_s": 0.08129348199997821,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.754313 matched=2000000 check=PASS\nmedian_core_ms=3.754313 actual_hit_percent=100 input_Mrecords_per_s=532.7206336\n"
+        },
+        {
+          "round": 5,
+          "implementation": "baseline_original",
+          "core_ms": 3.730661,
+          "matched": 2000000,
+          "process_wall_s": 0.0832089719999658,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.730661 matched=2000000 check=PASS\nmedian_core_ms=3.730661 actual_hit_percent=100 input_Mrecords_per_s=536.0980266\n"
+        },
+        {
+          "round": 5,
+          "implementation": "log_filter",
+          "core_ms": 4.040638,
+          "matched": 2000000,
+          "process_wall_s": 0.08367073800002345,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=4.040638 matched=2000000 check=PASS\nmedian_core_ms=4.040638 actual_hit_percent=100 input_Mrecords_per_s=494.9713387\n"
+        },
+        {
+          "round": 6,
+          "implementation": "baseline_original",
+          "core_ms": 4.754189,
+          "matched": 2000000,
+          "process_wall_s": 0.09248364999996284,
+          "stdout": "implementation=baseline threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=4.754189 matched=2000000 check=PASS\nmedian_core_ms=4.754189 actual_hit_percent=100 input_Mrecords_per_s=420.6816347\n"
+        },
+        {
+          "round": 6,
+          "implementation": "baseline_refactored",
+          "core_ms": 3.872096,
+          "matched": 2000000,
+          "process_wall_s": 0.08519887399995696,
+          "stdout": "implementation=serial_refactored threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=3.872096 matched=2000000 check=PASS\nmedian_core_ms=3.872096 actual_hit_percent=100 input_Mrecords_per_s=516.5161194\n"
+        },
+        {
+          "round": 6,
+          "implementation": "log_filter",
+          "core_ms": 4.156231,
+          "matched": 2000000,
+          "process_wall_s": 0.08367446499994458,
+          "stdout": "implementation=optimized threads=1 generator=v1 source=file count=2000000 sizeof_record=24 seed=2026 pattern=random requested_hit_percent=50 begin=1000 end=2000 min_latency=100 flags=3 warmup=1 repeats=1\nsample=0 core_ms=4.156231 matched=2000000 check=PASS\nmedian_core_ms=4.156231 actual_hit_percent=100 input_Mrecords_per_s=481.2052073\n"
+        }
+      ],
+      "summary": {
+        "baseline_original": {
+          "samples_ms": [
+            5.609076,
+            3.925306,
+            3.832827,
+            3.780255,
+            3.876971,
+            3.730661,
+            4.754189
+          ],
+          "median_ms": 3.876971,
+          "min_ms": 3.730661,
+          "max_ms": 5.609076
+        },
+        "baseline_refactored": {
+          "samples_ms": [
+            3.951989,
+            3.821469,
+            3.768233,
+            3.688671,
+            4.074582,
+            3.754313,
+            3.872096
+          ],
+          "median_ms": 3.821469,
+          "min_ms": 3.688671,
+          "max_ms": 4.074582
+        },
+        "log_filter": {
+          "samples_ms": [
+            4.897948,
+            4.934876,
+            4.280393,
+            4.200659,
+            4.124572,
+            4.040638,
+            4.156231
+          ],
+          "median_ms": 4.200659,
+          "min_ms": 4.040638,
+          "max_ms": 4.934876
+        }
+      },
+      "speedup_original_over_optimized": 0.9229435191002174
+    }
+  ],
+  "finished_utc": "2026-10-15T09:28:59.953667+00:00"
+}

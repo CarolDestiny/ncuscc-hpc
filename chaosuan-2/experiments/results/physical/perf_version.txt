@@ -1,0 +1,2 @@
+$ /usr/bin/perf --version
+perf version 7.0.14

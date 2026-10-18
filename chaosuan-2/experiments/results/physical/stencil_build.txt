@@ -1,0 +1,1 @@
+$ g++ -std=c++17 -O3 -march=x86-64-v3 -mtune=generic -ffp-contract=off -g -fopt-info-vec-all=/home/user/project/chaosuan-2-ai-20261012/experiments/results/physical/stencil_vectorization.txt stencil.cpp -o /home/user/project/chaosuan-2-ai-20261012/experiments/build/stencil

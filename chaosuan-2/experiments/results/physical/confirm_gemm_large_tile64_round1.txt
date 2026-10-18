@@ -1,0 +1,10 @@
+$ taskset -c 0 /home/user/project/chaosuan-2-ai-20261012/experiments/build/gemm 1024 blocked 64 3
+gemm impl=blocked n=1024 tile=64 seed=2026 warmup=1 threads=1
+check=PASS max_abs_error=0.00057706 checksum=2.68355e+08
+check=PASS max_abs_error=0.00057706 checksum=2.68355e+08
+sample=0 compute_ms=122.674
+check=PASS max_abs_error=0.00057706 checksum=2.68355e+08
+sample=1 compute_ms=122.37
+check=PASS max_abs_error=0.00057706 checksum=2.68355e+08
+sample=2 compute_ms=122.448
+samples=3 mean_ms=122.497 median_ms=122.448 stddev_ms=0.129058 min_ms=122.37 max_ms=122.674 stddev_kind=population GFLOP/s=17.538

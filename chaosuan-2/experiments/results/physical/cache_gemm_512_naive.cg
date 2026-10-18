@@ -1,0 +1,31 @@
+desc: I1 cache:         32768 B, 64 B, 8-way associative
+desc: D1 cache:         32768 B, 64 B, 8-way associative
+desc: LL cache:         6291456 B, 64 B, 12-way associative
+cmd: /home/user/project/chaosuan-2-ai-20261012/experiments/build/cache_driver gemm 512 naive 64
+events: Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw 
+fl=/home/user/project/chaosuan-2-ai-20261012/experiments/../gemm.cpp
+fn=gemm_naive(std::vector<float, std::allocator<float> > const&, std::vector<float, std::allocator<float> > const&, std::vector<float, std::allocator<float> >&, int)
+8 11 1 1 1 0 0 6 0 0
+9 1054724 2 2 2048 0 0 512 0 0
+11 1050624 0 0 262656 8192 0 512 0 0
+12 570950658 2 2 167772672 134518785 32770 0 0 0
+13 262144 1 1 0 0 0 262144 262144 16385
+15 7 0 0 7 1 0 0 0 0
+fl=/home/user/project/chaosuan-2-ai-20261012/experiments/cache_driver.cpp
+fn=main
+23 2 2 2 1 0 0 1 1 1
+24 19 2 2 10 3 3 7 1 1
+26 10 2 2 0 0 0 6 1 1
+fl=/usr/include/c++/15/bits/basic_string.h
+fn=main
+4064 4 0 0 1 1 1 0 0 0
+fl=/usr/include/c++/15/bits/char_traits.h
+fn=main
+383 4 2 2 1 0 0 1 1 1
+fl=/usr/include/c++/15/bits/stl_vector.h
+fn=gemm_naive(std::vector<float, std::allocator<float> > const&, std::vector<float, std::allocator<float> > const&, std::vector<float, std::allocator<float> >&, int)
+1283 11 1 1 2 0 0 3 1 1
+fl=???
+fn=???
+0 21 3 3 4 3 3 0 0 0
+summary: 573318239 18 18 168037403 134526985 32777 263192 262149 16390

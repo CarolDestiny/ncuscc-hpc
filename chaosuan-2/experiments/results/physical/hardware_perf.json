@@ -1,0 +1,1106 @@
+[
+  {
+    "kernel": "stencil",
+    "n": 512,
+    "impl": "row",
+    "param": 20,
+    "trial": 0,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 4582389.0,
+      "instructions:u": 8070768.0,
+      "mem_load_retired.l1_hit:u": 2958371.0,
+      "mem_load_retired.l1_miss:u": 135362.0,
+      "mem_load_retired.fb_hit:u": 425767.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=128655",
+    "log": "hardware_stencil_512_row_l1_trial0.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 512,
+    "impl": "row",
+    "param": 20,
+    "trial": 0,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 4551805.0,
+      "instructions:u": 8070768.0,
+      "mem_load_retired.l3_hit:u": 18198.0,
+      "mem_load_retired.l3_miss:u": 81.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=128655",
+    "log": "hardware_stencil_512_row_ll_trial0.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 512,
+    "impl": "column",
+    "param": 20,
+    "trial": 0,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 95495302.0,
+      "instructions:u": 67761216.0,
+      "mem_load_retired.l1_hit:u": 231227.0,
+      "mem_load_retired.l1_miss:u": 1816660.0,
+      "mem_load_retired.fb_hit:u": 23962180.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=128655",
+    "log": "hardware_stencil_512_column_l1_trial0.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 512,
+    "impl": "column",
+    "param": 20,
+    "trial": 0,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 90603160.0,
+      "instructions:u": 67761215.0,
+      "mem_load_retired.l3_hit:u": 1854135.0,
+      "mem_load_retired.l3_miss:u": 10.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=128655",
+    "log": "hardware_stencil_512_column_ll_trial0.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 512,
+    "impl": "column",
+    "param": 20,
+    "trial": 1,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 90626693.0,
+      "instructions:u": 67761214.0,
+      "mem_load_retired.l1_hit:u": 207215.0,
+      "mem_load_retired.l1_miss:u": 1902704.0,
+      "mem_load_retired.fb_hit:u": 23900570.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=128655",
+    "log": "hardware_stencil_512_column_l1_trial1.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 512,
+    "impl": "column",
+    "param": 20,
+    "trial": 1,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 90580665.0,
+      "instructions:u": 67761215.0,
+      "mem_load_retired.l3_hit:u": 1839771.0,
+      "mem_load_retired.l3_miss:u": 1.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=128655",
+    "log": "hardware_stencil_512_column_ll_trial1.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 512,
+    "impl": "row",
+    "param": 20,
+    "trial": 1,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 4580510.0,
+      "instructions:u": 8070769.0,
+      "mem_load_retired.l1_hit:u": 2958794.0,
+      "mem_load_retired.l1_miss:u": 134103.0,
+      "mem_load_retired.fb_hit:u": 426606.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=128655",
+    "log": "hardware_stencil_512_row_l1_trial1.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 512,
+    "impl": "row",
+    "param": 20,
+    "trial": 1,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 4547281.0,
+      "instructions:u": 8070768.0,
+      "mem_load_retired.l3_hit:u": 18212.0,
+      "mem_load_retired.l3_miss:u": 102.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=128655",
+    "log": "hardware_stencil_512_row_ll_trial1.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 512,
+    "impl": "row",
+    "param": 20,
+    "trial": 2,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 4548563.0,
+      "instructions:u": 8070768.0,
+      "mem_load_retired.l1_hit:u": 2958702.0,
+      "mem_load_retired.l1_miss:u": 134811.0,
+      "mem_load_retired.fb_hit:u": 425982.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=128655",
+    "log": "hardware_stencil_512_row_l1_trial2.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 512,
+    "impl": "row",
+    "param": 20,
+    "trial": 2,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 4558703.0,
+      "instructions:u": 8070769.0,
+      "mem_load_retired.l3_hit:u": 18173.0,
+      "mem_load_retired.l3_miss:u": 79.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=128655",
+    "log": "hardware_stencil_512_row_ll_trial2.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 512,
+    "impl": "column",
+    "param": 20,
+    "trial": 2,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 90611561.0,
+      "instructions:u": 67761214.0,
+      "mem_load_retired.l1_hit:u": 206417.0,
+      "mem_load_retired.l1_miss:u": 1901831.0,
+      "mem_load_retired.fb_hit:u": 23902250.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=128655",
+    "log": "hardware_stencil_512_column_l1_trial2.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 512,
+    "impl": "column",
+    "param": 20,
+    "trial": 2,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 90568862.0,
+      "instructions:u": 67761214.0,
+      "mem_load_retired.l3_hit:u": 1846486.0,
+      "mem_load_retired.l3_miss:u": 4.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=128655",
+    "log": "hardware_stencil_512_column_ll_trial2.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 4096,
+    "impl": "row",
+    "param": 20,
+    "trial": 0,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 794548193.0,
+      "instructions:u": 468274553.0,
+      "mem_load_retired.l1_hit:u": 72290419.0,
+      "mem_load_retired.l1_miss:u": 19335026.0,
+      "mem_load_retired.fb_hit:u": 120031589.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=8.36893e+06",
+    "log": "hardware_stencil_4096_row_l1_trial0.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 4096,
+    "impl": "row",
+    "param": 20,
+    "trial": 0,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 821895707.0,
+      "instructions:u": 468274556.0,
+      "mem_load_retired.l3_hit:u": 1165147.0,
+      "mem_load_retired.l3_miss:u": 992166.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=8.36893e+06",
+    "log": "hardware_stencil_4096_row_ll_trial0.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 4096,
+    "impl": "column",
+    "param": 20,
+    "trial": 0,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 13402946439.0,
+      "instructions:u": 4358895292.0,
+      "mem_load_retired.l1_hit:u": 70564464.0,
+      "mem_load_retired.l1_miss:u": 146388747.0,
+      "mem_load_retired.fb_hit:u": 1459096494.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=8.36893e+06",
+    "log": "hardware_stencil_4096_column_l1_trial0.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 4096,
+    "impl": "column",
+    "param": 20,
+    "trial": 0,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 13545293002.0,
+      "instructions:u": 4358895987.0,
+      "mem_load_retired.l3_hit:u": 9012031.0,
+      "mem_load_retired.l3_miss:u": 105834425.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=8.36893e+06",
+    "log": "hardware_stencil_4096_column_ll_trial0.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 4096,
+    "impl": "column",
+    "param": 20,
+    "trial": 1,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 13444793622.0,
+      "instructions:u": 4358896157.0,
+      "mem_load_retired.l1_hit:u": 69552836.0,
+      "mem_load_retired.l1_miss:u": 146641218.0,
+      "mem_load_retired.fb_hit:u": 1459884331.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=8.36893e+06",
+    "log": "hardware_stencil_4096_column_l1_trial1.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 4096,
+    "impl": "column",
+    "param": 20,
+    "trial": 1,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 13566984884.0,
+      "instructions:u": 4358895943.0,
+      "mem_load_retired.l3_hit:u": 10858857.0,
+      "mem_load_retired.l3_miss:u": 104465832.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=8.36893e+06",
+    "log": "hardware_stencil_4096_column_ll_trial1.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 4096,
+    "impl": "row",
+    "param": 20,
+    "trial": 1,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 837416891.0,
+      "instructions:u": 468274555.0,
+      "mem_load_retired.l1_hit:u": 48313445.0,
+      "mem_load_retired.l1_miss:u": 28073951.0,
+      "mem_load_retired.fb_hit:u": 135269451.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=8.36893e+06",
+    "log": "hardware_stencil_4096_row_l1_trial1.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 4096,
+    "impl": "row",
+    "param": 20,
+    "trial": 1,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 775985228.0,
+      "instructions:u": 468274554.0,
+      "mem_load_retired.l3_hit:u": 1155824.0,
+      "mem_load_retired.l3_miss:u": 938420.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=8.36893e+06",
+    "log": "hardware_stencil_4096_row_ll_trial1.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 4096,
+    "impl": "row",
+    "param": 20,
+    "trial": 2,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 845894715.0,
+      "instructions:u": 468274558.0,
+      "mem_load_retired.l1_hit:u": 50577329.0,
+      "mem_load_retired.l1_miss:u": 27956092.0,
+      "mem_load_retired.fb_hit:u": 133123600.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=8.36893e+06",
+    "log": "hardware_stencil_4096_row_l1_trial2.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 4096,
+    "impl": "row",
+    "param": 20,
+    "trial": 2,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 841833459.0,
+      "instructions:u": 468274556.0,
+      "mem_load_retired.l3_hit:u": 1292836.0,
+      "mem_load_retired.l3_miss:u": 1042865.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=8.36893e+06",
+    "log": "hardware_stencil_4096_row_ll_trial2.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 4096,
+    "impl": "column",
+    "param": 20,
+    "trial": 2,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 13838474194.0,
+      "instructions:u": 4358896504.0,
+      "mem_load_retired.l1_hit:u": 72928935.0,
+      "mem_load_retired.l1_miss:u": 147780465.0,
+      "mem_load_retired.fb_hit:u": 1455364785.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=8.36893e+06",
+    "log": "hardware_stencil_4096_column_l1_trial2.perf.csv"
+  },
+  {
+    "kernel": "stencil",
+    "n": 4096,
+    "impl": "column",
+    "param": 20,
+    "trial": 2,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 13533044474.0,
+      "instructions:u": 4358896302.0,
+      "mem_load_retired.l3_hit:u": 10649940.0,
+      "mem_load_retired.l3_miss:u": 104856250.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=8.36893e+06",
+    "log": "hardware_stencil_4096_column_ll_trial2.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 128,
+    "impl": "naive",
+    "param": 64,
+    "trial": 0,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 6894597.0,
+      "instructions:u": 9096478.0,
+      "mem_load_retired.l1_hit:u": 490288.0,
+      "mem_load_retired.l1_miss:u": 2118505.0,
+      "mem_load_retired.fb_hit:u": 30077.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=528745",
+    "log": "hardware_gemm_128_naive_l1_trial0.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 128,
+    "impl": "naive",
+    "param": 64,
+    "trial": 0,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 6877956.0,
+      "instructions:u": 9096477.0,
+      "mem_load_retired.l3_hit:u": 519.0,
+      "mem_load_retired.l3_miss:u": 2.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=528745",
+    "log": "hardware_gemm_128_naive_ll_trial0.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 128,
+    "impl": "blocked",
+    "param": 64,
+    "trial": 0,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 834215.0,
+      "instructions:u": 2489039.0,
+      "mem_load_retired.l1_hit:u": 687446.0,
+      "mem_load_retired.l1_miss:u": 8731.0,
+      "mem_load_retired.fb_hit:u": 11766.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=528745",
+    "log": "hardware_gemm_128_blocked_l1_trial0.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 128,
+    "impl": "blocked",
+    "param": 64,
+    "trial": 0,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 830073.0,
+      "instructions:u": 2489040.0,
+      "mem_load_retired.l3_hit:u": 1268.0,
+      "mem_load_retired.l3_miss:u": 1.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=528745",
+    "log": "hardware_gemm_128_blocked_ll_trial0.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 128,
+    "impl": "blocked",
+    "param": 64,
+    "trial": 1,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 830105.0,
+      "instructions:u": 2489039.0,
+      "mem_load_retired.l1_hit:u": 690721.0,
+      "mem_load_retired.l1_miss:u": 7754.0,
+      "mem_load_retired.fb_hit:u": 9470.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=528745",
+    "log": "hardware_gemm_128_blocked_l1_trial1.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 128,
+    "impl": "blocked",
+    "param": 64,
+    "trial": 1,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 835871.0,
+      "instructions:u": 2489040.0,
+      "mem_load_retired.l3_hit:u": 1180.0,
+      "mem_load_retired.l3_miss:u": 11.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=528745",
+    "log": "hardware_gemm_128_blocked_ll_trial1.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 128,
+    "impl": "naive",
+    "param": 64,
+    "trial": 1,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 6817003.0,
+      "instructions:u": 9096478.0,
+      "mem_load_retired.l1_hit:u": 493539.0,
+      "mem_load_retired.l1_miss:u": 2118349.0,
+      "mem_load_retired.fb_hit:u": 26982.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=528745",
+    "log": "hardware_gemm_128_naive_l1_trial1.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 128,
+    "impl": "naive",
+    "param": 64,
+    "trial": 1,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 6878758.0,
+      "instructions:u": 9096477.0,
+      "mem_load_retired.l3_hit:u": 2461.0,
+      "mem_load_retired.l3_miss:u": 8.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=528745",
+    "log": "hardware_gemm_128_naive_ll_trial1.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 128,
+    "impl": "naive",
+    "param": 64,
+    "trial": 2,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 6894508.0,
+      "instructions:u": 9096478.0,
+      "mem_load_retired.l1_hit:u": 490616.0,
+      "mem_load_retired.l1_miss:u": 2118440.0,
+      "mem_load_retired.fb_hit:u": 29814.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=528745",
+    "log": "hardware_gemm_128_naive_l1_trial2.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 128,
+    "impl": "naive",
+    "param": 64,
+    "trial": 2,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 6893718.0,
+      "instructions:u": 9096477.0,
+      "mem_load_retired.l3_hit:u": 524.0,
+      "mem_load_retired.l3_miss:u": 1.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=528745",
+    "log": "hardware_gemm_128_naive_ll_trial2.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 128,
+    "impl": "blocked",
+    "param": 64,
+    "trial": 2,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 833714.0,
+      "instructions:u": 2489039.0,
+      "mem_load_retired.l1_hit:u": 687755.0,
+      "mem_load_retired.l1_miss:u": 8607.0,
+      "mem_load_retired.fb_hit:u": 11583.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=528745",
+    "log": "hardware_gemm_128_blocked_l1_trial2.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 128,
+    "impl": "blocked",
+    "param": 64,
+    "trial": 2,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 832403.0,
+      "instructions:u": 2489039.0,
+      "mem_load_retired.l3_hit:u": 1018.0,
+      "mem_load_retired.l3_miss:u": 3.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=528745",
+    "log": "hardware_gemm_128_blocked_ll_trial2.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 1024,
+    "impl": "naive",
+    "param": 64,
+    "trial": 0,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 7709434275.0,
+      "instructions:u": 4574959949.0,
+      "mem_load_retired.l1_hit:u": 271151238.0,
+      "mem_load_retired.l1_miss:u": 1058020003.0,
+      "mem_load_retired.fb_hit:u": 14055371.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=2.68355e+08",
+    "log": "hardware_gemm_1024_naive_l1_trial0.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 1024,
+    "impl": "naive",
+    "param": 64,
+    "trial": 0,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 7827967837.0,
+      "instructions:u": 4574960270.0,
+      "mem_load_retired.l3_hit:u": 942818429.0,
+      "mem_load_retired.l3_miss:u": 72681275.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=2.68355e+08",
+    "log": "hardware_gemm_1024_naive_ll_trial0.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 1024,
+    "impl": "blocked",
+    "param": 64,
+    "trial": 0,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 404412604.0,
+      "instructions:u": 1266468001.0,
+      "mem_load_retired.l1_hit:u": 353534580.0,
+      "mem_load_retired.l1_miss:u": 3187135.0,
+      "mem_load_retired.fb_hit:u": 4067898.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=2.68355e+08",
+    "log": "hardware_gemm_1024_blocked_l1_trial0.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 1024,
+    "impl": "blocked",
+    "param": 64,
+    "trial": 0,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 405357549.0,
+      "instructions:u": 1266468001.0,
+      "mem_load_retired.l3_hit:u": 1080346.0,
+      "mem_load_retired.l3_miss:u": 100919.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=2.68355e+08",
+    "log": "hardware_gemm_1024_blocked_ll_trial0.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 1024,
+    "impl": "blocked",
+    "param": 64,
+    "trial": 1,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 407569579.0,
+      "instructions:u": 1266468002.0,
+      "mem_load_retired.l1_hit:u": 353523739.0,
+      "mem_load_retired.l1_miss:u": 3245413.0,
+      "mem_load_retired.fb_hit:u": 4020460.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=2.68355e+08",
+    "log": "hardware_gemm_1024_blocked_l1_trial1.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 1024,
+    "impl": "blocked",
+    "param": 64,
+    "trial": 1,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 404354344.0,
+      "instructions:u": 1266468000.0,
+      "mem_load_retired.l3_hit:u": 1071096.0,
+      "mem_load_retired.l3_miss:u": 105465.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=2.68355e+08",
+    "log": "hardware_gemm_1024_blocked_ll_trial1.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 1024,
+    "impl": "naive",
+    "param": 64,
+    "trial": 1,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 7563740011.0,
+      "instructions:u": 4574959885.0,
+      "mem_load_retired.l1_hit:u": 269987346.0,
+      "mem_load_retired.l1_miss:u": 1058373469.0,
+      "mem_load_retired.fb_hit:u": 14865753.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=2.68355e+08",
+    "log": "hardware_gemm_1024_naive_l1_trial1.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 1024,
+    "impl": "naive",
+    "param": 64,
+    "trial": 1,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 7563073040.0,
+      "instructions:u": 4574959877.0,
+      "mem_load_retired.l3_hit:u": 991263491.0,
+      "mem_load_retired.l3_miss:u": 54707170.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=2.68355e+08",
+    "log": "hardware_gemm_1024_naive_ll_trial1.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 1024,
+    "impl": "naive",
+    "param": 64,
+    "trial": 2,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 7348219324.0,
+      "instructions:u": 4574959658.0,
+      "mem_load_retired.l1_hit:u": 267589088.0,
+      "mem_load_retired.l1_miss:u": 1064130349.0,
+      "mem_load_retired.fb_hit:u": 11507022.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=2.68355e+08",
+    "log": "hardware_gemm_1024_naive_l1_trial2.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 1024,
+    "impl": "naive",
+    "param": 64,
+    "trial": 2,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 7314271611.0,
+      "instructions:u": 4574959642.0,
+      "mem_load_retired.l3_hit:u": 995494144.0,
+      "mem_load_retired.l3_miss:u": 40359495.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=2.68355e+08",
+    "log": "hardware_gemm_1024_naive_ll_trial2.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 1024,
+    "impl": "blocked",
+    "param": 64,
+    "trial": 2,
+    "group": "l1",
+    "counts": {
+      "cycles:u": 403943869.0,
+      "instructions:u": 1266468001.0,
+      "mem_load_retired.l1_hit:u": 353533554.0,
+      "mem_load_retired.l1_miss:u": 3208247.0,
+      "mem_load_retired.fb_hit:u": 4047811.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l1_hit:u": 100.0,
+      "mem_load_retired.l1_miss:u": 100.0,
+      "mem_load_retired.fb_hit:u": 100.0
+    },
+    "checksum": "profile_checksum=2.68355e+08",
+    "log": "hardware_gemm_1024_blocked_l1_trial2.perf.csv"
+  },
+  {
+    "kernel": "gemm",
+    "n": 1024,
+    "impl": "blocked",
+    "param": 64,
+    "trial": 2,
+    "group": "ll",
+    "counts": {
+      "cycles:u": 407426223.0,
+      "instructions:u": 1266468001.0,
+      "mem_load_retired.l3_hit:u": 1080061.0,
+      "mem_load_retired.l3_miss:u": 89911.0
+    },
+    "running_percent": {
+      "cycles:u": 100.0,
+      "instructions:u": 100.0,
+      "mem_load_retired.l3_hit:u": 100.0,
+      "mem_load_retired.l3_miss:u": 100.0
+    },
+    "checksum": "profile_checksum=2.68355e+08",
+    "log": "hardware_gemm_1024_blocked_ll_trial2.perf.csv"
+  }
+]

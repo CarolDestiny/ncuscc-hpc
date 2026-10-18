@@ -1,0 +1,10 @@
+$ taskset -c 0 /home/destiny/project/chaosuan-2/experiments/build/gemm 1024 naive 64 3
+gemm impl=naive n=1024 tile=64 seed=2026 warmup=1 threads=1
+check=PASS max_abs_error=0.00057706 checksum=2.68355e+08
+check=PASS max_abs_error=0.00057706 checksum=2.68355e+08
+sample=0 compute_ms=2221.1
+check=PASS max_abs_error=0.00057706 checksum=2.68355e+08
+sample=1 compute_ms=2214.64
+check=PASS max_abs_error=0.00057706 checksum=2.68355e+08
+sample=2 compute_ms=2208.04
+samples=3 mean_ms=2214.59 median_ms=2214.64 stddev_ms=5.33147 min_ms=2208.04 max_ms=2221.1 stddev_kind=population GFLOP/s=0.969677
