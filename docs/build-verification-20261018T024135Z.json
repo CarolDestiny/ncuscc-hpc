@@ -1,0 +1,523 @@
+{
+  "scope": "Unified repository CMake build and correctness checks; no performance remeasurement",
+  "started_utc": "2026-10-18T02:41:23.798747+00:00",
+  "commands": [
+    {
+      "command": [
+        "cmake",
+        "-S",
+        "/home/destiny/project/ncuscc-hpc",
+        "-B",
+        "/tmp/ncuscc-unified-qq5xurmi/build",
+        "-DCMAKE_BUILD_TYPE=Release"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "-- The CXX compiler identification is GNU 15.2.0\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Stage 1: original test scripts missing; use scripts/verify.py for the smoke check\n-- Found Python3: /usr/bin/python3 (found version \"3.14.4\") found components: Interpreter\n-- Configuring done (2.4s)\n-- Generating done (0.0s)\n-- Build files have been written to: /tmp/ncuscc-unified-qq5xurmi/build\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "/tmp/ncuscc-unified-qq5xurmi/build",
+        "-j2"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "[  4%] Building CXX object chaosuan-1/CMakeFiles/workload.dir/src/workload.cpp.o\n[  9%] Building CXX object chaosuan-1/CMakeFiles/linux_procfs.dir/src/linux_procfs.cpp.o\n[ 14%] Linking CXX executable workload\n[ 19%] Linking CXX static library liblinux_procfs.a\n[ 19%] Built target workload\n[ 23%] Building CXX object chaosuan-2/CMakeFiles/stencil.dir/stencil.cpp.o\n[ 23%] Built target linux_procfs\n[ 28%] Building CXX object chaosuan-2/CMakeFiles/gemm.dir/gemm.cpp.o\n[ 33%] Linking CXX executable stencil\n[ 38%] Linking CXX executable gemm\n[ 38%] Built target gemm\n[ 38%] Built target stencil\n[ 42%] Building CXX object chaosuan-3/CMakeFiles/log_filter.dir/main.cpp.o\n[ 47%] Building CXX object chaosuan-3/CMakeFiles/baseline_refactored.dir/main.cpp.o\n[ 52%] Building CXX object chaosuan-3/CMakeFiles/baseline_refactored.dir/serial_filter.cpp.o\n[ 57%] Building CXX object chaosuan-3/CMakeFiles/log_filter.dir/filter.cpp.o\n[ 61%] Linking CXX executable baseline_refactored\n[ 66%] Linking CXX executable log_filter\n[ 66%] Built target baseline_refactored\n[ 66%] Built target log_filter\n[ 71%] Building CXX object chaosuan-3/CMakeFiles/test_api.dir/test_api.cpp.o\n[ 76%] Building CXX object chaosuan-3/CMakeFiles/baseline_original.dir/baseline.cpp.o\n[ 80%] Building CXX object chaosuan-3/CMakeFiles/test_api.dir/filter.cpp.o\n[ 85%] Linking CXX executable baseline_original\n[ 90%] Linking CXX executable test_api\n[ 90%] Built target baseline_original\n[ 95%] Building CXX object chaosuan-1/CMakeFiles/collector.dir/src/collector.cpp.o\n[ 95%] Built target test_api\n[100%] Linking CXX executable collector\n[100%] Built target collector\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "ctest",
+        "--test-dir",
+        "/tmp/ncuscc-unified-qq5xurmi/build",
+        "--output-on-failure"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "Test project /tmp/ncuscc-unified-qq5xurmi/build\n    Start 1: api\n1/3 Test #1: api ..............................   Passed    0.03 sec\n    Start 2: public\n2/3 Test #2: public ...........................   Passed    0.15 sec\n    Start 3: regression\n3/3 Test #3: regression .......................   Passed    0.21 sec\n\n100% tests passed, 0 tests failed out of 3\n\nTotal Test time (real) =   0.39 sec\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-1/workload",
+        "--help"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "usage: workload [--mode cpu] --threads N --duration DURATION [--pid-file PATH] [--load-percent 1..100]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-1/collector",
+        "--help"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "usage: collector (--pid PID | --pid-file PATH) [--interval DURATION] [--duration DURATION] --output PATH [--overwrite]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-1/collector",
+        "--pid",
+        "784",
+        "--interval",
+        "200ms",
+        "--duration",
+        "1s",
+        "--output",
+        "/tmp/ncuscc-unified-qq5xurmi/samples.jsonl"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-2/stencil",
+        "3",
+        "3",
+        "1",
+        "row",
+        "2"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "stencil impl=row h=3 w=3 steps=1 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=0 checksum=0.0106246\ncheck=PASS max_abs_error=0 checksum=0.0106246\nsample=0 compute_ms=3.7e-05\ncheck=PASS max_abs_error=0 checksum=0.0106246\nsample=1 compute_ms=3.6e-05\nsamples=2 mean_ms=3.65e-05 median_ms=3.65e-05 stddev_ms=5e-07 min_ms=3.6e-05 max_ms=3.7e-05 stddev_kind=population throughput_time=median GUpdates/s=0.0273973 GFLOP/s=0.164384 effective_bandwidth_GB/s=0.219178 bandwidth_model=ideal_spatial_reuse bytes_per_update=8\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-2/stencil",
+        "3",
+        "3",
+        "1",
+        "column",
+        "2"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "stencil impl=column h=3 w=3 steps=1 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=0 checksum=0.0106246\ncheck=PASS max_abs_error=0 checksum=0.0106246\nsample=0 compute_ms=3.5e-05\ncheck=PASS max_abs_error=0 checksum=0.0106246\nsample=1 compute_ms=2e-05\nsamples=2 mean_ms=2.75e-05 median_ms=2.75e-05 stddev_ms=7.5e-06 min_ms=2e-05 max_ms=3.5e-05 stddev_kind=population throughput_time=median GUpdates/s=0.0363636 GFLOP/s=0.218182 effective_bandwidth_GB/s=0.290909 bandwidth_model=ideal_spatial_reuse bytes_per_update=8\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-2/stencil",
+        "7",
+        "11",
+        "4",
+        "row",
+        "2"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "stencil impl=row h=7 w=11 steps=4 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=4.22151e-08 checksum=15.6076\ncheck=PASS max_abs_error=4.22151e-08 checksum=15.6076\nsample=0 compute_ms=0.000149\ncheck=PASS max_abs_error=4.22151e-08 checksum=15.6076\nsample=1 compute_ms=0.000109\nsamples=2 mean_ms=0.000129 median_ms=0.000129 stddev_ms=2e-05 min_ms=0.000109 max_ms=0.000149 stddev_kind=population throughput_time=median GUpdates/s=1.39535 GFLOP/s=8.37209 effective_bandwidth_GB/s=11.1628 bandwidth_model=ideal_spatial_reuse bytes_per_update=8\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-2/stencil",
+        "7",
+        "11",
+        "4",
+        "column",
+        "2"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "stencil impl=column h=7 w=11 steps=4 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=4.22151e-08 checksum=15.6076\ncheck=PASS max_abs_error=4.22151e-08 checksum=15.6076\nsample=0 compute_ms=0.000173\ncheck=PASS max_abs_error=4.22151e-08 checksum=15.6076\nsample=1 compute_ms=0.000158\nsamples=2 mean_ms=0.0001655 median_ms=0.0001655 stddev_ms=7.5e-06 min_ms=0.000158 max_ms=0.000173 stddev_kind=population throughput_time=median GUpdates/s=1.08761 GFLOP/s=6.52568 effective_bandwidth_GB/s=8.70091 bandwidth_model=ideal_spatial_reuse bytes_per_update=8\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-2/stencil",
+        "64",
+        "64",
+        "4",
+        "row",
+        "2"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "stencil impl=row h=64 w=64 steps=4 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=9.13424e-08 checksum=1853.12\ncheck=PASS max_abs_error=9.13424e-08 checksum=1853.12\nsample=0 compute_ms=0.002508\ncheck=PASS max_abs_error=9.13424e-08 checksum=1853.12\nsample=1 compute_ms=0.00249\nsamples=2 mean_ms=0.002499 median_ms=0.002499 stddev_ms=9e-06 min_ms=0.00249 max_ms=0.002508 stddev_kind=population throughput_time=median GUpdates/s=6.15286 GFLOP/s=36.9172 effective_bandwidth_GB/s=49.2229 bandwidth_model=ideal_spatial_reuse bytes_per_update=8\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-2/stencil",
+        "64",
+        "64",
+        "4",
+        "column",
+        "2"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "stencil impl=column h=64 w=64 steps=4 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=9.13424e-08 checksum=1853.12\ncheck=PASS max_abs_error=9.13424e-08 checksum=1853.12\nsample=0 compute_ms=0.009338\ncheck=PASS max_abs_error=9.13424e-08 checksum=1853.12\nsample=1 compute_ms=0.009314\nsamples=2 mean_ms=0.009326 median_ms=0.009326 stddev_ms=1.2e-05 min_ms=0.009314 max_ms=0.009338 stddev_kind=population throughput_time=median GUpdates/s=1.64872 GFLOP/s=9.89234 effective_bandwidth_GB/s=13.1898 bandwidth_model=ideal_spatial_reuse bytes_per_update=8\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-2/gemm",
+        "1",
+        "naive",
+        "16",
+        "2"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "gemm impl=naive n=1 tile=16 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=2.41158e-11 checksum=0.000943359\ncheck=PASS max_abs_error=2.41158e-11 checksum=0.000943359\nsample=0 compute_ms=3.9e-05\ncheck=PASS max_abs_error=2.41158e-11 checksum=0.000943359\nsample=1 compute_ms=1.7e-05\nsamples=2 mean_ms=2.8e-05 median_ms=2.8e-05 stddev_ms=1.1e-05 min_ms=1.7e-05 max_ms=3.9e-05 stddev_kind=population GFLOP/s=0.0714286\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-2/gemm",
+        "1",
+        "blocked",
+        "16",
+        "2"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "gemm impl=blocked n=1 tile=16 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=2.41158e-11 checksum=0.000943359\ncheck=PASS max_abs_error=2.41158e-11 checksum=0.000943359\nsample=0 compute_ms=9.7e-05\ncheck=PASS max_abs_error=2.41158e-11 checksum=0.000943359\nsample=1 compute_ms=5.4e-05\nsamples=2 mean_ms=7.55e-05 median_ms=7.55e-05 stddev_ms=2.15e-05 min_ms=5.4e-05 max_ms=9.7e-05 stddev_kind=population GFLOP/s=0.0264901\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-2/gemm",
+        "31",
+        "naive",
+        "16",
+        "2"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "gemm impl=naive n=31 tile=16 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\nsample=0 compute_ms=0.007968\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\nsample=1 compute_ms=0.007921\nsamples=2 mean_ms=0.0079445 median_ms=0.0079445 stddev_ms=2.35e-05 min_ms=0.007921 max_ms=0.007968 stddev_kind=population GFLOP/s=7.49978\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-2/gemm",
+        "31",
+        "blocked",
+        "16",
+        "2"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "gemm impl=blocked n=31 tile=16 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\nsample=0 compute_ms=0.005954\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\nsample=1 compute_ms=0.005866\nsamples=2 mean_ms=0.00591 median_ms=0.00591 stddev_ms=4.4e-05 min_ms=0.005866 max_ms=0.005954 stddev_kind=population GFLOP/s=10.0816\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-2/gemm",
+        "31",
+        "naive",
+        "64",
+        "2"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "gemm impl=naive n=31 tile=64 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\nsample=0 compute_ms=0.007984\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\nsample=1 compute_ms=0.007956\nsamples=2 mean_ms=0.00797 median_ms=0.00797 stddev_ms=1.4e-05 min_ms=0.007956 max_ms=0.007984 stddev_kind=population GFLOP/s=7.47578\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-2/gemm",
+        "31",
+        "blocked",
+        "64",
+        "2"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "gemm impl=blocked n=31 tile=64 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\nsample=0 compute_ms=0.004008\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\nsample=1 compute_ms=0.003814\nsamples=2 mean_ms=0.003911 median_ms=0.003911 stddev_ms=9.7e-05 min_ms=0.003814 max_ms=0.004008 stddev_kind=population GFLOP/s=15.2345\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-2/gemm",
+        "128",
+        "naive",
+        "64",
+        "2"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "gemm impl=naive n=128 tile=64 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=2.54014e-05 checksum=528745\ncheck=PASS max_abs_error=2.54014e-05 checksum=528745\nsample=0 compute_ms=0.769467\ncheck=PASS max_abs_error=2.54014e-05 checksum=528745\nsample=1 compute_ms=0.763509\nsamples=2 mean_ms=0.766488 median_ms=0.766488 stddev_ms=0.002979 min_ms=0.763509 max_ms=0.769467 stddev_kind=population GFLOP/s=5.47211\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-2/gemm",
+        "128",
+        "blocked",
+        "64",
+        "2"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "gemm impl=blocked n=128 tile=64 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=2.54014e-05 checksum=528745\ncheck=PASS max_abs_error=2.54014e-05 checksum=528745\nsample=0 compute_ms=0.161522\ncheck=PASS max_abs_error=2.54014e-05 checksum=528745\nsample=1 compute_ms=0.177012\nsamples=2 mean_ms=0.169267 median_ms=0.169267 stddev_ms=0.007745 min_ms=0.161522 max_ms=0.177012 stddev_kind=population GFLOP/s=24.7792\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-2/stencil",
+        "2",
+        "3",
+        "1",
+        "row",
+        "1"
+      ],
+      "returncode": 2,
+      "expected": 2,
+      "stdout": "",
+      "stderr": "invalid dimensions or implementation\n"
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-2/gemm",
+        "31",
+        "unknown",
+        "16",
+        "1"
+      ],
+      "returncode": 2,
+      "expected": 2,
+      "stdout": "",
+      "stderr": "invalid implementation\n"
+    },
+    {
+      "command": [
+        "cmake",
+        "-S",
+        "/home/destiny/project/ncuscc-hpc/chaosuan-2",
+        "-B",
+        "/tmp/ncuscc-unified-qq5xurmi/stage2-standalone",
+        "-DCMAKE_BUILD_TYPE=Release"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "-- The CXX compiler identification is GNU 15.2.0\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Configuring done (0.8s)\n-- Generating done (0.0s)\n-- Build files have been written to: /tmp/ncuscc-unified-qq5xurmi/stage2-standalone\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "cmake",
+        "--build",
+        "/tmp/ncuscc-unified-qq5xurmi/stage2-standalone",
+        "-j2"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "[ 25%] Building CXX object CMakeFiles/stencil.dir/stencil.cpp.o\n[ 50%] Building CXX object CMakeFiles/gemm.dir/gemm.cpp.o\n[ 75%] Linking CXX executable stencil\n[100%] Linking CXX executable gemm\n[100%] Built target stencil\n[100%] Built target gemm\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/tmp/ncuscc-unified-qq5xurmi/stage2-standalone/gemm",
+        "31",
+        "blocked",
+        "16",
+        "2"
+      ],
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "gemm impl=blocked n=31 tile=16 seed=2026 warmup=1 threads=1\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\nsample=0 compute_ms=0.0057\ncheck=PASS max_abs_error=1.91895e-06 checksum=7232.89\nsample=1 compute_ms=0.00578\nsamples=2 mean_ms=0.00574 median_ms=0.00574 stddev_ms=4e-05 min_ms=0.0057 max_ms=0.00578 stddev_kind=population GFLOP/s=10.3801\n",
+      "stderr": ""
+    }
+  ],
+  "passed": true,
+  "stage1_smoke": {
+    "samples": 5,
+    "rows": [
+      {
+        "schema": "hpc-metrics.v1",
+        "event": "start",
+        "sequence": 0,
+        "wall_time": "2026-10-18T02:41:30.598Z",
+        "monotonic_ns": 64898201796,
+        "collector": {
+          "version": "0.1.0",
+          "pid": 785,
+          "interval_ms": 200,
+          "requested_duration_ms": 1000
+        },
+        "target": {
+          "pid": 784,
+          "start_ticks": 6489,
+          "command": "/tmp/ncuscc-unified-qq5xurmi/build/chaosuan-1/workload",
+          "uid": 1000
+        },
+        "host": {
+          "boot_id": "b364c530-d84c-49a3-a265-c62f817ab0eb",
+          "hostname": "CarolDestiny",
+          "logical_cpus": 2,
+          "clock_ticks_per_second": 100,
+          "page_size_bytes": 4096
+        },
+        "unavailable": []
+      },
+      {
+        "schema": "hpc-metrics.v1",
+        "event": "sample",
+        "sequence": 1,
+        "wall_time": "2026-10-18T02:41:30.798Z",
+        "monotonic_ns": 65098364429,
+        "elapsed_ms": 200,
+        "target": {
+          "pid": 784,
+          "start_ticks": 6489
+        },
+        "process": {
+          "cpu_cores_percent": 99.9,
+          "cpu_capacity_percent": 50.0,
+          "threads": 2,
+          "rss_bytes": 4046848,
+          "read_bytes": 0,
+          "write_bytes": 0,
+          "voluntary_context_switches_delta": 1,
+          "involuntary_context_switches_delta": 0
+        },
+        "host": {
+          "cpu_utilization_percent": 50.0,
+          "load1": 0.08,
+          "memory_available_bytes": 3242049536
+        },
+        "unavailable": []
+      },
+      {
+        "schema": "hpc-metrics.v1",
+        "event": "sample",
+        "sequence": 2,
+        "wall_time": "2026-10-18T02:41:30.998Z",
+        "monotonic_ns": 65298284319,
+        "elapsed_ms": 400,
+        "target": {
+          "pid": 784,
+          "start_ticks": 6489
+        },
+        "process": {
+          "cpu_cores_percent": 100.0,
+          "cpu_capacity_percent": 50.0,
+          "threads": 2,
+          "rss_bytes": 4046848,
+          "read_bytes": 0,
+          "write_bytes": 0,
+          "voluntary_context_switches_delta": 0,
+          "involuntary_context_switches_delta": 0
+        },
+        "host": {
+          "cpu_utilization_percent": 50.0,
+          "load1": 0.15,
+          "memory_available_bytes": 3242049536
+        },
+        "unavailable": []
+      },
+      {
+        "schema": "hpc-metrics.v1",
+        "event": "sample",
+        "sequence": 3,
+        "wall_time": "2026-10-18T02:41:31.198Z",
+        "monotonic_ns": 65498332524,
+        "elapsed_ms": 600,
+        "target": {
+          "pid": 784,
+          "start_ticks": 6489
+        },
+        "process": {
+          "cpu_cores_percent": 95.0,
+          "cpu_capacity_percent": 47.5,
+          "threads": 2,
+          "rss_bytes": 4046848,
+          "read_bytes": 0,
+          "write_bytes": 0,
+          "voluntary_context_switches_delta": 0,
+          "involuntary_context_switches_delta": 0
+        },
+        "host": {
+          "cpu_utilization_percent": 50.0,
+          "load1": 0.15,
+          "memory_available_bytes": 3242049536
+        },
+        "unavailable": []
+      },
+      {
+        "schema": "hpc-metrics.v1",
+        "event": "sample",
+        "sequence": 4,
+        "wall_time": "2026-10-18T02:41:31.398Z",
+        "monotonic_ns": 65698392323,
+        "elapsed_ms": 800,
+        "target": {
+          "pid": 784,
+          "start_ticks": 6489
+        },
+        "process": {
+          "cpu_cores_percent": 100.0,
+          "cpu_capacity_percent": 50.0,
+          "threads": 2,
+          "rss_bytes": 4046848,
+          "read_bytes": 0,
+          "write_bytes": 0,
+          "voluntary_context_switches_delta": 0,
+          "involuntary_context_switches_delta": 0
+        },
+        "host": {
+          "cpu_utilization_percent": 50.0,
+          "load1": 0.15,
+          "memory_available_bytes": 3242049536
+        },
+        "unavailable": []
+      },
+      {
+        "schema": "hpc-metrics.v1",
+        "event": "sample",
+        "sequence": 5,
+        "wall_time": "2026-10-18T02:41:31.598Z",
+        "monotonic_ns": 65898343538,
+        "elapsed_ms": 1000,
+        "target": {
+          "pid": 784,
+          "start_ticks": 6489
+        },
+        "process": {
+          "cpu_cores_percent": 100.0,
+          "cpu_capacity_percent": 50.0,
+          "threads": 2,
+          "rss_bytes": 4046848,
+          "read_bytes": 0,
+          "write_bytes": 0,
+          "voluntary_context_switches_delta": 0,
+          "involuntary_context_switches_delta": 0
+        },
+        "host": {
+          "cpu_utilization_percent": 50.0,
+          "load1": 0.15,
+          "memory_available_bytes": 3246858240
+        },
+        "unavailable": []
+      },
+      {
+        "schema": "hpc-metrics.v1",
+        "event": "end",
+        "sequence": 6,
+        "wall_time": "2026-10-18T02:41:31.598Z",
+        "monotonic_ns": 65898463796,
+        "elapsed_ms": 1000,
+        "reason": "duration_reached",
+        "samples_written": 5,
+        "missed_deadlines": 0,
+        "unavailable_fields": []
+      }
+    ],
+    "stdout": "",
+    "stderr": ""
+  },
+  "finished_utc": "2026-10-18T02:41:35.012570+00:00"
+}

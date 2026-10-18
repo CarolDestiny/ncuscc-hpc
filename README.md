@@ -1,38 +1,39 @@
 # NCUSCC 超算学习与实验
 
-本仓库汇总三个 WSL 工作区的源码、学习笔记与可核对的实验材料，供最终技术报告引用。
+三个 C/C++ 工作区的源码、实验材料及合并考核报告。
 
-| 目录 | 内容 | 阅读入口 |
+**阅读入口：[合并报告](docs/report.md) · [PDF](docs/report.pdf) · [详细数据与复现](docs/data-index.md)**
+
+| 目录 | 内容 | 说明 |
 | --- | --- | --- |
-| [chaosuan-1](chaosuan-1/) | Linux CPU 负载程序、procfs 指标采集与 JSONL 输出 | [构建与现状](chaosuan-1/README.md) |
-| [chaosuan-2](chaosuan-2/) | 五点 stencil、矩阵乘法、访问顺序与分块实验 | [实验报告](chaosuan-2/ai_result.md)、[个人分析](chaosuan-2/thinking.txt) |
-| [chaosuan-3](chaosuan-3/) | 稳定日志筛选、64 条位图分块优化与回归验证 | [使用说明](chaosuan-3/README.md)、[实验报告](chaosuan-3/REPORT.md) |
+| [chaosuan-1](chaosuan-1/) | CPU 负载与 Linux procfs 指标采集 | [使用说明](chaosuan-1/README.md) |
+| [chaosuan-2](chaosuan-2/) | Stencil / GEMM、访问顺序与分块实验 | [使用说明](chaosuan-2/README.md)、[详细报告](chaosuan-2/ai_result.md) |
+| [chaosuan-3](chaosuan-3/) | 稳定日志筛选及位图分块优化 | [使用说明](chaosuan-3/README.md)、[详细报告](chaosuan-3/REPORT.md) |
+| [docs](docs/) | 合并报告、数据索引、验证记录和来源 | [验证结果](docs/verification.md) |
+| [scripts](scripts/) | 完整正确性复验入口 | [verify.py](scripts/verify.py) |
 
-## 构建和验证
+## 统一构建
 
-需要 Linux / WSL 2、CMake、G++（C++17）和 Python 3。仓库不附带编译器、构建缓存或生成的数据集。
+需要 Linux / WSL 2、CMake、G++（C++17）和 Python 3。
+
+```bash
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build -j2
+ctest --test-dir build --output-on-failure
+```
+
+可执行文件位于 `build/chaosuan-1/`、`build/chaosuan-2/`、`build/chaosuan-3/`。第二题也可单独用 CMake 构建。根目录 CTest 运行第三题现存的 3 组测试；第一题原 CMake 引用的两项脚本缺失，统一入口明确提示并关闭这两项注册，不将其计为通过。
+
+完整复验（第一题联动、第二题参数与边界、第三题公开/API/回归及 ASan/UBSan）使用：
 
 ```bash
 python3 scripts/verify.py
 ```
 
-脚本在临时目录构建：第一题执行负载与采集联动检查；第二题测试两种 stencil 和两种 GEMM 实现及边界；第三题调用原有验证脚本，检查公开测试、回归测试和 ASan/UBSan。它不重跑历史性能测量或物理机 PMU 采样。
+该脚本在临时目录构建，将命令与输出保存为新的 `docs/verification-*.json`，不覆盖历史测量。
 
-第一题的原 CMake 引用了未保留的 `tests/integration_test.py` 和 `tests/lifecycle_test.py`。当前复验关闭这两项注册，并明确区分新增的基本联动检查与缺失的原测试；原源码和 CMake 不作修改。
+## 数据与报告
 
-## 实验材料与结果口径
+报告正文只保留工具、方法和主要成果，逐次样本、环境、编译参数及硬件计数通过[数据索引](docs/data-index.md)引用。感想来自作者最新修改的 Markdown；技术、实验和报告中的 AI 使用已在正文说明。
 
-第二题的 `experiments/` 从原交付备份 `ai_experiment_evidence.zip` 恢复；恢复前逐字节核对了归档中的源码、报告和工具说明与工作区一致。该目录包含 WSL/物理机样本、环境、分析脚本和物理机 PMU 证据。历史性能结果不等于本次重新测得的成绩。
-
-第三题保留 `measurements.json`、`validation.json` 与原始文件哈希。历史混合命中场景约有 1.68–2.68 倍核心加速，全命中场景约退化 8.35%；报告保留了收益、退化与环境限制。WSL 本地验证不代表正式平台验收或排名。
-
-本次复验：[结果与完整命令](docs/verification.md)。
-
-## 最终报告准备
-
-- [报告要求和素材索引](docs/report-plan.md)
-- [技术报告提纲](docs/technical-report.md)
-- [感想报告待本人填写](docs/reflections.md)
-- [仓库整理来源与范围](docs/provenance.md)
-
-技术报告可以基于代码、命令和实验材料整理。感想报告需要作者提供真实经历、问题和思考，目前仅保留提示，不代写个人体验。部分既有分析、实现、测试和文档使用了 AI 辅助，具体过程应在最终报告中如实说明。
+第二题历史证据由原交付备份恢复，第三题保留原始测量与测试输出。核心算法、历史数据和原始文件哈希保持原状。第一题缺失的测试和未执行的正式平台验收均已注明，具体见[整理来源](docs/provenance.md)。

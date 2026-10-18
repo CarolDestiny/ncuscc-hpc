@@ -1,23 +1,37 @@
-# 技术报告提纲（待作者核对）
+# NCUSCC C/C++ 技术报告
 
-作者：待填写。时间范围：待填写。正式平台成绩：待提供。
+## 1. 开发环境与工具
 
-## 1. 环境与方法
+在 Ubuntu / WSL 2 中使用 VS Code 开发，语言为 C++17；使用 G++ 15.2.0、CMake 和 Python 完成编译、实验与校验，Git / GitHub 管理代码。第二题另在 i5-8250U Ubuntu 物理机上分析性能。
 
-说明 WSL、物理机和正式评测环境的区别。记录编译器、参数、输入规模、种子、预热和重复次数。区分正确性复验、历史性能测量和未完成的正式验收。
+## 2. 第一题：负载生成与指标采集
 
-## 2. 第一题：Linux 负载和指标采集
+**工具与实现：** 使用 C++ 线程生成可配置的 CPU 负载，通过 Linux `/proc` 定时采集 CPU、内存、I/O 和上下文切换，以 JSONL 保存结果。CPU 使用率根据两次采样的时间差计算，使用 PID 和启动时间识别进程。
 
-从 workload、collector、procfs 封装和 JSONL 格式说明数据流。逐项解释采样间隔、计数差分、进程生命周期与错误处理。对照原题面核对指标要求。现存原测试缺失，只能引用本次实际执行的基本联动检查。
+**成果：** Release 构建、真实负载与采集联动、JSONL 解析和目标 PID 检查通过。原有两项测试脚本缺失，未将其计为已通过。
 
-## 3. 第二题：访问顺序与分块
+## 3. 第二题：Stencil 与矩阵乘法分析
 
-以 `thinking.txt` 为阅读起点，解释 stencil 双缓冲及 row/column 访问；GEMM 的 naive/blocked、packing 成本和 tile 选择。以 `ai_result.md` 及恢复的原始样本为来源，分别展示 WSL 计时和物理机缓存/PMU 证据。有效字节模型不等同于实测 DRAM 流量，whole-process 计数不直接除以 kernel 耗时。
+**工具与实现：** 使用 G++、Python 比较 Stencil 的按行/按列遍历及 GEMM 的普通/分块实现；在物理机上结合 perf stat、Cachegrind、向量化报告和 objdump 分析访问顺序、数据复用及 tile 大小。
 
-## 4. 第三题：稳定日志筛选
+**成果：** 历史物理机实验中，4096×4096、20 步 Stencil 的 row 相对 column 加速 43.57 倍；N=1024、tile=64 的 blocked GEMM 相对 naive 加速 26.72 倍。主实验采用预热后的 9 样本中位数。历史两机共 472 次逐元素校验通过；本次 WSL 复验的 14 组正常参数和 2 组错误参数检查通过。
 
-解释原始串行算法、接口抽取、64 条谓词位图、全命中连续复制及按低位顺序输出。说明稳定性、重复项和字段完整性。引用公开/回归/API/消毒器结果。性能表同时列出约 1.68–2.68 倍混合命中收益与约 8.35% 全命中退化；具体数值引用原始记录，不能称为今天的新成绩。
+## 4. 第三题：稳定日志筛选优化
 
-## 5. 局限、复现与 AI 辅助
+**工具与实现：** 使用 CMake、CTest、Python、ASan / UBSan 和 objdump；保留原始基线，抽取筛选接口，每 64 条记录构造命中位图，全命中时连续复制，部分命中时按位置顺序写出，保留重复项和全部字段。
 
-列出缺失材料、宿主机负载和频率影响、硬件计数范围及未完成的正式评测。记录使用 AI 的环节、作者实际采纳和否决的建议，并用代码、命令和证据解释理由。
+**成果：** 历史 WSL 测量的四组混合命中场景加速约 1.68–2.68 倍；全命中场景耗时增加 8.35%，说明优化存在额外位图成本。公开测试、优化版 3 组 CTest、1057 个 API 用例及 ASan / UBSan 检查通过。
+
+## 5. 详细数据与复现材料
+
+| 题目 | GitHub 材料 |
+| --- | --- |
+| 第一题 | [采样、构建命令与完整校验输出](https://github.com/CarolDestiny/ncuscc-hpc/blob/01eae591f6e81f7f8bd6d0e93e19da1e552df4f6/docs/verification-20261018T020039Z.json) |
+| 第二题 | [详细报告](https://github.com/CarolDestiny/ncuscc-hpc/blob/01eae591f6e81f7f8bd6d0e93e19da1e552df4f6/chaosuan-2/ai_result.md) · [汇总数据](https://github.com/CarolDestiny/ncuscc-hpc/blob/01eae591f6e81f7f8bd6d0e93e19da1e552df4f6/chaosuan-2/experiments/results/summary.csv) · [原始样本及环境](https://github.com/CarolDestiny/ncuscc-hpc/tree/01eae591f6e81f7f8bd6d0e93e19da1e552df4f6/chaosuan-2/experiments/results) |
+| 第三题 | [详细报告](https://github.com/CarolDestiny/ncuscc-hpc/blob/01eae591f6e81f7f8bd6d0e93e19da1e552df4f6/chaosuan-3/REPORT.md) · [逐次测量](https://github.com/CarolDestiny/ncuscc-hpc/blob/01eae591f6e81f7f8bd6d0e93e19da1e552df4f6/chaosuan-3/measurements.json) · [测试输出](https://github.com/CarolDestiny/ncuscc-hpc/blob/01eae591f6e81f7f8bd6d0e93e19da1e552df4f6/chaosuan-3/validation.json) |
+
+[数据与复现总索引](https://github.com/CarolDestiny/ncuscc-hpc/blob/main/docs/data-index.md)还提供分析脚本、物理机硬件计数及统一构建命令。上述历史材料链接固定到归档提交，便于核对。
+
+**结果口径：** 第二题性能数据来自 2026-10-12，第三题来自 2026-10-15；2026-10-18 进行了本地正确性复验。加速比针对计算核心，未执行正式平台验收。
+
+**AI 使用：** 第一题主要自行编写；第二题代码分析由本人完成，实验及报告整理借助 AI；第三题实现、测试和报告使用 AI 辅助。

@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.16)
+project(stencil_gemm LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+add_executable(stencil stencil.cpp)
+add_executable(gemm gemm.cpp)
+foreach(target IN ITEMS stencil gemm)
+    if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+        target_compile_options(${target} PRIVATE -Wall -Wextra -Wpedantic)
+    endif()
+endforeach()

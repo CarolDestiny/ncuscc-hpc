@@ -5,7 +5,9 @@
 - `experiments/`：从原交付备份恢复的脚本及历史原始结果。
 - `tools.md`：工具使用说明，以及 whole-process 与 kernel 计时的区别。
 
-基本构建与正确性复验（不等同于历史性能实验的编译配置）：
+可通过仓库根目录统一构建，也可在本目录执行 `cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -j2`。
+
+基本编译与正确性复验（不等同于历史性能实验的编译配置）：
 
 ```bash
 mkdir -p build
